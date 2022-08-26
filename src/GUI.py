@@ -11,7 +11,7 @@ class GUI(wx.Frame):
         height_half = height//2
         width_half = width//2
 
-        wx.Frame.__init__(self, parent, title=title, style=wx.DEFAULT_FRAME_STYLE ^ wx.RESIZE_BORDER)
+        wx.Frame.__init__(self, parent, title=title, size=(height, width), style=wx.DEFAULT_FRAME_STYLE ^ wx.RESIZE_BORDER)
 
         # add panel
         self.panel = wx.Panel(self, wx.ID_ANY, pos=(0, 0),
@@ -40,6 +40,7 @@ class GUI(wx.Frame):
         self.Show(True)
 
     def drawProp(self, props):
+        # TODO: probably desirable to split this off into its own file
         assert props.all_same_cathegory()
         assert props.all_same_name()
 
@@ -63,13 +64,23 @@ class GUI(wx.Frame):
             ui_element = wx.TextCtrl(self.panel, pos=(110, self.Ypos - 5),
                                         size=(140, -1))
 
+        if prop0.data_type == 'string':
+            wx.StaticText(self.panel, label=prop0.name, pos=(10, self.Ypos),
+                                        size=(100, 20), style=wx.SIMPLE_BORDER)
+
+            ui_element = wx.TextCtrl(self.panel, pos=(110, self.Ypos - 5),
+                                        size=(140, -1))
+
 
         self.Ypos += 35
 
         if props.all_same_value():
             ui_element.SetValue(str(prop0.value))
         else:
-            ui_element.SetValue("x")
+            if prop0.data_type == 'string':
+                ui_element.SetValue("*")
+            else:
+                ui_element.SetValue("x")
 
         for prop in props.list:
             prop.ui_element = ui_element

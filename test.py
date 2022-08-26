@@ -8,6 +8,9 @@ properties = Properties_array([
         Property("X", "Position", "length", 2),
         Property("Y", "Position", "length", 3),
         Property("Y", "Position", "length", 4),
+        Property("Ref", "Strings", "string", "aaa"),
+        Property("Ref", "Strings", "string", "bbb"),
+        Property("datasheet", "Strings", "string", "datasheet"),
         Property("Angle", "Orientation", "angle", 90)
         ])
 

@@ -1,4 +1,5 @@
 from .property import Property
+from .regex import regex
 import math
 import wx
 import re
@@ -28,7 +29,13 @@ def acos(x):
 class Property(Property):
     def eval(self):
         if self.data_type == 'string':
-            self.value = self.ui_element.GetValue()
+            if self.ui_element.GetValue()[:2] == "*s":
+                print("regex")
+                self.value = regex(self.value + self.ui_element.GetValue()[1:])
+
+            elif re.search("^\*\s*$", self.ui_element.GetValue()) == None:
+                self.value = self.ui_element.GetValue()
+
 
         if self.data_type == 'length' or self.data_type == 'length_unsigned':
 
