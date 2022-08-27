@@ -8,7 +8,9 @@ class Property:
         self.name = name
         self.cathegory = cathegory
         self.data_type = data_type
+
         self.value = value
+
         self.ui_element = None
 
     def __str__(self):
@@ -31,8 +33,9 @@ class Properties_array:
         retval += "}"
 
         return retval
-
-
+    
+    def __add__(self, other):
+        return Properties_array(self.list + other.list)
 
     def contains_cathegory(self, cathegory):
         for prop in self.list:
@@ -114,3 +117,4 @@ class Properties_array:
         return True
 
 
+from .eval_value import *

@@ -1,11 +1,13 @@
 from .property import *
 from .eval_value import *
+from pcbnew import *
 import wx
 
 
 class GUI(wx.Frame):
-    def __init__(self, parent, title, properties_array):
-        self.properties = properties_array
+    def __init__(self, parent, title, selected):
+        self.selected = selected
+        self.properties = selected.get_properties()
         height = 600
         width = 800
         height_half = height//2
@@ -88,9 +90,9 @@ class GUI(wx.Frame):
 
 
     def save(self, e):
-        for prop in self.properties.list:
-            if not prop.eval():
-                return
+        for item in self.selected.list:
+            item.write_properties()
 
+            
         self.Close(True)  # Close the frame.
 
