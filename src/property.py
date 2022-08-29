@@ -1,20 +1,50 @@
+from .kicad.kicad import *
+
 # types: 'bool', 'string', 'length', 'lenght_unsigned', 'angle'
 # Anything expressed in meters, inches, feet, lightyears is considered to be
 # expressed in a unit of length, even if a coordinate or thickness isn't
 # neccesarely considered "length'
 
 class Property:
-    def __init__(self, name, cathegory, data_type, value):
+    def __init__(self, name, category, data_type, value, item):
         self.name = name
-        self.cathegory = cathegory
+        self.category = category
         self.data_type = data_type
 
         self.value = value
 
         self.ui_element = None
 
+        kicad_info.update()
+
     def __str__(self):
-        return "Property{" + self.name + ", " + self.cathegory + ", " + self.data_type + ", " + str(self.value) + "}"
+        return "Property{" + self.name + ", " + self.category + ", " + self.data_type + ", " + str(self.get_ui_value()) + "}"
+
+    def get_ui_value(self):
+        if self.data_type == "length" or self.data_type == "length_unsigned":
+            ui_val = kicad_info.toUnit(self.value.get())
+        elif self.data_type == "angle":
+            ui_val = self.value.get() / 10
+        else:
+            ui_val = self.value.get()
+        
+        self.__ui_val = ui_val
+        return ui_val
+
+    def put_ui_value(self, ui_val):
+        if self.get_ui_value() == ui_val:
+            return
+
+        print("updating value", self.name)
+
+        if self.data_type == "length" or self.data_type == "length_unsigned":
+            self.value.put(kicad_info.fromUnit(ui_val))
+        elif self.data_type == "angle":
+            self.value.put(ui_val * 10)
+        else:
+            self.value.put(ui_val)
+        
+
 
 class Properties_array:
     def __init__(self, properties):
@@ -37,9 +67,9 @@ class Properties_array:
     def __add__(self, other):
         return Properties_array(self.list + other.list)
 
-    def contains_cathegory(self, cathegory):
+    def contains_category(self, category):
         for prop in self.list:
-            if prop.cathegory == cathegory:
+            if prop.category == category:
                 return True
         return False
 
@@ -49,11 +79,11 @@ class Properties_array:
                 return True
         return False
 
-    def get_in_cathegory(self, cathegory):
+    def get_in_category(self, category):
         properties = []
 
         for prop in self.list:
-            if prop.cathegory == cathegory:
+            if prop.category == category:
                 properties.append(prop)
 
         return Properties_array(properties)
@@ -74,8 +104,8 @@ class Properties_array:
         cathegories = [] # should be ordered
 
         for prop in self.list:
-            if not prop.cathegory in cathegories:
-                cathegories.append(prop.cathegory)
+            if not prop.category in cathegories:
+                cathegories.append(prop.category)
 
         return cathegories
 
@@ -90,19 +120,19 @@ class Properties_array:
         return names
 
     def all_same_value(self):
-        value = self.list[0].value
+        value = self.list[0].value.get()
 
         for prop in self.list:
-            if prop.value != value:
+            if prop.value.get() != value:
                 return False
 
         return True
 
-    def all_same_cathegory(self):
-        cathegory = self.list[0].cathegory
+    def all_same_category(self):
+        category = self.list[0].category
 
         for prop in self.list:
-            if prop.cathegory != cathegory:
+            if prop.category != category:
                 return False
 
         return True
@@ -117,4 +147,4 @@ class Properties_array:
         return True
 
 
-from .eval_value import *
+from .update_value import *

@@ -1,5 +1,3 @@
-from .property import *
-from .eval_value import *
 from pcbnew import *
 import wx
 
@@ -22,16 +20,16 @@ class GUI(wx.Frame):
                           size=(width_half, height))
 
         self.Ypos = 10
-        for cathegory in self.properties.get_cathegories():
-            if self.properties.contains_cathegory(cathegory):
-                cathegory_properties = self.properties.get_in_cathegory(cathegory)
+        for category in self.properties.get_cathegories():
+            if self.properties.contains_category(category):
+                category_properties = self.properties.get_in_category(category)
 
-                wx.StaticText(self.panel, label=cathegory, pos=(10, self.Ypos), 
+                wx.StaticText(self.panel, label=category, pos=(10, self.Ypos), 
                         size=(100, 20), style=wx.SIMPLE_BORDER)
                 self.Ypos += 35
 
-                for name in cathegory_properties.get_names():
-                    self.drawProp(cathegory_properties.get_with_name(name))
+                for name in category_properties.get_names():
+                    self.drawProp(category_properties.get_with_name(name))
 
 
         self.button = wx.Button(self.panel, label="Save", pos=(10, self.Ypos))
@@ -43,7 +41,7 @@ class GUI(wx.Frame):
 
     def drawProp(self, props):
         # TODO: probably desirable to split this off into its own file
-        assert props.all_same_cathegory()
+        assert props.all_same_category()
         assert props.all_same_name()
 
         prop0 = props.list[0]
@@ -77,7 +75,8 @@ class GUI(wx.Frame):
         self.Ypos += 35
 
         if props.all_same_value():
-            ui_element.SetValue(str(prop0.value))
+            print(prop0.get_ui_value())
+            ui_element.SetValue(str(prop0.get_ui_value()))
         else:
             if prop0.data_type == 'string':
                 ui_element.SetValue("*")
@@ -91,8 +90,7 @@ class GUI(wx.Frame):
 
     def save(self, e):
         for item in self.selected.list:
-            item.write_properties()
-
+            for prop in item.properties.list:
+                prop.update_value()
             
         self.Close(True)  # Close the frame.
-

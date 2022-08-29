@@ -1,0 +1,57 @@
+# All these methods have .put() and .get() method
+    class Footprint:
+        Reference
+        x
+        y
+        side
+        orientation
+        lock
+        footprint
+        type
+        not_in_schematic
+        exclude_from_pos
+        exclude_from_bom
+
+    class Line:
+        startX
+        startY
+        endX
+        endY
+        layer
+        width
+        locked
+            
+    class Reference:
+        x
+        y
+        reference
+        layer
+        width
+        height
+        thickness
+        visible
+        italic
+        justification
+        orientation
+        mirrored
+        keep upright
+
+    class Text:
+        x
+        y
+        text
+        locked
+        layer
+        width
+        height
+        thickness
+        italic
+        justification
+        orientation
+        mirrored
+
+    class Pad:
+
+    class Zone:
+
+

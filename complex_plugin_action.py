@@ -1,7 +1,7 @@
-import pcbnew
+from .src.get_selected import *
+from .src.GUI import *
 import os
 import wx
-from .src.properties import *
 
 pcb = pcbnew.GetBoard()
 
@@ -17,7 +17,12 @@ class ComplexPluginAction(pcbnew.ActionPlugin):
     def Run(self):
         # The entry function of the plugin that is executed on user action
         try:
-            open_properties()
+            selected = get_selected()
+
+            app = wx.App(False)
+            frame = GUI(None, 'Properties', selected)
+            app.MainLoop()
+
         except (Exception, ArithmeticError) as e:
             template = "An exception of type {0} occurred. Arguments:\n{1!r}"
             message = template.format(type(e).__name__, e.args)
