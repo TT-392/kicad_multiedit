@@ -24,6 +24,7 @@ def acos(x):
 def snap(x, amount):
     x = x / amount
     x = round(x, 0)
+    return x * amount
 
 
 def evaluate(string, prop):
