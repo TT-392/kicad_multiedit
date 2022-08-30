@@ -1,4 +1,4 @@
-from pcbnew import *
+import pcbnew
 import wx
 
 
@@ -57,19 +57,21 @@ class GUI(wx.Frame):
             wx.StaticText(self.panel, label="mm", pos=(250, self.Ypos),
                                         size=(40, 20), style=wx.SIMPLE_BORDER)
 
-        if prop0.data_type == 'angle':
+        elif prop0.data_type == 'angle':
             wx.StaticText(self.panel, label=prop0.name, pos=(10, self.Ypos),
                                         size=(100, 20), style=wx.SIMPLE_BORDER)
 
             ui_element = wx.TextCtrl(self.panel, pos=(110, self.Ypos - 5),
                                         size=(140, -1))
 
-        if prop0.data_type == 'string':
+        elif prop0.data_type == 'string':
             wx.StaticText(self.panel, label=prop0.name, pos=(10, self.Ypos),
                                         size=(100, 20), style=wx.SIMPLE_BORDER)
 
             ui_element = wx.TextCtrl(self.panel, pos=(110, self.Ypos - 5),
                                         size=(140, -1))
+
+
 
 
         self.Ypos += 35
@@ -93,4 +95,5 @@ class GUI(wx.Frame):
             for prop in item.properties.list:
                 prop.update_value()
             
+        pcbnew.Refresh()
         self.Close(True)  # Close the frame.

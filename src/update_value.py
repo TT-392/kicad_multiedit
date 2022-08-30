@@ -25,3 +25,4 @@ class Property(Property):
                 message = template.format(type(e).__name__, e.args)
 
                 wx.MessageBox(message, 'Error', wx.OK | wx.ICON_INFORMATION)
+                return
