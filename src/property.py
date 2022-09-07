@@ -10,6 +10,7 @@ class Property:
         self.name = name
         self.category = category
         self.data_type = data_type
+        self.item = item
 
         self.value = value
 
@@ -97,17 +98,26 @@ class Properties_array:
 
         return Properties_array(properties)
 
+    def get_in_category_and_with_name(self, category, name):
+        properties = []
+
+        for prop in self.list:
+            if prop.category == category and prop.name == name:
+                properties.append(prop)
+
+        return Properties_array(properties)
+
     def append(self, prop):
         self.list.append(prop)
 
-    def get_cathegories(self):
-        cathegories = [] # should be ordered
+    def get_categories(self):
+        categories = [] # should be ordered
 
         for prop in self.list:
-            if not prop.category in cathegories:
-                cathegories.append(prop.category)
+            if not prop.category in categories:
+                categories.append(prop.category)
 
-        return cathegories
+        return categories
 
 
     def get_names(self):
@@ -145,6 +155,13 @@ class Properties_array:
                 return False
 
         return True
+
+    def get_items(self):
+        items = []
+        for prop in self.list:
+            items.append(prop.item)
+        return items
+            
 
 
 from .update_value import *

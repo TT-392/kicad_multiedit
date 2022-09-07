@@ -1,7 +1,5 @@
 import pcbnew
 
-print(pcbnew.GetUserUnits())
-
 UNIT_MM = 1
 UNIT_MIL = 5
 UNIT_IN = 0
@@ -12,6 +10,13 @@ class Kicad_info:
 
     def update(self):
         self.units = pcbnew.GetUserUnits()
+
+        if self.units == UNIT_MM:
+            self.unit_string = "mm"
+        elif self.units == UNIT_MIL:
+            self.unit_string = "mils"
+        elif self.units == UNIT_IN:
+            self.unit_string = "in"
 
     def toUnit(self, value):
         if self.units == UNIT_MM:

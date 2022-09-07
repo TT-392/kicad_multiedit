@@ -29,21 +29,27 @@ def get_selected():
         if drawing.IsSelected():
             if type(drawing) == pcbnew.PCB_TEXT:
                 item_list.append(GraphicText(drawing))
+                print("text")
 
             elif drawing.GetShape() == LINE:
                 item_list.append(GraphicLine(drawing))
+                print("line")
 
             elif drawing.GetShape() == ARC:
                 item_list.append(GraphicArc(drawing))
+                print("arc")
 
             elif drawing.GetShape() == RECT:
                 item_list.append(GraphicRect(drawing))
+                print("rect")
 
             elif drawing.GetShape() == CIRCLE:
                 item_list.append(GraphicCircle(drawing))
+                print("circle")
 
             elif drawing.GetShape() == POLY:
                 item_list.append(GraphicPolygon(drawing))
+                print("poly")
 
 
     return Items(item_list)
