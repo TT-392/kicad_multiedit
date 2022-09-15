@@ -19,6 +19,8 @@ class GraphicCircle:
         self.radius = self.__radius(self)
         self.width = self.__width(self)
 
+        self.icon = "add_circle"
+
         self.x_prop = Property("X", "Position", "length", self.x, self)
         self.y_prop = Property("Y", "Position", "length", self.y, self)
         self.radius_prop = Property("Radius", "Shape", "length_unsigned", self.radius, self)

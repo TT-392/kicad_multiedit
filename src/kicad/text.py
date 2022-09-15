@@ -21,6 +21,8 @@ class GraphicText:
         self.width = self.__width(self)
         self.orientation = self.__orientation(self)
 
+        self.icon = "text"
+
         self.text_prop = Property("Text", "Strings", "string", self.text, self)
         self.x_prop = Property("X", "Position", "length", self.x, self)
         self.y_prop = Property("Y", "Position", "length", self.y, self)

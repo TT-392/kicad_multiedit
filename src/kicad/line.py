@@ -19,6 +19,8 @@ class GraphicLine:
         self.endY = self.__endY(self)
         self.width = self.__width(self)
 
+        self.icon = "add_line"
+
         self.startX_prop = Property("startX", "Points", "length", self.startX, self)
         self.startY_prop = Property("startY", "Points", "length", self.startY, self)
         self.endX_prop = Property("endX", "Points", "length", self.endX, self)

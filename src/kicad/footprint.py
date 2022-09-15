@@ -18,6 +18,8 @@ class Footprint:
         self.y = self.__y(self)
         self.orientation = self.__orientation(self)
 
+        self.icon = "add_footprint"
+
         self.x_prop = Property("X", "Position", "length", self.x, self)
         self.y_prop = Property("Y", "Position", "length", self.y, self)
         self.ref_prop = Property("Ref", "Strings", "string", self.reference, self)
@@ -29,7 +31,6 @@ class Footprint:
             self.ref_prop,
             self.orientation_prop
             ])
-
 
     def __str__(self):
         return "Footprint: " + self.reference.get()

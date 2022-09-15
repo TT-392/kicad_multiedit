@@ -25,6 +25,10 @@ class ComplexPluginAction(pcbnew.ActionPlugin):
             print(selected.get_properties())
             print()
             print(Ui_elements(selected.get_properties()))
+            app = wx.App(0)
+            GUI(None, Ui_elements(selected.get_properties()))
+            app.MainLoop()
+
 
             #app = wx.App(False)
             #frame = GUI(None, 'Properties', selected)

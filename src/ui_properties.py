@@ -43,7 +43,7 @@ class Ui_elements:
                 if len(props.list) != 0:
                     widget_type = self.__widget_type_from_data_type(props.list[0].data_type)
                     if props.all_same_value():
-                        ui_value = props.list[0].get_ui_value()
+                        ui_value = str(props.list[0].get_ui_value())
                     else:
                         ui_value = "x"
 

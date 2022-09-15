@@ -13,3 +13,12 @@ class Items:
 
 
         return properties
+    
+    def get_icons(self):
+        retval = []
+        for item in self.list:
+            if not item.icon in retval:
+                retval.append(item.icon)
+        
+        return retval
+

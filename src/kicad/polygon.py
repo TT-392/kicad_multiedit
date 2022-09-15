@@ -16,6 +16,8 @@ class GraphicPolygon:
         self.obj = obj
         self.width = self.__width(self)
 
+        self.icon = "add_graphical_polygon"
+
         self.width_prop = Property("width", "Line", "length_unsigned", self.width, self)
 
         self.properties = Properties_array([
