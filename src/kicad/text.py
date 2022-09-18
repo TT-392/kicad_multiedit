@@ -24,12 +24,12 @@ class GraphicText:
         self.icon = "text"
 
         self.text_prop = Property("Text", "Strings", "string", self.text, self)
-        self.x_prop = Property("X", "Position", "length", self.x, self)
-        self.y_prop = Property("Y", "Position", "length", self.y, self)
-        self.textWidth_prop = Property("Width", "Text", "length_unsigned", self.textWidth, self)
-        self.textHeight_prop = Property("Height", "Text", "length_unsigned", self.textHeight, self)
-        self.width_prop = Property("Width", "Line", "length_unsigned", self.width, self)
-        self.orientation_prop = Property("Angle", "Orientation", "angle", self.orientation, self)
+        self.x_prop = Property("X", "Position", "length", self.x, self, "x")
+        self.y_prop = Property("Y", "Position", "length", self.y, self, "y")
+        self.textWidth_prop = Property("Width", "Text", "length_unsigned", self.textWidth, self, "textWidth")
+        self.textHeight_prop = Property("Height", "Text", "length_unsigned", self.textHeight, self, "textHeight")
+        self.width_prop = Property("Width", "Line", "length_unsigned", self.width, self, "width")
+        self.orientation_prop = Property("Angle", "Orientation", "angle", self.orientation, self, "rot")
 
         self.properties = Properties_array([
             self.text_prop,

@@ -30,6 +30,7 @@ class Ui_property:
 class Ui_elements:
     def __init__(self, properties):
         #TODO: I don't think it'd hurt combining these 2 for cleaner code
+        #TODO: this code could be cleaner in general
         names = properties.get_names()
         categories = properties.get_categories()
 
@@ -42,10 +43,17 @@ class Ui_elements:
 
                 if len(props.list) != 0:
                     widget_type = self.__widget_type_from_data_type(props.list[0].data_type)
+
                     if props.all_same_value():
                         ui_value = str(props.list[0].get_ui_value())
                     else:
-                        ui_value = "x"
+                        if props.list[0].data_type != "string" and props.list[0].data_type != "bool":
+                            if props.list[0].varname != None:
+                                ui_value = props.list[0].varname
+                            else:
+                                ui_value = "None"
+                        else:
+                            ui_value = "*"
 
                     items = Items(props.get_items())
                     unit = self.__unit_from_data_type(props.list[0].data_type)

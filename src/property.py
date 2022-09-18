@@ -6,11 +6,12 @@ from .kicad.kicad import *
 # neccesarely considered "length'
 
 class Property:
-    def __init__(self, name, category, data_type, value, item):
+    def __init__(self, name, category, data_type, value, item, varname=None):
         self.name = name
         self.category = category
         self.data_type = data_type
         self.item = item
+        self.varname = varname
 
         self.value = value
 

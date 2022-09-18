@@ -20,10 +20,10 @@ class Footprint:
 
         self.icon = "add_footprint"
 
-        self.x_prop = Property("X", "Position", "length", self.x, self)
-        self.y_prop = Property("Y", "Position", "length", self.y, self)
+        self.x_prop = Property("X", "Position", "length", self.x, self, "x")
+        self.y_prop = Property("Y", "Position", "length", self.y, self, "y")
         self.ref_prop = Property("Ref", "Strings", "string", self.reference, self)
-        self.orientation_prop = Property("Angle", "Orientation", "angle", self.orientation, self)
+        self.orientation_prop = Property("Angle", "Orientation", "angle", self.orientation, self, "Rot")
 
         self.properties = Properties_array([
             self.x_prop,

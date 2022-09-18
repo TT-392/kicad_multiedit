@@ -21,11 +21,11 @@ class GraphicRect:
 
         self.icon = "add_rectangle"
 
-        self.startX_prop = Property("startX", "Points", "length", self.startX, self)
-        self.startY_prop = Property("startY", "Points", "length", self.startY, self)
-        self.endX_prop = Property("endX", "Points", "length", self.endX, self)
-        self.endY_prop = Property("endY", "Points", "length", self.endY, self)
-        self.width_prop = Property("width", "Line", "length_unsigned", self.width, self)
+        self.startX_prop = Property("startX", "Points", "length", self.startX, self, "x1")
+        self.startY_prop = Property("startY", "Points", "length", self.startY, self, "y1")
+        self.endX_prop = Property("endX", "Points", "length", self.endX, self, "x2")
+        self.endY_prop = Property("endY", "Points", "length", self.endY, self, "y2")
+        self.width_prop = Property("width", "Line", "length_unsigned", self.width, self, "width")
 
         self.properties = Properties_array([
             self.startX_prop,

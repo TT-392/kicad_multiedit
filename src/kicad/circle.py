@@ -21,10 +21,10 @@ class GraphicCircle:
 
         self.icon = "add_circle"
 
-        self.x_prop = Property("X", "Position", "length", self.x, self)
-        self.y_prop = Property("Y", "Position", "length", self.y, self)
-        self.radius_prop = Property("Radius", "Shape", "length_unsigned", self.radius, self)
-        self.width_prop = Property("width", "Line", "length_unsigned", self.width, self)
+        self.x_prop = Property("X", "Position", "length", self.x, self, "x")
+        self.y_prop = Property("Y", "Position", "length", self.y, self, "y")
+        self.radius_prop = Property("Radius", "Shape", "length_unsigned", self.radius, self, "r")
+        self.width_prop = Property("width", "Line", "length_unsigned", self.width, self, "width")
 
         self.properties = Properties_array([
             self.x_prop,
