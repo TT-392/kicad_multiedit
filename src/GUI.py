@@ -60,7 +60,7 @@ class GUI(wx.Frame):
             if type(element) == str:
                 self.add_category(main_grid, element)
             else:
-                self.add_value(main_grid, element.name, element.ui_value, element.unit)
+                self.add_value(main_grid, element.name, element.field_value, element.unit)
                 self.add_icons(main_grid, element.items.get_icons())
 
 

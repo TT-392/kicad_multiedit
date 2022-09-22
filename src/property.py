@@ -50,12 +50,12 @@ class Property:
 
 class Properties_array:
     def __init__(self, properties):
-        self.list = properties
+        self.__list = properties
 
     def __str__(self):
         retval = "Properties {"
 
-        for prop in self.list:
+        for prop in self.__list:
             retval += "\n"
             retval += str(prop)
             retval += ","
@@ -67,16 +67,22 @@ class Properties_array:
         return retval
     
     def __add__(self, other):
-        return Properties_array(self.list + other.list)
+        return Properties_array(self.__list + other.__list)
+
+    def is_empty(self):
+        if len(self.__list) == 0:
+            return True
+        else:
+            return False
 
     def contains_category(self, category):
-        for prop in self.list:
+        for prop in self.__list:
             if prop.category == category:
                 return True
         return False
 
     def contains_name(self, name):
-        for prop in self.list:
+        for prop in self.__list:
             if prop.name == name:
                 return True
         return False
@@ -84,7 +90,7 @@ class Properties_array:
     def get_in_category(self, category):
         properties = []
 
-        for prop in self.list:
+        for prop in self.__list:
             if prop.category == category:
                 properties.append(prop)
 
@@ -93,7 +99,7 @@ class Properties_array:
     def get_with_name(self, name):
         properties = []
 
-        for prop in self.list:
+        for prop in self.__list:
             if prop.name == name:
                 properties.append(prop)
 
@@ -102,19 +108,19 @@ class Properties_array:
     def get_in_category_and_with_name(self, category, name):
         properties = []
 
-        for prop in self.list:
+        for prop in self.__list:
             if prop.category == category and prop.name == name:
                 properties.append(prop)
 
         return Properties_array(properties)
 
     def append(self, prop):
-        self.list.append(prop)
+        self.__list.append(prop)
 
     def get_categories(self):
         categories = [] # should be ordered
 
-        for prop in self.list:
+        for prop in self.__list:
             if not prop.category in categories:
                 categories.append(prop.category)
 
@@ -124,34 +130,34 @@ class Properties_array:
     def get_names(self):
         names = [] # should be ordered
 
-        for prop in self.list:
+        for prop in self.__list:
             if not prop.name in names:
                 names.append(prop.name)
 
         return names
 
     def all_same_value(self):
-        value = self.list[0].value.get()
+        value = self.__list[0].value.get()
 
-        for prop in self.list:
+        for prop in self.__list:
             if prop.value.get() != value:
                 return False
 
         return True
 
     def all_same_category(self):
-        category = self.list[0].category
+        category = self.__list[0].category
 
-        for prop in self.list:
+        for prop in self.__list:
             if prop.category != category:
                 return False
 
         return True
 
     def all_same_name(self):
-        name = self.list[0].name
+        name = self.__list[0].name
 
-        for prop in self.list:
+        for prop in self.__list:
             if prop.name != name:
                 return False
 
@@ -159,9 +165,38 @@ class Properties_array:
 
     def get_items(self):
         items = []
-        for prop in self.list:
+        for prop in self.__list:
             items.append(prop.item)
         return items
+
+    #NOTE: These could be run at creation of object, assuming an empty array is never created
+    def get_variable_name(self):
+        assert len(self.__list) != 0, "Properties array empty"
+
+        retval = self.__list[0].varname
+        
+        for prop in self.__list[1:]:
+            assert prop.varname == retval, "Mismatched varnames in properties array"
+
+        return retval
+
+    def get_data_type(self):
+        assert len(self.__list) != 0, "Properties array empty"
+
+        retval = self.__list[0].data_type
+        
+        for prop in self.__list[1:]:
+            assert prop.data_type == retval, "Mismatched data types in properties array"
+
+        return retval
+    
+    def get_ui_value(self):
+        assert len(self.__list) != 0, "Properties array empty"
+        assert self.all_same_value(), "Mismatched ui values in properties array"
+
+        return self.__list[0].get_ui_value()
+
+
             
 
 

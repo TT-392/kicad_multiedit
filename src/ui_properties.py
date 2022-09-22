@@ -3,17 +3,17 @@ from .kicad.kicad import *
 
 
 class Ui_property:
-    def __init__(self, name, category, widget_type, ui_value, properties, items, unit=None):
+    def __init__(self, name, category, widget_type, field_value, properties, items, unit=None):
         self.name = name
         self.category = category
         self.widget_type = widget_type
-        self.ui_value = ui_value
+        self.field_value = field_value
         self.properties = properties
         self.unit = unit
         self.items = items
 
     def __str__(self):
-        retval = self.name + ": " + str(self.ui_value)
+        retval = self.name + ": " + str(self.field_value)
         retval += " " + self.widget_type
 
         if self.unit != None:
@@ -29,7 +29,6 @@ class Ui_property:
 
 class Ui_elements:
     def __init__(self, properties):
-        #TODO: I don't think it'd hurt combining these 2 for cleaner code
         #TODO: this code could be cleaner in general
         names = properties.get_names()
         categories = properties.get_categories()
@@ -41,23 +40,23 @@ class Ui_elements:
             for name in names:
                 props = properties.get_in_category_and_with_name(category, name)
 
-                if len(props.list) != 0:
-                    widget_type = self.__widget_type_from_data_type(props.list[0].data_type)
+                if not props.is_empty():
+                    widget_type = self.__widget_type_from_data_type(props.get_data_type())
 
                     if props.all_same_value():
-                        ui_value = str(props.list[0].get_ui_value())
+                        field_value = str(props.get_ui_value())
                     else:
-                        if props.list[0].data_type != "string" and props.list[0].data_type != "bool":
-                            if props.list[0].varname != None:
-                                ui_value = props.list[0].varname
+                        if props.get_data_type() != "string" and props.get_data_type() != "bool":
+                            if props.get_variable_name() != None:
+                                field_value = props.get_variable_name()
                             else:
-                                ui_value = "None"
+                                field_value = "None"
                         else:
-                            ui_value = "*"
+                            field_value = "*"
 
                     items = Items(props.get_items())
-                    unit = self.__unit_from_data_type(props.list[0].data_type)
-                    self.list.append(Ui_property(name, category, widget_type, ui_value, props, items, unit))
+                    unit = self.__unit_from_data_type(props.get_data_type())
+                    self.list.append(Ui_property(name, category, widget_type, field_value, props, items, unit))
 
     def __widget_type_from_data_type(self, data_type):
         if data_type == "string" or data_type == "length" or data_type == "length_unsigned" or data_type == "angle":

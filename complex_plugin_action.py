@@ -21,7 +21,6 @@ class ComplexPluginAction(pcbnew.ActionPlugin):
         # The entry function of the plugin that is executed on user action
         try:
             selected = get_selected()
-            print(selected.list)
             print(selected.get_properties())
             print()
             print(Ui_elements(selected.get_properties()))
