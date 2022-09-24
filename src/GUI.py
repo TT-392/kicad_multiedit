@@ -9,10 +9,11 @@ import wx.xrc
 #        toolbar: ToolBar
 
 
-
 class GUI(wx.Frame):
     def __init__(self, parent, ui_elements):
-        wx.Frame.__init__ (self, parent, id = wx.ID_ANY, title = wx.EmptyString, pos = wx.DefaultPosition, size = wx.Size(400,800), style = wx.FRAME_FLOAT_ON_PARENT|wx.TAB_TRAVERSAL)
+        self.ui_elements = ui_elements
+
+        wx.Frame.__init__(self, parent, id = wx.ID_ANY, title = wx.EmptyString, pos = wx.DefaultPosition, size = wx.Size(400,800), style = wx.FRAME_FLOAT_ON_PARENT|wx.TAB_TRAVERSAL)
 
         self.SetSizeHints(wx.DefaultSize, wx.DefaultSize)
 
@@ -20,10 +21,31 @@ class GUI(wx.Frame):
         self.SetSizer(outer_sizer)
         self.Layout()
 
+        m_toolBar1 = wx.ToolBar(self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TB_HORIZONTAL)
+        m_staticText2 = wx.StaticText(m_toolBar1, wx.ID_ANY, "Origin:", wx.DefaultPosition, wx.DefaultSize, 0)
+        m_staticText2.Wrap(-1)
+        
+        m_toolBar1.AddControl(m_staticText2)
+        self.origin_field = wx.TextCtrl(m_toolBar1, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0)
+        self.origin_field.SetValue("(0, 0), 0")
+
+        m_toolBar1.AddControl(self.origin_field)
+        update_button = wx.Button(m_toolBar1, wx.ID_ANY, "update", wx.DefaultPosition, wx.DefaultSize, 0)
+
+        m_toolBar1.AddControl(update_button)
+        m_toolBar1.Realize()
+
+        update_button.Bind(wx.EVT_BUTTON, self.update_origin)
+        
+        
+        outer_sizer.Add(m_toolBar1, 0, wx.ALIGN_RIGHT, 5)
+
+
         self.scroll_box = wx.ScrolledWindow(self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.HSCROLL|wx.VSCROLL)
         self.scroll_box.SetScrollRate(5, 5)
 
         outer_sizer.Add(self.scroll_box, 1, wx.EXPAND |wx.ALL, 5)
+
 
 
 
@@ -53,21 +75,27 @@ class GUI(wx.Frame):
         toolbar.AddControl(button_save)
 
 
-
-
-
-        for element in ui_elements.list:
-            if type(element) == str:
-                self.add_category(main_grid, element)
-            else:
-                self.add_value(main_grid, element.name, element.field_value, element.unit)
-                self.add_icons(main_grid, element.items.get_icons())
-
-
-
+        self.place_elements(main_grid)
 
 
         self.Show()
+
+    def update_origin(self, e):
+        for element in self.ui_elements.list:
+            if type(element) != str:
+                element.update(eval(self.origin_field.GetValue()))
+
+    def place_elements(self, parent):
+        for element in self.ui_elements.list:
+            self.place_element(parent, element)
+
+    def place_element(self, parent, ui_element):
+        if type(ui_element) == str:
+            self.add_category(parent, ui_element)
+        else:
+            ui_element.wx_field = self.add_value(parent, ui_element.name, ui_element.field_value, ui_element.unit)
+            print("type: ", type(ui_element))
+            self.add_icons(parent, ui_element.items.get_icons())
 
     def add_category(self, parent, name):
         staticText = wx.StaticText(self.scroll_box, wx.ID_ANY, name, wx.DefaultPosition, wx.DefaultSize, 0)
@@ -75,6 +103,7 @@ class GUI(wx.Frame):
         parent.Add(staticText, 0, wx.ALL, 5)
         parent.Add((0, 0), 1, wx.EXPAND, 5)
         parent.Add((0, 0), 1, wx.EXPAND, 5)
+
 
     def add_value(self, parent, name, value, unit = None):
         staticText = wx.StaticText(self.scroll_box, wx.ID_ANY, name + ":", wx.DefaultPosition, wx.DefaultSize, 0)
@@ -103,6 +132,7 @@ class GUI(wx.Frame):
 
         input_field.SetValue(value)
 
+        return input_field
 
 
     def add_icons(self, parent, icons):

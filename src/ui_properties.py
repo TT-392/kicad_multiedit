@@ -25,11 +25,15 @@ class Ui_property:
 
         return retval
 
+    def update(self, origin):
+        if self.properties.all_same_value():
+            self.field_value = str(self.properties.get_ui_value(origin))
+            self.wx_field.SetValue(self.field_value)
+
 
 
 class Ui_elements:
     def __init__(self, properties):
-        #TODO: this code could be cleaner in general
         names = properties.get_names()
         categories = properties.get_categories()
 

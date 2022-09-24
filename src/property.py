@@ -1,17 +1,20 @@
 from .kicad.kicad import *
+from .utils import *
 
-# types: 'bool', 'string', 'length', 'lenght_unsigned', 'angle'
+# data_types: 'bool', 'string', 'length', 'lenght_unsigned', 'angle'
 # Anything expressed in meters, inches, feet, lightyears is considered to be
 # expressed in a unit of length, even if a coordinate or thickness isn't
 # neccesarely considered "length'
+# translatable_types: 'None', 'x', 'y', 'rot'
 
 class Property:
-    def __init__(self, name, category, data_type, value, item, varname=None):
+    def __init__(self, name, category, data_type, value, item, varname=None, translatable_type=None):
         self.name = name
         self.category = category
         self.data_type = data_type
         self.item = item
         self.varname = varname
+        self.translatable_type = translatable_type
 
         self.value = value
 
@@ -22,13 +25,15 @@ class Property:
     def __str__(self):
         return "Property{" + self.name + ", " + self.category + ", " + self.data_type + ", " + str(self.get_ui_value()) + "}"
 
-    def get_ui_value(self):
+    def get_ui_value(self, origin=((0, 0), 0)):
+        value = self.__get_translated_value(origin)
+
         if self.data_type == "length" or self.data_type == "length_unsigned":
-            ui_val = kicad_info.toUnit(self.value.get())
+            ui_val = kicad_info.toUnit(value)
         elif self.data_type == "angle":
-            ui_val = self.value.get() / 10
+            ui_val = value / 10
         else:
-            ui_val = self.value.get()
+            ui_val = value 
         
         self.__ui_val = ui_val
         return ui_val
@@ -45,7 +50,29 @@ class Property:
             self.value.put(ui_val * 10)
         else:
             self.value.put(ui_val)
-        
+
+    def __get_translated_value(self, origin):
+        if self.translatable_type == None:
+            return self.value.get()
+
+        elif self.translatable_type == "rot":
+            return self.value.get() - origin[1] * 10
+
+        elif self.translatable_type == "x":
+            x = self.value.get()
+            y = self.y_prop.value.get()
+            x -= kicad_info.fromUnit(origin[0][0])
+            y -= kicad_info.fromUnit(origin[0][1])
+            x = utils.rotate_around((x, y), (0, 0), origin[1])[0]
+            return x
+
+        elif self.translatable_type == "y":
+            x = self.x_prop.value.get()
+            y = self.value.get()
+            x -= kicad_info.fromUnit(origin[0][0])
+            y -= kicad_info.fromUnit(origin[0][1])
+            y = utils.rotate_around((x, y), (0, 0), origin[1])[1]
+            return y
 
 
 class Properties_array:
@@ -190,11 +217,11 @@ class Properties_array:
 
         return retval
     
-    def get_ui_value(self):
+    def get_ui_value(self, origin=((0,0),0)):
         assert len(self.__list) != 0, "Properties array empty"
         assert self.all_same_value(), "Mismatched ui values in properties array"
 
-        return self.__list[0].get_ui_value()
+        return self.__list[0].get_ui_value(origin)
 
 
             
