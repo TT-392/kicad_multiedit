@@ -1,6 +1,7 @@
 import os
 import wx
 import wx.xrc
+import pcbnew
 
 #GUI: Frame
 #    outer_sizer: BoxSizer
@@ -98,8 +99,7 @@ class GUI(wx.Frame):
                 if element.field_value != element.wx_field.GetValue():
                     element.put(element.wx_field.GetValue())
 
-        print("apply")
-        pass
+        pcbnew.Refresh()
 
     def ok(self, e):
         print("ok")
