@@ -67,12 +67,15 @@ class GUI(wx.Frame):
 
         button_cancel = wx.Button(toolbar, wx.ID_ANY, "Cancel", wx.DefaultPosition, wx.DefaultSize, 0)
         toolbar.AddControl(button_cancel)
+        button_cancel.Bind(wx.EVT_BUTTON, self.cancel)
 
         button_apply = wx.Button(toolbar, wx.ID_ANY, "Apply", wx.DefaultPosition, wx.DefaultSize, 0)
         toolbar.AddControl(button_apply)
+        button_apply.Bind(wx.EVT_BUTTON, self.apply)
 
-        button_save = wx.Button(toolbar, wx.ID_ANY, "Save", wx.DefaultPosition, wx.DefaultSize, 0)
-        toolbar.AddControl(button_save)
+        button_ok = wx.Button(toolbar, wx.ID_ANY, "Ok", wx.DefaultPosition, wx.DefaultSize, 0)
+        toolbar.AddControl(button_ok)
+        button_ok.Bind(wx.EVT_BUTTON, self.ok)
 
 
         self.place_elements(main_grid)
@@ -84,6 +87,23 @@ class GUI(wx.Frame):
         for element in self.ui_elements.list:
             if type(element) != str:
                 element.update(eval(self.origin_field.GetValue()))
+
+    def cancel(self, e):
+        print("cancel")
+        pass
+
+    def apply(self, e):
+        for element in self.ui_elements.list:
+            if type(element) != str:
+                if element.field_value != element.wx_field.GetValue():
+                    element.put(element.wx_field.GetValue())
+
+        print("apply")
+        pass
+
+    def ok(self, e):
+        print("ok")
+        pass
 
     def place_elements(self, parent):
         for element in self.ui_elements.list:
@@ -145,6 +165,7 @@ class GUI(wx.Frame):
             icon_sizer.Add(bitmap, 0, wx.ALL, 0)
 
         parent.Add(icon_sizer, 1, wx.EXPAND, len(icons))
+
 
 
 

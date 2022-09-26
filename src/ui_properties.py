@@ -11,6 +11,7 @@ class Ui_property:
         self.properties = properties
         self.unit = unit
         self.items = items
+        self.origin = ((0,0), 0)
 
     def __str__(self):
         retval = self.name + ": " + str(self.field_value)
@@ -29,6 +30,12 @@ class Ui_property:
         if self.properties.all_same_value():
             self.field_value = str(self.properties.get_ui_value(origin))
             self.wx_field.SetValue(self.field_value)
+            self.origin = origin
+
+    def put(self, value):
+        print(self, "updated")
+        self.properties.put_ui_value(value, self.origin)
+
 
 
 

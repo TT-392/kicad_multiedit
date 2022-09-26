@@ -38,18 +38,47 @@ class Property:
         self.__ui_val = ui_val
         return ui_val
 
-    def put_ui_value(self, ui_val):
+    def put_ui_value(self, ui_val, origin=((0,0), 0)):
         if self.get_ui_value() == ui_val:
             return
 
         print("updating value", self.name)
+        value = self.__put_translated_value(float(ui_val), origin)
 
-        if self.data_type == "length" or self.data_type == "length_unsigned":
-            self.value.put(kicad_info.fromUnit(ui_val))
-        elif self.data_type == "angle":
-            self.value.put(ui_val * 10)
-        else:
-            self.value.put(ui_val)
+
+    #TODO: origin translations should be done in the item put and get methods
+    def __put_translated_value(self, value, origin):
+        print("reverse translate")
+        if self.translatable_type == None:
+            self.value.put(value)
+
+        elif self.translatable_type == "rot":
+            self.value.put((value + origin[1]) * 10)
+
+        elif self.translatable_type == "x":
+            x = value
+            y = self.y_prop.__get_translated_value(origin)
+            print("origin:", origin)
+            print("pos before:", (x,y))
+            pos = utils.rotate_around((x, y), (0, 0), -origin[1])
+            print("pos:", pos)
+            pos[0] += origin[0][0]
+            pos[1] += origin[0][1]
+            self.value.put(kicad_info.fromUnit(pos[0]))
+            self.y_prop.value.put(kicad_info.fromUnit(pos[1]))
+
+        elif self.translatable_type == "y":
+            x = self.x_prop.__get_translated_value(origin)
+            y = value
+            print("origin:", origin)
+            print("pos before:", (x,y))
+            pos = utils.rotate_around((x, y), (0, 0), -origin[1])
+            print("pos:", pos)
+            pos[0] += origin[0][0]
+            pos[1] += origin[0][1]
+            self.x_prop.value.put(kicad_info.fromUnit(pos[0]))
+            self.value.put(kicad_info.fromUnit(pos[1]))
+
 
     def __get_translated_value(self, origin):
         if self.translatable_type == None:
@@ -222,6 +251,12 @@ class Properties_array:
         assert self.all_same_value(), "Mismatched ui values in properties array"
 
         return self.__list[0].get_ui_value(origin)
+
+    def put_ui_value(self, value, origin=((0,0),0)):
+        assert len(self.__list) != 0, "Properties array empty"
+
+        for prop in self.__list:
+            prop.put_ui_value(value, origin)
 
 
             
