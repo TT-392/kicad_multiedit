@@ -114,7 +114,6 @@ class GUI(wx.Frame):
             self.add_category(parent, ui_element)
         else:
             ui_element.wx_field = self.add_value(parent, ui_element.name, ui_element.field_value, ui_element.unit)
-            print("type: ", type(ui_element))
             self.add_icons(parent, ui_element.items.get_icons())
 
     def add_category(self, parent, name):
@@ -146,7 +145,6 @@ class GUI(wx.Frame):
 
             parent.Add(box_unit_grid, 1, wx.EXPAND, 5)
         else:
-            print("None")
             input_field = wx.TextCtrl(self.scroll_box, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0)
             parent.Add(input_field, 0, wx.ALL|wx.EXPAND, 5)
 

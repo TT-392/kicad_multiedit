@@ -1,4 +1,3 @@
-import pcbnew
 import math
 from ..property import *
 

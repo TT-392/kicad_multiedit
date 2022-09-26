@@ -1,4 +1,3 @@
-import pcbnew
 from ..property import *
 
 # footprint attributes:

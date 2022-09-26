@@ -42,13 +42,11 @@ class Property:
         if self.get_ui_value() == ui_val:
             return
 
-        print("updating value", self.name)
         value = self.__put_translated_value(float(ui_val), origin)
 
 
     #TODO: origin translations should be done in the item put and get methods
     def __put_translated_value(self, value, origin):
-        print("reverse translate")
         if self.translatable_type == None:
             self.value.put(value)
 
@@ -58,10 +56,7 @@ class Property:
         elif self.translatable_type == "x":
             x = value
             y = self.y_prop.__get_translated_value(origin)
-            print("origin:", origin)
-            print("pos before:", (x,y))
             pos = utils.rotate_around((x, y), (0, 0), -origin[1])
-            print("pos:", pos)
             pos[0] += origin[0][0]
             pos[1] += origin[0][1]
             self.value.put(kicad_info.fromUnit(pos[0]))
@@ -70,10 +65,7 @@ class Property:
         elif self.translatable_type == "y":
             x = self.x_prop.__get_translated_value(origin)
             y = value
-            print("origin:", origin)
-            print("pos before:", (x,y))
             pos = utils.rotate_around((x, y), (0, 0), -origin[1])
-            print("pos:", pos)
             pos[0] += origin[0][0]
             pos[1] += origin[0][1]
             self.x_prop.value.put(kicad_info.fromUnit(pos[0]))
