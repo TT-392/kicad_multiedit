@@ -1,4 +1,10 @@
 from .rotate_around import *
+from .gui import *
+import sys
 
-rotate_around.test()
-print("test rotate_around successful")
+if "rotate_around" in sys.argv:
+    rotate_around.test()
+    print("test rotate_around successful")
+
+if "gui" in sys.argv:
+    gui()

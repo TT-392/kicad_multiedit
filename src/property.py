@@ -82,6 +82,9 @@ class Property:
         elif self.translatable_type == "x":
             x = self.value.get()
             y = self.y_prop.value.get()
+            print("xy", (x, y))
+            print("origin00", origin[0][0])
+            print(kicad_info.fromUnit(0))
             x -= kicad_info.fromUnit(origin[0][0])
             y -= kicad_info.fromUnit(origin[0][1])
             x = utils.rotate_around((x, y), (0, 0), origin[1])[0]

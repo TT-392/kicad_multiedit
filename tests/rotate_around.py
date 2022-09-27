@@ -1,4 +1,5 @@
 from src.utils import *
+from tests.resources import *
 import math
 
 def check(array1, array2, allowable_error):

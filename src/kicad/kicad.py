@@ -11,12 +11,17 @@ class Kicad_info:
     def update(self):
         self.units = pcbnew.GetUserUnits()
 
+        if self.units == -1:
+            self.units = UNIT_MM
+
         if self.units == UNIT_MM:
             self.unit_string = "mm"
         elif self.units == UNIT_MIL:
             self.unit_string = "mils"
         elif self.units == UNIT_IN:
             self.unit_string = "in"
+
+
 
     def toUnit(self, value):
         if self.units == UNIT_MM:
