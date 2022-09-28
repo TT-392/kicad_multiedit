@@ -36,7 +36,7 @@ class Property:
             ui_val = value 
         
         self.__ui_val = ui_val
-        return ui_val
+        return utils.round(ui_val)
 
     def put_ui_value(self, ui_val, origin=((0,0), 0)):
         if self.get_ui_value() == ui_val:
