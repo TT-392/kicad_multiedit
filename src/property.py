@@ -36,7 +36,10 @@ class Property:
             ui_val = value 
         
         self.__ui_val = ui_val
-        return utils.round(ui_val)
+        if type(ui_val) == str:
+            return ui_val
+        else:
+            return utils.round(ui_val)
 
     def put_ui_value(self, ui_val, origin=((0,0), 0)):
         if self.get_ui_value() == ui_val:
@@ -82,9 +85,6 @@ class Property:
         elif self.translatable_type == "x":
             x = self.value.get()
             y = self.y_prop.value.get()
-            print("xy", (x, y))
-            print("origin00", origin[0][0])
-            print(kicad_info.fromUnit(0))
             x -= kicad_info.fromUnit(origin[0][0])
             y -= kicad_info.fromUnit(origin[0][1])
             x = utils.rotate_around((x, y), (0, 0), origin[1])[0]
@@ -187,6 +187,16 @@ class Properties_array:
 
         return names
 
+    def get_varnames(self):
+        varnames = [] # should be ordered
+
+        for prop in self.__list:
+            if not prop.varname in varnames:
+                if not prop.varname == None:
+                    varnames.append(prop.varname)
+
+        return varnames
+
     def all_same_value(self):
         value = self.__list[0].value.get()
 
@@ -252,6 +262,10 @@ class Properties_array:
 
         for prop in self.__list:
             prop.put_ui_value(value, origin)
+
+    def get_list(self):
+        return self.__list
+
 
 
             
