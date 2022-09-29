@@ -10,7 +10,21 @@ class utils:
         
         return [utils.round(x), utils.round(y)]
 
+    def translate(val, origin):
+        val = list(val)
+        val[0] -= origin[0][0]
+        val[1] -= origin[0][1]
+        return utils.rotate_around(val, (0, 0), origin[1])
+
+    def reverse_translate(val, origin):
+        val = utils.rotate_around(val, (0, 0), -origin[1])
+        val[0] += origin[0][0]
+        val[1] += origin[0][1]
+        return val
+
+
     def round(val):
         if abs(val) <= 1E-14:
             val = 0
         return round(val, 14)
+

@@ -1,0 +1,1119 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combineV2/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROC_CWD	/home/emile/Creation/programming/kicad_multiedit/	//
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	5.9.0	/p5.9.20220828.0/
+ComplexPluginAction	complex_plugin_action.py	/^class ComplexPluginAction(pcbnew.ActionPlugin):$/;"	c
+Footprint	src/kicad/footprint.py	/^class Footprint:$/;"	c
+GUI	src/GUI.py	/^class GUI(wx.Frame):$/;"	c
+GetOrientation	tests/resources/kicad_footprint.py	/^    def GetOrientation(self):$/;"	m	class:Test_kicad_footprint
+GetPosition	tests/resources/kicad_footprint.py	/^    def GetPosition(self):$/;"	m	class:Test_kicad_footprint
+GetReference	tests/resources/kicad_footprint.py	/^    def GetReference(self):$/;"	m	class:Test_kicad_footprint
+GraphicArc	src/kicad/arc.py	/^class GraphicArc:$/;"	c
+GraphicCircle	src/kicad/circle.py	/^class GraphicCircle:$/;"	c
+GraphicLine	src/kicad/line.py	/^class GraphicLine:$/;"	c
+GraphicPolygon	src/kicad/polygon.py	/^class GraphicPolygon:$/;"	c
+GraphicRect	src/kicad/rect.py	/^class GraphicRect:$/;"	c
+GraphicText	src/kicad/text.py	/^class GraphicText:$/;"	c
+Items	src/item.py	/^class Items:$/;"	c
+Kicad_info	src/kicad/kicad.py	/^class Kicad_info:$/;"	c
+Layer_1	resources/sources/add_keepout_area.svg	/^   inkscape:version="1.0.1 (1.0.1+r74)"><metadata$/;"	i
+Properties_array	src/property.py	/^class Properties_array:$/;"	c
+Property	src/property.py	/^class Property:$/;"	c
+Property	src/update_value.py	/^class Property(Property):$/;"	c
+Python_env	src/field_evaluation/python_defines.py	/^class Python_env:$/;"	c
+Run	complex_plugin_action.py	/^    def Run(self):$/;"	m	class:ComplexPluginAction
+SetOrientation	tests/resources/kicad_footprint.py	/^    def SetOrientation(self, value):$/;"	m	class:Test_kicad_footprint
+SetPosition	tests/resources/kicad_footprint.py	/^    def SetPosition(self, value):$/;"	m	class:Test_kicad_footprint
+SetReference	tests/resources/kicad_footprint.py	/^    def SetReference(self, value):$/;"	m	class:Test_kicad_footprint
+Test_kicad_footprint	tests/resources/kicad_footprint.py	/^class Test_kicad_footprint:$/;"	c
+UNIT_IN	src/kicad/kicad.py	/^UNIT_IN = 0$/;"	v
+UNIT_MIL	src/kicad/kicad.py	/^UNIT_MIL = 5$/;"	v
+UNIT_MM	src/kicad/kicad.py	/^UNIT_MM = 1$/;"	v
+Ui_elements	src/ui_properties.py	/^class Ui_elements:$/;"	c
+Ui_property	src/ui_properties.py	/^class Ui_property:$/;"	c
+__add__	src/property.py	/^    def __add__(self, other):$/;"	m	class:Properties_array
+__arcAngle	src/kicad/arc.py	/^    class __arcAngle:$/;"	c	class:GraphicArc	file:
+__del__	src/GUI.py	/^    def __del__(self):$/;"	m	class:GUI
+__endX	src/kicad/arc.py	/^    class __endX:$/;"	c	class:GraphicArc	file:
+__endX	src/kicad/line.py	/^    class __endX:$/;"	c	class:GraphicLine	file:
+__endX	src/kicad/rect.py	/^    class __endX:$/;"	c	class:GraphicRect	file:
+__endY	src/kicad/arc.py	/^    class __endY:$/;"	c	class:GraphicArc	file:
+__endY	src/kicad/line.py	/^    class __endY:$/;"	c	class:GraphicLine	file:
+__endY	src/kicad/rect.py	/^    class __endY:$/;"	c	class:GraphicRect	file:
+__get_translated_value	src/property.py	/^    def __get_translated_value(self, origin):$/;"	m	class:Property	file:
+__init__	src/GUI.py	/^    def __init__(self, parent, ui_elements):$/;"	m	class:GUI
+__init__	src/field_evaluation/python_defines.py	/^    def __init__(self, items):$/;"	m	class:Python_env
+__init__	src/item.py	/^    def __init__(self, items):$/;"	m	class:Items
+__init__	src/kicad/arc.py	/^        def __init__(self, Self):$/;"	m	class:GraphicArc.__arcAngle
+__init__	src/kicad/arc.py	/^        def __init__(self, Self):$/;"	m	class:GraphicArc.__endX
+__init__	src/kicad/arc.py	/^        def __init__(self, Self):$/;"	m	class:GraphicArc.__endY
+__init__	src/kicad/arc.py	/^        def __init__(self, Self):$/;"	m	class:GraphicArc.__startX
+__init__	src/kicad/arc.py	/^        def __init__(self, Self):$/;"	m	class:GraphicArc.__startY
+__init__	src/kicad/arc.py	/^        def __init__(self, Self):$/;"	m	class:GraphicArc.__width
+__init__	src/kicad/arc.py	/^    def __init__(self, obj):$/;"	m	class:GraphicArc
+__init__	src/kicad/circle.py	/^        def __init__(self, Self):$/;"	m	class:GraphicCircle.__radius
+__init__	src/kicad/circle.py	/^        def __init__(self, Self):$/;"	m	class:GraphicCircle.__width
+__init__	src/kicad/circle.py	/^        def __init__(self, Self):$/;"	m	class:GraphicCircle.__x
+__init__	src/kicad/circle.py	/^        def __init__(self, Self):$/;"	m	class:GraphicCircle.__y
+__init__	src/kicad/circle.py	/^    def __init__(self, obj):$/;"	m	class:GraphicCircle
+__init__	src/kicad/footprint.py	/^        def __init__(self, Self):$/;"	m	class:Footprint.__orientation
+__init__	src/kicad/footprint.py	/^        def __init__(self, Self):$/;"	m	class:Footprint.__reference
+__init__	src/kicad/footprint.py	/^        def __init__(self, Self):$/;"	m	class:Footprint.__x
+__init__	src/kicad/footprint.py	/^        def __init__(self, Self):$/;"	m	class:Footprint.__y
+__init__	src/kicad/footprint.py	/^    def __init__(self, obj):$/;"	m	class:Footprint
+__init__	src/kicad/kicad.py	/^    def __init__(self):$/;"	m	class:Kicad_info
+__init__	src/kicad/line.py	/^        def __init__(self, Self):$/;"	m	class:GraphicLine.__endX
+__init__	src/kicad/line.py	/^        def __init__(self, Self):$/;"	m	class:GraphicLine.__endY
+__init__	src/kicad/line.py	/^        def __init__(self, Self):$/;"	m	class:GraphicLine.__startX
+__init__	src/kicad/line.py	/^        def __init__(self, Self):$/;"	m	class:GraphicLine.__startY
+__init__	src/kicad/line.py	/^        def __init__(self, Self):$/;"	m	class:GraphicLine.__width
+__init__	src/kicad/line.py	/^    def __init__(self, obj):$/;"	m	class:GraphicLine
+__init__	src/kicad/polygon.py	/^        def __init__(self, Self):$/;"	m	class:GraphicPolygon.__width
+__init__	src/kicad/polygon.py	/^    def __init__(self, obj):$/;"	m	class:GraphicPolygon
+__init__	src/kicad/rect.py	/^        def __init__(self, Self):$/;"	m	class:GraphicRect.__endX
+__init__	src/kicad/rect.py	/^        def __init__(self, Self):$/;"	m	class:GraphicRect.__endY
+__init__	src/kicad/rect.py	/^        def __init__(self, Self):$/;"	m	class:GraphicRect.__startX
+__init__	src/kicad/rect.py	/^        def __init__(self, Self):$/;"	m	class:GraphicRect.__startY
+__init__	src/kicad/rect.py	/^        def __init__(self, Self):$/;"	m	class:GraphicRect.__width
+__init__	src/kicad/rect.py	/^    def __init__(self, obj):$/;"	m	class:GraphicRect
+__init__	src/kicad/text.py	/^        def __init__(self, Self):$/;"	m	class:GraphicText.__orientation
+__init__	src/kicad/text.py	/^        def __init__(self, Self):$/;"	m	class:GraphicText.__text
+__init__	src/kicad/text.py	/^        def __init__(self, Self):$/;"	m	class:GraphicText.__textHeight
+__init__	src/kicad/text.py	/^        def __init__(self, Self):$/;"	m	class:GraphicText.__textWidth
+__init__	src/kicad/text.py	/^        def __init__(self, Self):$/;"	m	class:GraphicText.__width
+__init__	src/kicad/text.py	/^        def __init__(self, Self):$/;"	m	class:GraphicText.__x
+__init__	src/kicad/text.py	/^        def __init__(self, Self):$/;"	m	class:GraphicText.__y
+__init__	src/kicad/text.py	/^    def __init__(self, obj):$/;"	m	class:GraphicText
+__init__	src/property.py	/^    def __init__(self, name, category, data_type, value, item, varname=None, translatable_type=N/;"	m	class:Property
+__init__	src/property.py	/^    def __init__(self, properties):$/;"	m	class:Properties_array
+__init__	src/ui_properties.py	/^    def __init__(self, name, category, widget_type, field_value, properties, items, unit=None):$/;"	m	class:Ui_property
+__init__	src/ui_properties.py	/^    def __init__(self, properties):$/;"	m	class:Ui_elements
+__init__	tests/resources/kicad_footprint.py	/^    def __init__(self):$/;"	m	class:Test_kicad_footprint
+__orientation	src/kicad/footprint.py	/^    class __orientation:$/;"	c	class:Footprint	file:
+__orientation	src/kicad/text.py	/^    class __orientation:$/;"	c	class:GraphicText	file:
+__put_translated_value	src/property.py	/^    def __put_translated_value(self, value, origin):$/;"	m	class:Property	file:
+__radius	src/kicad/circle.py	/^    class __radius:$/;"	c	class:GraphicCircle	file:
+__reference	src/kicad/footprint.py	/^    class __reference:$/;"	c	class:Footprint	file:
+__startX	src/kicad/arc.py	/^    class __startX:$/;"	c	class:GraphicArc	file:
+__startX	src/kicad/line.py	/^    class __startX:$/;"	c	class:GraphicLine	file:
+__startX	src/kicad/rect.py	/^    class __startX:$/;"	c	class:GraphicRect	file:
+__startY	src/kicad/arc.py	/^    class __startY:$/;"	c	class:GraphicArc	file:
+__startY	src/kicad/line.py	/^    class __startY:$/;"	c	class:GraphicLine	file:
+__startY	src/kicad/rect.py	/^    class __startY:$/;"	c	class:GraphicRect	file:
+__str__	src/kicad/arc.py	/^    def __str__(self):$/;"	m	class:GraphicArc
+__str__	src/kicad/circle.py	/^    def __str__(self):$/;"	m	class:GraphicCircle
+__str__	src/kicad/footprint.py	/^    def __str__(self):$/;"	m	class:Footprint
+__str__	src/kicad/line.py	/^    def __str__(self):$/;"	m	class:GraphicLine
+__str__	src/kicad/polygon.py	/^    def __str__(self):$/;"	m	class:GraphicPolygon
+__str__	src/kicad/rect.py	/^    def __str__(self):$/;"	m	class:GraphicRect
+__str__	src/kicad/text.py	/^    def __str__(self):$/;"	m	class:GraphicText
+__str__	src/property.py	/^    def __str__(self):$/;"	m	class:Properties_array
+__str__	src/property.py	/^    def __str__(self):$/;"	m	class:Property
+__str__	src/ui_properties.py	/^    def __str__(self):$/;"	m	class:Ui_elements
+__str__	src/ui_properties.py	/^    def __str__(self):$/;"	m	class:Ui_property
+__text	src/kicad/text.py	/^    class __text:$/;"	c	class:GraphicText	file:
+__textHeight	src/kicad/text.py	/^    class __textHeight:$/;"	c	class:GraphicText	file:
+__textWidth	src/kicad/text.py	/^    class __textWidth:$/;"	c	class:GraphicText	file:
+__unit_from_data_type	src/ui_properties.py	/^    def __unit_from_data_type(self, data_type):$/;"	m	class:Ui_elements	file:
+__widget_type_from_data_type	src/ui_properties.py	/^    def __widget_type_from_data_type(self, data_type):$/;"	m	class:Ui_elements	file:
+__width	src/kicad/arc.py	/^    class __width:$/;"	c	class:GraphicArc	file:
+__width	src/kicad/circle.py	/^    class __width:$/;"	c	class:GraphicCircle	file:
+__width	src/kicad/line.py	/^    class __width:$/;"	c	class:GraphicLine	file:
+__width	src/kicad/polygon.py	/^    class __width:$/;"	c	class:GraphicPolygon	file:
+__width	src/kicad/rect.py	/^    class __width:$/;"	c	class:GraphicRect	file:
+__width	src/kicad/text.py	/^    class __width:$/;"	c	class:GraphicText	file:
+__x	src/kicad/circle.py	/^    class __x:$/;"	c	class:GraphicCircle	file:
+__x	src/kicad/footprint.py	/^    class __x:$/;"	c	class:Footprint	file:
+__x	src/kicad/text.py	/^    class __x:$/;"	c	class:GraphicText	file:
+__y	src/kicad/circle.py	/^    class __y:$/;"	c	class:GraphicCircle	file:
+__y	src/kicad/footprint.py	/^    class __y:$/;"	c	class:Footprint	file:
+__y	src/kicad/text.py	/^    class __y:$/;"	c	class:GraphicText	file:
+acos	src/field_evaluation/math.py	/^def acos(x):$/;"	f
+add_category	src/GUI.py	/^    def add_category(self, parent, name):$/;"	m	class:GUI
+add_icons	src/GUI.py	/^    def add_icons(self, parent, icons):$/;"	m	class:GUI
+add_value	src/GUI.py	/^    def add_value(self, parent, name, value, unit = None):$/;"	m	class:GUI
+all_same_category	src/property.py	/^    def all_same_category(self):$/;"	m	class:Properties_array
+all_same_name	src/property.py	/^    def all_same_name(self):$/;"	m	class:Properties_array
+all_same_value	src/property.py	/^    def all_same_value(self):$/;"	m	class:Properties_array
+append	src/property.py	/^    def append(self, prop):$/;"	m	class:Properties_array
+apply	src/GUI.py	/^    def apply(self, e):$/;"	m	class:GUI
+asin	src/field_evaluation/math.py	/^def asin(x):$/;"	f
+atan	src/field_evaluation/math.py	/^def atan(x):$/;"	f
+cancel	src/GUI.py	/^    def cancel(self, e):$/;"	m	class:GUI
+cc	resources/sources/add_aligned_dimension.svg	/^   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)">$/;"	n	uri:http://creativecommons.org/ns#
+cc	resources/sources/add_arc.svg	/^   inkscape:version="1.0.1 (c497b03c, 2020-09-10)">$/;"	n	uri:http://creativecommons.org/ns#
+cc	resources/sources/add_board.svg	/^   inkscape:export-ydpi="96">$/;"	n	uri:http://creativecommons.org/ns#
+cc	resources/sources/add_bus.svg	/^   inkscape:version="1.0.1 (1.0.1+r74)">$/;"	n	uri:http://creativecommons.org/ns#
+cc	resources/sources/add_bus2bus.svg	/^   xmlns:inkscape="http:\/\/www.inkscape.org\/namespaces\/inkscape" height="26" width="26" versi/;"	n	uri:http://creativecommons.org/ns#
+cc	resources/sources/add_center_dimension.svg	/^   inkscape:version="1.0.2 (e86c8708, 2021-01-15)">$/;"	n	uri:http://creativecommons.org/ns#
+cc	resources/sources/add_circle.svg	/^   inkscape:version="1.0.2 (1.0.2+r75+1)">$/;"	n	uri:http://creativecommons.org/ns#
+cc	resources/sources/add_class_flag.svg	/^   inkscape:version="1.0.2 (e86c8708, 2021-01-15)">$/;"	n	uri:http://creativecommons.org/ns#
+cc	resources/sources/add_component.svg	/^   inkscape:version="1.0.1 (1.0.1+r74)">$/;"	n	uri:http://creativecommons.org/ns#
+cc	resources/sources/add_corner.svg	/^   xmlns:inkscape="http:\/\/www.inkscape.org\/namespaces\/inkscape" id="Слой_1" data-name="С/;"	n	uri:http://creativecommons.org/ns#
+cc	resources/sources/add_dashed_line.svg	/^   inkscape:version="1.0.1 (c497b03c, 2020-09-10)">$/;"	n	uri:http://creativecommons.org/ns#
+cc	resources/sources/add_document.svg	/^   inkscape:export-ydpi="96">$/;"	n	uri:http://creativecommons.org/ns#
+cc	resources/sources/add_footprint.svg	/^   xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/">$/;"	n	uri:http://creativecommons.org/ns#
+cc	resources/sources/add_glabel.svg	/^   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)">$/;"	n	uri:http://creativecommons.org/ns#
+cc	resources/sources/add_graphical_polygon.svg	/^   inkscape:version="1.0.2 (1.0.2+r75+1)">$/;"	n	uri:http://creativecommons.org/ns#
+cc	resources/sources/add_graphical_segments.svg	/^   inkscape:version="1.0.1 (c497b03c, 2020-09-10)">$/;"	n	uri:http://creativecommons.org/ns#
+cc	resources/sources/add_hierar_pin.svg	/^   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)">$/;"	n	uri:http://creativecommons.org/ns#
+cc	resources/sources/add_hierarchical_label.svg	/^   inkscape:version="1.0.1 (c497b03c, 2020-09-10)">$/;"	n	uri:http://creativecommons.org/ns#
+cc	resources/sources/add_hierarchical_subsheet.svg	/^   inkscape:export-ydpi="96">$/;"	n	uri:http://creativecommons.org/ns#
+cc	resources/sources/add_junction.svg	/^   inkscape:version="1.0.1 (c497b03c, 2020-09-10)">$/;"	n	uri:http://creativecommons.org/ns#
+cc	resources/sources/add_keepout_area.svg	/^   inkscape:version="1.0.1 (1.0.1+r74)"><metadata$/;"	n	uri:http://creativecommons.org/ns#
+cc	resources/sources/add_label.svg	/^   inkscape:version="1.0.1 (c497b03c, 2020-09-10)">$/;"	n	uri:http://creativecommons.org/ns#
+cc	resources/sources/add_leader.svg	/^   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)">$/;"	n	uri:http://creativecommons.org/ns#
+cc	resources/sources/add_library.svg	/^   xmlns:inkscape="http:\/\/www.inkscape.org\/namespaces\/inkscape" id="Слой_1" data-name="С/;"	n	uri:http://creativecommons.org/ns#
+cc	resources/sources/add_line.svg	/^   inkscape:version="1.0.1 (1.0.1+r74)">$/;"	n	uri:http://creativecommons.org/ns#
+cc	resources/sources/add_line2bus.svg	/^   inkscape:version="1.0.1 (c497b03c, 2020-09-10)">$/;"	n	uri:http://creativecommons.org/ns#
+cc	resources/sources/add_line_label.svg	/^   sodipodi:docname="add_line_label.svg">$/;"	n	uri:http://creativecommons.org/ns#
+cc	resources/sources/add_orthogonal_dimension.svg	/^   inkscape:version="1.0.1 (c497b03c, 2020-09-10)">$/;"	n	uri:http://creativecommons.org/ns#
+cc	resources/sources/add_pcb_target.svg	/^   inkscape:version="1.0.2 (1.0.2+r75+1)">$/;"	n	uri:http://creativecommons.org/ns#
+cc	resources/sources/add_power.svg	/^   inkscape:version="1.0.1 (1.0.1+r74)">$/;"	n	uri:http://creativecommons.org/ns#
+cc	resources/sources/add_radial_dimension.svg	/^   inkscape:version="1.0.2 (e86c8708, 2021-01-15)">$/;"	n	uri:http://creativecommons.org/ns#
+cc	resources/sources/add_rectangle.svg	/^   inkscape:version="1.0.2 (1.0.2+r75+1)">$/;"	n	uri:http://creativecommons.org/ns#
+cc	resources/sources/add_symbol_to_schematic.svg	/^   inkscape:export-ydpi="96">$/;"	n	uri:http://creativecommons.org/ns#
+cc	resources/sources/add_tracks.svg	/^   inkscape:version="1.0.1 (c497b03c, 2020-09-10)">$/;"	n	uri:http://creativecommons.org/ns#
+cc	resources/sources/add_via.svg	/^   inkscape:version="1.0.2 (1.0.2+r75+1)">$/;"	n	uri:http://creativecommons.org/ns#
+cc	resources/sources/add_zone.svg	/^   xml:space="preserve"><metadata$/;"	n	uri:http://creativecommons.org/ns#
+cc	resources/sources/add_zone_cutout.svg	/^   inkscape:version="1.0.1 (c497b03c, 2020-09-10)">$/;"	n	uri:http://creativecommons.org/ns#
+cc	resources/sources/pad.svg	/^   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)">$/;"	n	uri:http://creativecommons.org/ns#
+cc	resources/sources/text.svg	/^   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)">$/;"	n	uri:http://creativecommons.org/ns#
+check	tests/rotate_around.py	/^def check(array1, array2, allowable_error):$/;"	f
+circle115659	resources/sources/add_hierarchical_subsheet.svg	/^       style="display:inline;fill:#f2647e;stroke:none;stroke-width:1;stroke-miterlimit:4;stroke-/;"	i
+circle115659	resources/sources/add_library.svg	/^         <circle class="cls-5" cx="0.0060997009" cy="17" r="7" id="circle115659" style="fill:#f2/;"	i
+circle115719	resources/sources/add_pcb_target.svg	/^     r="9.9283161" \/>$/;"	i
+circle115776	resources/sources/add_via.svg	/^     id="circle115776" \/>$/;"	i
+circle115778	resources/sources/add_via.svg	/^     r="3" \/>$/;"	i
+circle162	resources/sources/add_document.svg	/^       style="display:inline" \/>$/;"	i
+circle27864	resources/sources/add_board.svg	/^       id="circle27864" \/>$/;"	i
+circle27912	resources/sources/add_circle.svg	/^     ry="9" \/>$/;"	i
+circle938	resources/sources/add_board.svg	/^       ry="1.6027977" \/>$/;"	i
+clip-path	resources/sources/pad.svg	/^       id="clip-path">$/;"	d
+clip-path	resources/sources/pad.svg	/^       id="clip-path">$/;"	i
+clipPath1241	resources/sources/add_hierarchical_subsheet.svg	/^       id="clipPath1241">$/;"	d
+clipPath1241	resources/sources/add_hierarchical_subsheet.svg	/^       id="clipPath1241">$/;"	i
+clipPath1386	resources/sources/add_document.svg	/^       id="clipPath1386">$/;"	d
+clipPath1386	resources/sources/add_document.svg	/^       id="clipPath1386">$/;"	i
+clipPath954	resources/sources/add_board.svg	/^       id="clipPath954">$/;"	d
+clipPath954	resources/sources/add_board.svg	/^       id="clipPath954">$/;"	i
+contains_category	src/property.py	/^    def contains_category(self, category):$/;"	m	class:Properties_array
+contains_name	src/property.py	/^    def contains_name(self, name):$/;"	m	class:Properties_array
+cos	src/field_evaluation/math.py	/^def cos(x):$/;"	f
+dc	resources/sources/add_aligned_dimension.svg	/^   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)">$/;"	n	uri:http://purl.org/dc/elements/1.1/
+dc	resources/sources/add_arc.svg	/^   inkscape:version="1.0.1 (c497b03c, 2020-09-10)">$/;"	n	uri:http://purl.org/dc/elements/1.1/
+dc	resources/sources/add_board.svg	/^   inkscape:export-ydpi="96">$/;"	n	uri:http://purl.org/dc/elements/1.1/
+dc	resources/sources/add_bus.svg	/^   inkscape:version="1.0.1 (1.0.1+r74)">$/;"	n	uri:http://purl.org/dc/elements/1.1/
+dc	resources/sources/add_bus2bus.svg	/^   xmlns:inkscape="http:\/\/www.inkscape.org\/namespaces\/inkscape" height="26" width="26" versi/;"	n	uri:http://purl.org/dc/elements/1.1/
+dc	resources/sources/add_center_dimension.svg	/^   inkscape:version="1.0.2 (e86c8708, 2021-01-15)">$/;"	n	uri:http://purl.org/dc/elements/1.1/
+dc	resources/sources/add_circle.svg	/^   inkscape:version="1.0.2 (1.0.2+r75+1)">$/;"	n	uri:http://purl.org/dc/elements/1.1/
+dc	resources/sources/add_class_flag.svg	/^   inkscape:version="1.0.2 (e86c8708, 2021-01-15)">$/;"	n	uri:http://purl.org/dc/elements/1.1/
+dc	resources/sources/add_component.svg	/^   inkscape:version="1.0.1 (1.0.1+r74)">$/;"	n	uri:http://purl.org/dc/elements/1.1/
+dc	resources/sources/add_corner.svg	/^   xmlns:inkscape="http:\/\/www.inkscape.org\/namespaces\/inkscape" id="Слой_1" data-name="С/;"	n	uri:http://purl.org/dc/elements/1.1/
+dc	resources/sources/add_dashed_line.svg	/^   inkscape:version="1.0.1 (c497b03c, 2020-09-10)">$/;"	n	uri:http://purl.org/dc/elements/1.1/
+dc	resources/sources/add_document.svg	/^   inkscape:export-ydpi="96">$/;"	n	uri:http://purl.org/dc/elements/1.1/
+dc	resources/sources/add_footprint.svg	/^   xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/">$/;"	n	uri:http://purl.org/dc/elements/1.1/
+dc	resources/sources/add_glabel.svg	/^   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)">$/;"	n	uri:http://purl.org/dc/elements/1.1/
+dc	resources/sources/add_graphical_polygon.svg	/^   inkscape:version="1.0.2 (1.0.2+r75+1)">$/;"	n	uri:http://purl.org/dc/elements/1.1/
+dc	resources/sources/add_graphical_segments.svg	/^   inkscape:version="1.0.1 (c497b03c, 2020-09-10)">$/;"	n	uri:http://purl.org/dc/elements/1.1/
+dc	resources/sources/add_hierar_pin.svg	/^   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)">$/;"	n	uri:http://purl.org/dc/elements/1.1/
+dc	resources/sources/add_hierarchical_label.svg	/^   inkscape:version="1.0.1 (c497b03c, 2020-09-10)">$/;"	n	uri:http://purl.org/dc/elements/1.1/
+dc	resources/sources/add_hierarchical_subsheet.svg	/^   inkscape:export-ydpi="96">$/;"	n	uri:http://purl.org/dc/elements/1.1/
+dc	resources/sources/add_junction.svg	/^   inkscape:version="1.0.1 (c497b03c, 2020-09-10)">$/;"	n	uri:http://purl.org/dc/elements/1.1/
+dc	resources/sources/add_keepout_area.svg	/^   inkscape:version="1.0.1 (1.0.1+r74)"><metadata$/;"	n	uri:http://purl.org/dc/elements/1.1/
+dc	resources/sources/add_label.svg	/^   inkscape:version="1.0.1 (c497b03c, 2020-09-10)">$/;"	n	uri:http://purl.org/dc/elements/1.1/
+dc	resources/sources/add_leader.svg	/^   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)">$/;"	n	uri:http://purl.org/dc/elements/1.1/
+dc	resources/sources/add_library.svg	/^   xmlns:inkscape="http:\/\/www.inkscape.org\/namespaces\/inkscape" id="Слой_1" data-name="С/;"	n	uri:http://purl.org/dc/elements/1.1/
+dc	resources/sources/add_line.svg	/^   inkscape:version="1.0.1 (1.0.1+r74)">$/;"	n	uri:http://purl.org/dc/elements/1.1/
+dc	resources/sources/add_line2bus.svg	/^   inkscape:version="1.0.1 (c497b03c, 2020-09-10)">$/;"	n	uri:http://purl.org/dc/elements/1.1/
+dc	resources/sources/add_line_label.svg	/^   sodipodi:docname="add_line_label.svg">$/;"	n	uri:http://purl.org/dc/elements/1.1/
+dc	resources/sources/add_orthogonal_dimension.svg	/^   inkscape:version="1.0.1 (c497b03c, 2020-09-10)">$/;"	n	uri:http://purl.org/dc/elements/1.1/
+dc	resources/sources/add_pcb_target.svg	/^   inkscape:version="1.0.2 (1.0.2+r75+1)">$/;"	n	uri:http://purl.org/dc/elements/1.1/
+dc	resources/sources/add_power.svg	/^   inkscape:version="1.0.1 (1.0.1+r74)">$/;"	n	uri:http://purl.org/dc/elements/1.1/
+dc	resources/sources/add_radial_dimension.svg	/^   inkscape:version="1.0.2 (e86c8708, 2021-01-15)">$/;"	n	uri:http://purl.org/dc/elements/1.1/
+dc	resources/sources/add_rectangle.svg	/^   inkscape:version="1.0.2 (1.0.2+r75+1)">$/;"	n	uri:http://purl.org/dc/elements/1.1/
+dc	resources/sources/add_symbol_to_schematic.svg	/^   inkscape:export-ydpi="96">$/;"	n	uri:http://purl.org/dc/elements/1.1/
+dc	resources/sources/add_tracks.svg	/^   inkscape:version="1.0.1 (c497b03c, 2020-09-10)">$/;"	n	uri:http://purl.org/dc/elements/1.1/
+dc	resources/sources/add_via.svg	/^   inkscape:version="1.0.2 (1.0.2+r75+1)">$/;"	n	uri:http://purl.org/dc/elements/1.1/
+dc	resources/sources/add_zone.svg	/^   xml:space="preserve"><metadata$/;"	n	uri:http://purl.org/dc/elements/1.1/
+dc	resources/sources/add_zone_cutout.svg	/^   inkscape:version="1.0.1 (c497b03c, 2020-09-10)">$/;"	n	uri:http://purl.org/dc/elements/1.1/
+dc	resources/sources/pad.svg	/^   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)">$/;"	n	uri:http://purl.org/dc/elements/1.1/
+dc	resources/sources/text.svg	/^   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)">$/;"	n	uri:http://purl.org/dc/elements/1.1/
+defaults	complex_plugin_action.py	/^    def defaults(self):$/;"	m	class:ComplexPluginAction
+defs115603	resources/sources/add_leader.svg	/^     id="defs115603">$/;"	i
+defs115671	resources/sources/add_line2bus.svg	/^     id="defs115671">$/;"	i
+defs115691	resources/sources/add_orthogonal_dimension.svg	/^     id="defs115691">$/;"	i
+defs115715	resources/sources/add_pcb_target.svg	/^     id="defs115715">$/;"	i
+defs115735	resources/sources/add_rectangle.svg	/^     id="defs115735">$/;"	i
+defs115772	resources/sources/add_via.svg	/^     id="defs115772">$/;"	i
+defs115786	resources/sources/add_zone_cutout.svg	/^     id="defs115786">$/;"	i
+defs124	resources/sources/add_document.svg	/^     id="defs124">$/;"	i
+defs157875	resources/sources/add_hierar_pin.svg	/^     id="defs157875">$/;"	i
+defs157961	resources/sources/add_class_flag.svg	/^     id="defs157961">$/;"	i
+defs157961	resources/sources/add_label.svg	/^     id="defs157961">$/;"	i
+defs158702	resources/sources/pad.svg	/^     id="defs158702">$/;"	i
+defs174	resources/sources/add_glabel.svg	/^     id="defs174">$/;"	i
+defs190	resources/sources/add_hierarchical_label.svg	/^     id="defs190">$/;"	i
+defs20	resources/sources/add_line_label.svg	/^     id="defs20" \/>$/;"	i
+defs222	resources/sources/add_hierarchical_subsheet.svg	/^     id="defs222">$/;"	i
+defs25895	resources/sources/add_footprint.svg	/^     id="defs25895">$/;"	i
+defs27349	resources/sources/text.svg	/^     id="defs27349">$/;"	i
+defs27840	resources/sources/add_board.svg	/^     id="defs27840">$/;"	i
+defs27876	resources/sources/add_bus.svg	/^     id="defs27876">$/;"	i
+defs27890	resources/sources/add_center_dimension.svg	/^     id="defs27890">$/;"	i
+defs27890	resources/sources/add_radial_dimension.svg	/^     id="defs27890">$/;"	i
+defs27908	resources/sources/add_circle.svg	/^     id="defs27908">$/;"	i
+defs27924	resources/sources/add_component.svg	/^     id="defs27924">$/;"	i
+defs27951	resources/sources/add_corner.svg	/^   <defs id="defs27951">$/;"	i
+defs27977	resources/sources/add_dashed_line.svg	/^     id="defs27977">$/;"	i
+defs27999	resources/sources/add_graphical_polygon.svg	/^     id="defs27999">$/;"	i
+defs28019	resources/sources/add_graphical_segments.svg	/^     id="defs28019">$/;"	i
+defs306	resources/sources/add_junction.svg	/^     id="defs306">$/;"	i
+defs342	resources/sources/add_line.svg	/^     id="defs342">$/;"	i
+defs354	resources/sources/add_power.svg	/^     id="defs354">$/;"	i
+defs4	resources/sources/add_bus2bus.svg	/^   <defs id="defs4" \/>$/;"	i
+defs400	resources/sources/add_tracks.svg	/^     id="defs400">$/;"	i
+defs5	resources/sources/add_library.svg	/^   <defs id="defs5">$/;"	i
+defs5	resources/sources/add_symbol_to_schematic.svg	/^     id="defs5">$/;"	i
+defs76	resources/sources/add_aligned_dimension.svg	/^     id="defs76">$/;"	i
+defs841	resources/sources/add_zone.svg	/^   id="defs841" \/>$/;"	i
+defs864	resources/sources/add_keepout_area.svg	/^   id="defs864" \/><sodipodi:namedview$/;"	i
+defs984	resources/sources/add_arc.svg	/^     id="defs984">$/;"	i
+eval	src/field_evaluation/python_defines.py	/^    def eval(self, item, string):$/;"	m	class:Python_env
+eval_in_clean_environment	src/field_evaluation/python_defines.py	/^def eval_in_clean_environment(defines_string, string):$/;"	f
+evaluate	src/field_evaluation/math.py	/^def evaluate(string, prop):$/;"	f
+fromUnit	src/kicad/kicad.py	/^    def fromUnit(self, value):$/;"	m	class:Kicad_info
+fromUnit	src/unit.py	/^def fromUnit(x):$/;"	f
+g1384	resources/sources/add_document.svg	/^     style="display:inline">$/;"	i
+g1427	resources/sources/add_document.svg	/^     id="g1427">$/;"	i
+g158744	resources/sources/pad.svg	/^     transform="translate(-1,-1)">$/;"	i
+g853	resources/sources/add_library.svg	/^         <g id="g853">$/;"	i
+g856	resources/sources/add_board.svg	/^     style="display:inline">$/;"	i
+g865	resources/sources/add_library.svg	/^   <g id="g865">$/;"	i
+g933	resources/sources/add_library.svg	/^      <g id="g933" transform="translate(-1,-1)">$/;"	i
+g945	resources/sources/add_library.svg	/^         <g id="g945">$/;"	i
+g952	resources/sources/add_board.svg	/^     style="display:inline">$/;"	i
+g957	resources/sources/add_library.svg	/^      <g id="g957" transform="translate(5,-1)">$/;"	i
+g969	resources/sources/add_library.svg	/^            <g id="g969">$/;"	i
+g981	resources/sources/add_library.svg	/^      <g id="g981" transform="translate(17)">$/;"	i
+g994	resources/sources/add_library.svg	/^         <g id="g994" inkscape:transform-center-x="0.63442536" inkscape:transform-center-y="-10./;"	i
+get	src/kicad/arc.py	/^        def get(self):$/;"	m	class:GraphicArc.__arcAngle
+get	src/kicad/arc.py	/^        def get(self):$/;"	m	class:GraphicArc.__endX
+get	src/kicad/arc.py	/^        def get(self):$/;"	m	class:GraphicArc.__endY
+get	src/kicad/arc.py	/^        def get(self):$/;"	m	class:GraphicArc.__startX
+get	src/kicad/arc.py	/^        def get(self):$/;"	m	class:GraphicArc.__startY
+get	src/kicad/arc.py	/^        def get(self):$/;"	m	class:GraphicArc.__width
+get	src/kicad/circle.py	/^        def get(self):$/;"	m	class:GraphicCircle.__radius
+get	src/kicad/circle.py	/^        def get(self):$/;"	m	class:GraphicCircle.__width
+get	src/kicad/circle.py	/^        def get(self):$/;"	m	class:GraphicCircle.__x
+get	src/kicad/circle.py	/^        def get(self):$/;"	m	class:GraphicCircle.__y
+get	src/kicad/footprint.py	/^        def get(self):$/;"	m	class:Footprint.__orientation
+get	src/kicad/footprint.py	/^        def get(self):$/;"	m	class:Footprint.__reference
+get	src/kicad/footprint.py	/^        def get(self):$/;"	m	class:Footprint.__x
+get	src/kicad/footprint.py	/^        def get(self):$/;"	m	class:Footprint.__y
+get	src/kicad/line.py	/^        def get(self):$/;"	m	class:GraphicLine.__endX
+get	src/kicad/line.py	/^        def get(self):$/;"	m	class:GraphicLine.__endY
+get	src/kicad/line.py	/^        def get(self):$/;"	m	class:GraphicLine.__startX
+get	src/kicad/line.py	/^        def get(self):$/;"	m	class:GraphicLine.__startY
+get	src/kicad/line.py	/^        def get(self):$/;"	m	class:GraphicLine.__width
+get	src/kicad/polygon.py	/^        def get(self):$/;"	m	class:GraphicPolygon.__width
+get	src/kicad/rect.py	/^        def get(self):$/;"	m	class:GraphicRect.__endX
+get	src/kicad/rect.py	/^        def get(self):$/;"	m	class:GraphicRect.__endY
+get	src/kicad/rect.py	/^        def get(self):$/;"	m	class:GraphicRect.__startX
+get	src/kicad/rect.py	/^        def get(self):$/;"	m	class:GraphicRect.__startY
+get	src/kicad/rect.py	/^        def get(self):$/;"	m	class:GraphicRect.__width
+get	src/kicad/text.py	/^        def get(self):$/;"	m	class:GraphicText.__orientation
+get	src/kicad/text.py	/^        def get(self):$/;"	m	class:GraphicText.__text
+get	src/kicad/text.py	/^        def get(self):$/;"	m	class:GraphicText.__textHeight
+get	src/kicad/text.py	/^        def get(self):$/;"	m	class:GraphicText.__textWidth
+get	src/kicad/text.py	/^        def get(self):$/;"	m	class:GraphicText.__width
+get	src/kicad/text.py	/^        def get(self):$/;"	m	class:GraphicText.__x
+get	src/kicad/text.py	/^        def get(self):$/;"	m	class:GraphicText.__y
+get_categories	src/property.py	/^    def get_categories(self):$/;"	m	class:Properties_array
+get_data_type	src/property.py	/^    def get_data_type(self):$/;"	m	class:Properties_array
+get_icons	src/item.py	/^    def get_icons(self):$/;"	m	class:Items
+get_in_category	src/property.py	/^    def get_in_category(self, category):$/;"	m	class:Properties_array
+get_in_category_and_with_name	src/property.py	/^    def get_in_category_and_with_name(self, category, name):$/;"	m	class:Properties_array
+get_items	src/property.py	/^    def get_items(self):$/;"	m	class:Properties_array
+get_list	src/property.py	/^    def get_list(self):$/;"	m	class:Properties_array
+get_names	src/property.py	/^    def get_names(self):$/;"	m	class:Properties_array
+get_properties	src/item.py	/^    def get_properties(self):$/;"	m	class:Items
+get_selected	src/get_selected.py	/^def get_selected():$/;"	f
+get_ui_value	src/property.py	/^    def get_ui_value(self, origin=((0, 0), 0)):$/;"	m	class:Property
+get_ui_value	src/property.py	/^    def get_ui_value(self, origin=((0,0),0)):$/;"	m	class:Properties_array
+get_variable_name	src/property.py	/^    def get_variable_name(self):$/;"	m	class:Properties_array
+get_varnames	src/property.py	/^    def get_varnames(self):$/;"	m	class:Properties_array
+get_with_name	src/property.py	/^    def get_with_name(self, name):$/;"	m	class:Properties_array
+grid2213	resources/sources/add_arc.svg	/^       id="grid2213" \/>$/;"	i
+grid240600	resources/sources/pad.svg	/^       opacity="0.1254902" \/>$/;"	i
+grid2992	resources/sources/add_line_label.svg	/^       snapvisiblegridlinesonly="true" \/>$/;"	i
+grid2993	resources/sources/add_bus2bus.svg	/^      <inkscape:grid type="xygrid" id="grid2993" empspacing="5" visible="true" enabled="true" sn/;"	i
+grid4149	resources/sources/add_keepout_area.svg	/^     opacity="0.1254902" \/><\/sodipodi:namedview>$/;"	i
+grid838	resources/sources/add_keepout_area.svg	/^   type="xygrid">$/;"	i
+grid846	resources/sources/add_library.svg	/^      <inkscape:grid type="xygrid" id="grid846" spacingx="0.5" spacingy="0.5" color="#aaaaff" op/;"	i
+grid857	resources/sources/add_zone.svg	/^   opacity="0.1254902" \/>$/;"	i
+grid882	resources/sources/add_symbol_to_schematic.svg	/^       empspacing="2" \/>$/;"	i
+grid_kicad	resources/sources/add_aligned_dimension.svg	/^       empspacing="2" \/>$/;"	i
+grid_kicad	resources/sources/add_board.svg	/^       empspacing="2" \/>$/;"	i
+grid_kicad	resources/sources/add_bus.svg	/^       empspacing="2" \/>$/;"	i
+grid_kicad	resources/sources/add_center_dimension.svg	/^       empspacing="2" \/>$/;"	i
+grid_kicad	resources/sources/add_circle.svg	/^       empspacing="2" \/>$/;"	i
+grid_kicad	resources/sources/add_class_flag.svg	/^       empspacing="2" \/>$/;"	i
+grid_kicad	resources/sources/add_component.svg	/^       empspacing="2" \/>$/;"	i
+grid_kicad	resources/sources/add_dashed_line.svg	/^       empspacing="2" \/>$/;"	i
+grid_kicad	resources/sources/add_document.svg	/^       empspacing="2" \/>$/;"	i
+grid_kicad	resources/sources/add_footprint.svg	/^       empspacing="2" \/>$/;"	i
+grid_kicad	resources/sources/add_glabel.svg	/^       empspacing="2" \/>$/;"	i
+grid_kicad	resources/sources/add_graphical_polygon.svg	/^       empspacing="2" \/>$/;"	i
+grid_kicad	resources/sources/add_graphical_segments.svg	/^       empspacing="2" \/>$/;"	i
+grid_kicad	resources/sources/add_hierar_pin.svg	/^       empspacing="2" \/>$/;"	i
+grid_kicad	resources/sources/add_hierarchical_label.svg	/^       empspacing="2" \/>$/;"	i
+grid_kicad	resources/sources/add_hierarchical_subsheet.svg	/^       empspacing="2" \/>$/;"	i
+grid_kicad	resources/sources/add_junction.svg	/^       empspacing="2" \/>$/;"	i
+grid_kicad	resources/sources/add_keepout_area.svg	/^   type="xygrid">$/;"	i
+grid_kicad	resources/sources/add_label.svg	/^       empspacing="2" \/>$/;"	i
+grid_kicad	resources/sources/add_leader.svg	/^       empspacing="2" \/>$/;"	i
+grid_kicad	resources/sources/add_line.svg	/^       empspacing="2" \/>$/;"	i
+grid_kicad	resources/sources/add_line2bus.svg	/^       empspacing="2" \/>$/;"	i
+grid_kicad	resources/sources/add_orthogonal_dimension.svg	/^       empspacing="2" \/>$/;"	i
+grid_kicad	resources/sources/add_pcb_target.svg	/^       empspacing="2" \/>$/;"	i
+grid_kicad	resources/sources/add_power.svg	/^       empspacing="2" \/>$/;"	i
+grid_kicad	resources/sources/add_radial_dimension.svg	/^       empspacing="2" \/>$/;"	i
+grid_kicad	resources/sources/add_rectangle.svg	/^       empspacing="2" \/>$/;"	i
+grid_kicad	resources/sources/add_tracks.svg	/^       empspacing="2" \/>$/;"	i
+grid_kicad	resources/sources/add_via.svg	/^       empspacing="2" \/>$/;"	i
+grid_kicad	resources/sources/add_zone_cutout.svg	/^       empspacing="2" \/>$/;"	i
+grid_kicad	resources/sources/text.svg	/^       empspacing="2" \/>$/;"	i
+gui	tests/gui.py	/^def  gui():$/;"	f
+inkscape	resources/sources/add_aligned_dimension.svg	/^   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)">$/;"	n	uri:http://www.inkscape.org/namespaces/inkscape
+inkscape	resources/sources/add_arc.svg	/^   inkscape:version="1.0.1 (c497b03c, 2020-09-10)">$/;"	n	uri:http://www.inkscape.org/namespaces/inkscape
+inkscape	resources/sources/add_board.svg	/^   inkscape:export-ydpi="96">$/;"	n	uri:http://www.inkscape.org/namespaces/inkscape
+inkscape	resources/sources/add_bus.svg	/^   inkscape:version="1.0.1 (1.0.1+r74)">$/;"	n	uri:http://www.inkscape.org/namespaces/inkscape
+inkscape	resources/sources/add_bus2bus.svg	/^   xmlns:inkscape="http:\/\/www.inkscape.org\/namespaces\/inkscape" height="26" width="26" versi/;"	n	uri:http://www.inkscape.org/namespaces/inkscape
+inkscape	resources/sources/add_center_dimension.svg	/^   inkscape:version="1.0.2 (e86c8708, 2021-01-15)">$/;"	n	uri:http://www.inkscape.org/namespaces/inkscape
+inkscape	resources/sources/add_circle.svg	/^   inkscape:version="1.0.2 (1.0.2+r75+1)">$/;"	n	uri:http://www.inkscape.org/namespaces/inkscape
+inkscape	resources/sources/add_class_flag.svg	/^   inkscape:version="1.0.2 (e86c8708, 2021-01-15)">$/;"	n	uri:http://www.inkscape.org/namespaces/inkscape
+inkscape	resources/sources/add_component.svg	/^   inkscape:version="1.0.1 (1.0.1+r74)">$/;"	n	uri:http://www.inkscape.org/namespaces/inkscape
+inkscape	resources/sources/add_corner.svg	/^   xmlns:inkscape="http:\/\/www.inkscape.org\/namespaces\/inkscape" id="Слой_1" data-name="С/;"	n	uri:http://www.inkscape.org/namespaces/inkscape
+inkscape	resources/sources/add_dashed_line.svg	/^   inkscape:version="1.0.1 (c497b03c, 2020-09-10)">$/;"	n	uri:http://www.inkscape.org/namespaces/inkscape
+inkscape	resources/sources/add_document.svg	/^   inkscape:export-ydpi="96">$/;"	n	uri:http://www.inkscape.org/namespaces/inkscape
+inkscape	resources/sources/add_footprint.svg	/^   xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/">$/;"	n	uri:http://www.inkscape.org/namespaces/inkscape
+inkscape	resources/sources/add_glabel.svg	/^   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)">$/;"	n	uri:http://www.inkscape.org/namespaces/inkscape
+inkscape	resources/sources/add_graphical_polygon.svg	/^   inkscape:version="1.0.2 (1.0.2+r75+1)">$/;"	n	uri:http://www.inkscape.org/namespaces/inkscape
+inkscape	resources/sources/add_graphical_segments.svg	/^   inkscape:version="1.0.1 (c497b03c, 2020-09-10)">$/;"	n	uri:http://www.inkscape.org/namespaces/inkscape
+inkscape	resources/sources/add_hierar_pin.svg	/^   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)">$/;"	n	uri:http://www.inkscape.org/namespaces/inkscape
+inkscape	resources/sources/add_hierarchical_label.svg	/^   inkscape:version="1.0.1 (c497b03c, 2020-09-10)">$/;"	n	uri:http://www.inkscape.org/namespaces/inkscape
+inkscape	resources/sources/add_hierarchical_subsheet.svg	/^   inkscape:export-ydpi="96">$/;"	n	uri:http://www.inkscape.org/namespaces/inkscape
+inkscape	resources/sources/add_junction.svg	/^   inkscape:version="1.0.1 (c497b03c, 2020-09-10)">$/;"	n	uri:http://www.inkscape.org/namespaces/inkscape
+inkscape	resources/sources/add_keepout_area.svg	/^   inkscape:version="1.0.1 (1.0.1+r74)"><metadata$/;"	n	uri:http://www.inkscape.org/namespaces/inkscape
+inkscape	resources/sources/add_label.svg	/^   inkscape:version="1.0.1 (c497b03c, 2020-09-10)">$/;"	n	uri:http://www.inkscape.org/namespaces/inkscape
+inkscape	resources/sources/add_leader.svg	/^   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)">$/;"	n	uri:http://www.inkscape.org/namespaces/inkscape
+inkscape	resources/sources/add_library.svg	/^   xmlns:inkscape="http:\/\/www.inkscape.org\/namespaces\/inkscape" id="Слой_1" data-name="С/;"	n	uri:http://www.inkscape.org/namespaces/inkscape
+inkscape	resources/sources/add_line.svg	/^   inkscape:version="1.0.1 (1.0.1+r74)">$/;"	n	uri:http://www.inkscape.org/namespaces/inkscape
+inkscape	resources/sources/add_line2bus.svg	/^   inkscape:version="1.0.1 (c497b03c, 2020-09-10)">$/;"	n	uri:http://www.inkscape.org/namespaces/inkscape
+inkscape	resources/sources/add_line_label.svg	/^   sodipodi:docname="add_line_label.svg">$/;"	n	uri:http://www.inkscape.org/namespaces/inkscape
+inkscape	resources/sources/add_orthogonal_dimension.svg	/^   inkscape:version="1.0.1 (c497b03c, 2020-09-10)">$/;"	n	uri:http://www.inkscape.org/namespaces/inkscape
+inkscape	resources/sources/add_pcb_target.svg	/^   inkscape:version="1.0.2 (1.0.2+r75+1)">$/;"	n	uri:http://www.inkscape.org/namespaces/inkscape
+inkscape	resources/sources/add_power.svg	/^   inkscape:version="1.0.1 (1.0.1+r74)">$/;"	n	uri:http://www.inkscape.org/namespaces/inkscape
+inkscape	resources/sources/add_radial_dimension.svg	/^   inkscape:version="1.0.2 (e86c8708, 2021-01-15)">$/;"	n	uri:http://www.inkscape.org/namespaces/inkscape
+inkscape	resources/sources/add_rectangle.svg	/^   inkscape:version="1.0.2 (1.0.2+r75+1)">$/;"	n	uri:http://www.inkscape.org/namespaces/inkscape
+inkscape	resources/sources/add_symbol_to_schematic.svg	/^   inkscape:export-ydpi="96">$/;"	n	uri:http://www.inkscape.org/namespaces/inkscape
+inkscape	resources/sources/add_tracks.svg	/^   inkscape:version="1.0.1 (c497b03c, 2020-09-10)">$/;"	n	uri:http://www.inkscape.org/namespaces/inkscape
+inkscape	resources/sources/add_via.svg	/^   inkscape:version="1.0.2 (1.0.2+r75+1)">$/;"	n	uri:http://www.inkscape.org/namespaces/inkscape
+inkscape	resources/sources/add_zone.svg	/^   xml:space="preserve"><metadata$/;"	n	uri:http://www.inkscape.org/namespaces/inkscape
+inkscape	resources/sources/add_zone_cutout.svg	/^   inkscape:version="1.0.1 (c497b03c, 2020-09-10)">$/;"	n	uri:http://www.inkscape.org/namespaces/inkscape
+inkscape	resources/sources/pad.svg	/^   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)">$/;"	n	uri:http://www.inkscape.org/namespaces/inkscape
+inkscape	resources/sources/text.svg	/^   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)">$/;"	n	uri:http://www.inkscape.org/namespaces/inkscape
+is_empty	src/property.py	/^    def is_empty(self):$/;"	m	class:Properties_array
+kicad_info	src/kicad/kicad.py	/^kicad_info = Kicad_info()$/;"	v
+layer1	resources/sources/add_hierarchical_subsheet.svg	/^     style="display:inline">$/;"	i
+line115661	resources/sources/add_hierarchical_subsheet.svg	/^       style="display:inline;fill:none;stroke:#f5f5f5;stroke-width:2px;stroke-linecap:round;stro/;"	i
+line115661	resources/sources/add_library.svg	/^         <line class="cls-6" x1="0" y1="13.499999" x2="0" y2="20.5" id="line115661" style="fill:/;"	i
+line115663	resources/sources/add_hierarchical_subsheet.svg	/^       style="display:inline;fill:none;stroke:#f5f5f5;stroke-width:2px;stroke-linecap:round;stro/;"	i
+line115663	resources/sources/add_library.svg	/^         <line class="cls-6" x1="3.5" y1="17" x2="-3.500001" y2="17" id="line115663" style="fill/;"	i
+line115703	resources/sources/add_orthogonal_dimension.svg	/^     id="line115703" \/>$/;"	i
+line115725	resources/sources/add_pcb_target.svg	/^     style="stroke:#DED3DD;stroke-opacity:1" \/>$/;"	i
+line115727	resources/sources/add_pcb_target.svg	/^     style="stroke:#DED3DD;stroke-opacity:1" \/>$/;"	i
+line116809	resources/sources/add_document.svg	/^       style="display:inline;fill:none;stroke:#5a5a5a;stroke-width:2.28383;stroke-linecap:round;/;"	i
+line116819	resources/sources/add_document.svg	/^       transform="matrix(0.87505466,0,0,0.87639125,4.0883031e-7,-0.00244489)" \/>$/;"	i
+line116821	resources/sources/add_document.svg	/^       style="display:inline;fill:none;stroke:#E0E0E0;stroke-width:2.85478;stroke-linecap:round;/;"	i
+line116823	resources/sources/add_document.svg	/^       style="fill:none;stroke:#5a5a5a;stroke-width:2.32258;stroke-linecap:square;stroke-linejoi/;"	i
+line116825	resources/sources/add_document.svg	/^       transform="matrix(0.87505466,0,0,0.87639125,-0.62560059,-0.08382688)" \/>$/;"	i
+line116833	resources/sources/add_document.svg	/^       inkscape:connector-curvature="0" \/>$/;"	i
+line116835	resources/sources/add_document.svg	/^       style="fill:none;stroke:#E0E0E0;stroke-width:2.28383;stroke-linecap:round;stroke-linejoin/;"	i
+line13	resources/sources/add_library.svg	/^            <line class="cls-3" x1="3.1611004" y1="9.4176998" x2="5.8388996" y2="9.4176998" id="/;"	i
+line15	resources/sources/add_library.svg	/^            <line class="cls-3" x1="3.1611004" y1="17.769501" x2="5.8388996" y2="17.769501" id="/;"	i
+line157879	resources/sources/add_hierar_pin.svg	/^     id="line157879" \/>$/;"	i
+line158716	resources/sources/pad.svg	/^       id="line158716" \/>$/;"	i
+line158718	resources/sources/pad.svg	/^       id="line158718" \/>$/;"	i
+line164	resources/sources/add_document.svg	/^       style="display:inline" \/>$/;"	i
+line166	resources/sources/add_document.svg	/^       style="display:inline" \/>$/;"	i
+line17	resources/sources/add_library.svg	/^            <line class="cls-3" x1="3.1611004" y1="7.7101998" x2="5.8388996" y2="7.7101998" id="/;"	i
+line178	resources/sources/add_glabel.svg	/^     id="line178" \/>$/;"	i
+line19	resources/sources/add_library.svg	/^            <line class="cls-3" x1="3.1611004" y1="6.0026002" x2="5.8388996" y2="6.0026002" id="/;"	i
+line19	resources/sources/add_symbol_to_schematic.svg	/^     style="stroke:#ffffff;stroke-opacity:1" \/>$/;"	i
+line27866	resources/sources/add_board.svg	/^       id="line27866" \/>$/;"	i
+line27868	resources/sources/add_board.svg	/^       id="line27868" \/>$/;"	i
+line27930	resources/sources/add_component.svg	/^     id="line27930" \/>$/;"	i
+line27930	resources/sources/add_symbol_to_schematic.svg	/^     style="fill:none;stroke:#DED3DD;stroke-width:2px;stroke-linecap:round;stroke-linejoin:round/;"	i
+line27932	resources/sources/add_component.svg	/^     id="line27932" \/>$/;"	i
+line27932	resources/sources/add_symbol_to_schematic.svg	/^     style="fill:none;stroke:#DED3DD;stroke-width:2px;stroke-linecap:round;stroke-linejoin:round/;"	i
+line27934	resources/sources/add_component.svg	/^     id="line27934" \/>$/;"	i
+line27934	resources/sources/add_symbol_to_schematic.svg	/^     style="fill:none;stroke:#DED3DD;stroke-width:2px;stroke-linecap:round;stroke-linejoin:round/;"	i
+line27936	resources/sources/add_component.svg	/^     sodipodi:nodetypes="cc" \/>$/;"	i
+line27936	resources/sources/add_symbol_to_schematic.svg	/^     sodipodi:nodetypes="cc" \/>$/;"	i
+line27955	resources/sources/add_corner.svg	/^   <line class="cls-1" x1="15" y1="3" x2="15" y2="21.238701" id="line27955" style="stroke:url(#%/;"	i
+line310	resources/sources/add_junction.svg	/^     id="line310" \/>$/;"	i
+line312	resources/sources/add_junction.svg	/^     style="stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none" \/>$/;"	i
+line346	resources/sources/add_bus.svg	/^     sodipodi:nodetypes="cc" \/>$/;"	i
+line346	resources/sources/add_line.svg	/^     sodipodi:nodetypes="cc" \/>$/;"	i
+line358	resources/sources/add_power.svg	/^     style="stroke:#DED3DD;stroke-opacity:1" \/>$/;"	i
+line360	resources/sources/add_power.svg	/^     style="stroke:#DED3DD;stroke-opacity:1" \/>$/;"	i
+line362	resources/sources/add_power.svg	/^     style="stroke:#DED3DD;stroke-opacity:1" \/>$/;"	i
+line364	resources/sources/add_power.svg	/^     style="stroke:#DED3DD;stroke-opacity:1" \/>$/;"	i
+line84	resources/sources/add_aligned_dimension.svg	/^     id="line84" \/>$/;"	i
+line854	resources/sources/add_document.svg	/^       class="cls-4" \/>$/;"	i
+line863	resources/sources/add_library.svg	/^         <path id="line863" style="fill:none;stroke:#8f8f8f;stroke-width:1;stroke-linecap:round;/;"	i
+line937	resources/sources/add_library.svg	/^            <line class="cls-3" x1="3.1611004" y1="9.4176998" x2="5.8388996" y2="9.4176998" id="/;"	i
+line939	resources/sources/add_library.svg	/^            <line class="cls-3" x1="3.1611004" y1="17.769501" x2="5.8388996" y2="17.769501" id="/;"	i
+line941	resources/sources/add_library.svg	/^            <line class="cls-3" x1="3.1611004" y1="7.7101998" x2="5.8388996" y2="7.7101998" id="/;"	i
+line943	resources/sources/add_library.svg	/^            <line class="cls-3" x1="3.1611004" y1="6.0026002" x2="5.8388996" y2="6.0026002" id="/;"	i
+line961	resources/sources/add_library.svg	/^               <line class="cls-3" x1="3.1611004" y1="9.4176998" x2="5.8388996" y2="9.4176998" i/;"	i
+line963	resources/sources/add_library.svg	/^               <line class="cls-3" x1="3.1611004" y1="17.769501" x2="5.8388996" y2="17.769501" i/;"	i
+line965	resources/sources/add_library.svg	/^               <line class="cls-3" x1="3.1611004" y1="7.7101998" x2="5.8388996" y2="7.7101998" i/;"	i
+line967	resources/sources/add_library.svg	/^               <line class="cls-3" x1="3.1611004" y1="6.0026002" x2="5.8388996" y2="6.0026002" i/;"	i
+message	__init__.py	/^    message = template.format(type(e).__name__, e.args)$/;"	v
+metadata22	resources/sources/add_line_label.svg	/^     id="metadata22">$/;"	i
+metadata29	resources/sources/add_bus2bus.svg	/^   <metadata id="metadata29">$/;"	i
+metadata43	resources/sources/add_aligned_dimension.svg	/^     id="metadata43">$/;"	i
+metadata43	resources/sources/add_arc.svg	/^     id="metadata43">$/;"	i
+metadata43	resources/sources/add_board.svg	/^     id="metadata43">$/;"	i
+metadata43	resources/sources/add_bus.svg	/^     id="metadata43">$/;"	i
+metadata43	resources/sources/add_center_dimension.svg	/^     id="metadata43">$/;"	i
+metadata43	resources/sources/add_circle.svg	/^     id="metadata43">$/;"	i
+metadata43	resources/sources/add_class_flag.svg	/^     id="metadata43">$/;"	i
+metadata43	resources/sources/add_component.svg	/^     id="metadata43">$/;"	i
+metadata43	resources/sources/add_corner.svg	/^   <metadata id="metadata43">$/;"	i
+metadata43	resources/sources/add_dashed_line.svg	/^     id="metadata43">$/;"	i
+metadata43	resources/sources/add_document.svg	/^     id="metadata43">$/;"	i
+metadata43	resources/sources/add_footprint.svg	/^     id="metadata43">$/;"	i
+metadata43	resources/sources/add_glabel.svg	/^     id="metadata43">$/;"	i
+metadata43	resources/sources/add_graphical_polygon.svg	/^     id="metadata43">$/;"	i
+metadata43	resources/sources/add_graphical_segments.svg	/^     id="metadata43">$/;"	i
+metadata43	resources/sources/add_hierar_pin.svg	/^     id="metadata43">$/;"	i
+metadata43	resources/sources/add_hierarchical_label.svg	/^     id="metadata43">$/;"	i
+metadata43	resources/sources/add_hierarchical_subsheet.svg	/^     id="metadata43">$/;"	i
+metadata43	resources/sources/add_junction.svg	/^     id="metadata43">$/;"	i
+metadata43	resources/sources/add_label.svg	/^     id="metadata43">$/;"	i
+metadata43	resources/sources/add_leader.svg	/^     id="metadata43">$/;"	i
+metadata43	resources/sources/add_library.svg	/^   <metadata id="metadata43">$/;"	i
+metadata43	resources/sources/add_line.svg	/^     id="metadata43">$/;"	i
+metadata43	resources/sources/add_line2bus.svg	/^     id="metadata43">$/;"	i
+metadata43	resources/sources/add_orthogonal_dimension.svg	/^     id="metadata43">$/;"	i
+metadata43	resources/sources/add_pcb_target.svg	/^     id="metadata43">$/;"	i
+metadata43	resources/sources/add_power.svg	/^     id="metadata43">$/;"	i
+metadata43	resources/sources/add_radial_dimension.svg	/^     id="metadata43">$/;"	i
+metadata43	resources/sources/add_rectangle.svg	/^     id="metadata43">$/;"	i
+metadata43	resources/sources/add_symbol_to_schematic.svg	/^     id="metadata43">$/;"	i
+metadata43	resources/sources/add_tracks.svg	/^     id="metadata43">$/;"	i
+metadata43	resources/sources/add_via.svg	/^     id="metadata43">$/;"	i
+metadata43	resources/sources/add_zone_cutout.svg	/^     id="metadata43">$/;"	i
+metadata43	resources/sources/pad.svg	/^     id="metadata43">$/;"	i
+metadata43	resources/sources/text.svg	/^     id="metadata43">$/;"	i
+metadata843	resources/sources/add_zone.svg	/^   id="metadata843"><rdf:RDF><cc:Work$/;"	i
+metadata866	resources/sources/add_keepout_area.svg	/^   id="metadata866"><rdf:RDF><cc:Work$/;"	i
+namedview1001	resources/sources/add_arc.svg	/^     inkscape:document-rotation="0">$/;"	i
+namedview158751	resources/sources/pad.svg	/^     inkscape:current-layer="Слой_1">$/;"	i
+namedview18	resources/sources/add_line_label.svg	/^     inkscape:document-rotation="0">$/;"	i
+namedview24	resources/sources/add_symbol_to_schematic.svg	/^     inkscape:document-rotation="0">$/;"	i
+namedview27	resources/sources/add_bus2bus.svg	/^   <sodipodi:namedview pagecolor="#ffffff" bordercolor="#666666" borderopacity="1" objecttoleran/;"	i
+namedview27970	resources/sources/add_corner.svg	/^   <sodipodi:namedview pagecolor="#ffffff" bordercolor="#666666" borderopacity="1" objecttoleran/;"	i
+namedview30	resources/sources/add_aligned_dimension.svg	/^     inkscape:current-layer="Слой_1">$/;"	i
+namedview30	resources/sources/add_board.svg	/^     inkscape:current-layer="g952">$/;"	i
+namedview30	resources/sources/add_bus.svg	/^     inkscape:current-layer="Слой_1">$/;"	i
+namedview30	resources/sources/add_center_dimension.svg	/^     inkscape:current-layer="Слой_1">$/;"	i
+namedview30	resources/sources/add_circle.svg	/^     inkscape:current-layer="Слой_1">$/;"	i
+namedview30	resources/sources/add_class_flag.svg	/^     inkscape:current-layer="Слой_1">$/;"	i
+namedview30	resources/sources/add_component.svg	/^     inkscape:current-layer="Слой_1">$/;"	i
+namedview30	resources/sources/add_dashed_line.svg	/^     inkscape:current-layer="Слой_1">$/;"	i
+namedview30	resources/sources/add_document.svg	/^     inkscape:current-layer="Слой_1">$/;"	i
+namedview30	resources/sources/add_footprint.svg	/^     inkscape:deskcolor="#d1d1d1">$/;"	i
+namedview30	resources/sources/add_glabel.svg	/^     inkscape:current-layer="Слой_1">$/;"	i
+namedview30	resources/sources/add_graphical_polygon.svg	/^     inkscape:current-layer="Слой_1">$/;"	i
+namedview30	resources/sources/add_graphical_segments.svg	/^     inkscape:current-layer="Слой_1">$/;"	i
+namedview30	resources/sources/add_hierar_pin.svg	/^     inkscape:current-layer="Слой_1">$/;"	i
+namedview30	resources/sources/add_hierarchical_label.svg	/^     inkscape:current-layer="Слой_1">$/;"	i
+namedview30	resources/sources/add_hierarchical_subsheet.svg	/^     inkscape:current-layer="Слой_1">$/;"	i
+namedview30	resources/sources/add_junction.svg	/^     inkscape:current-layer="Слой_1">$/;"	i
+namedview30	resources/sources/add_keepout_area.svg	/^   showgrid="true">$/;"	i
+namedview30	resources/sources/add_label.svg	/^     inkscape:current-layer="Слой_1">$/;"	i
+namedview30	resources/sources/add_leader.svg	/^     inkscape:current-layer="Слой_1">$/;"	i
+namedview30	resources/sources/add_line.svg	/^     inkscape:current-layer="Слой_1">$/;"	i
+namedview30	resources/sources/add_line2bus.svg	/^     inkscape:current-layer="Слой_1">$/;"	i
+namedview30	resources/sources/add_orthogonal_dimension.svg	/^     inkscape:current-layer="Слой_1">$/;"	i
+namedview30	resources/sources/add_pcb_target.svg	/^     inkscape:current-layer="Слой_1">$/;"	i
+namedview30	resources/sources/add_power.svg	/^     inkscape:current-layer="Слой_1">$/;"	i
+namedview30	resources/sources/add_radial_dimension.svg	/^     inkscape:current-layer="Слой_1">$/;"	i
+namedview30	resources/sources/add_rectangle.svg	/^     inkscape:current-layer="Слой_1">$/;"	i
+namedview30	resources/sources/add_tracks.svg	/^     inkscape:current-layer="Слой_1">$/;"	i
+namedview30	resources/sources/add_via.svg	/^     inkscape:current-layer="Слой_1">$/;"	i
+namedview30	resources/sources/add_zone_cutout.svg	/^     inkscape:current-layer="Слой_1">$/;"	i
+namedview30	resources/sources/text.svg	/^     inkscape:current-layer="Слой_1">$/;"	i
+namedview32	resources/sources/add_zone.svg	/^   showgrid="true">$/;"	i
+namedview42	resources/sources/add_library.svg	/^   <sodipodi:namedview pagecolor="#ffffff" bordercolor="#666666" borderopacity="1" objecttoleran/;"	i
+namedview840	resources/sources/add_keepout_area.svg	/^   showgrid="true">$/;"	i
+namedview862	resources/sources/add_keepout_area.svg	/^   inkscape:document-rotation="0"><inkscape:grid$/;"	i
+np	src/utils.py	/^import numpy as np$/;"	I	nameref:module:numpy
+ns02d0386e0101	resources/sources/add_bus2bus.svg	/^   xmlns:inkscape="http:\/\/www.inkscape.org\/namespaces\/inkscape" height="26" width="26" versi/;"	n	uri:http://www.w3.org/2000/svg
+ns089512fd0101	resources/sources/add_library.svg	/^   xmlns:inkscape="http:\/\/www.inkscape.org\/namespaces\/inkscape" id="Слой_1" data-name="С/;"	n	uri:http://www.w3.org/2000/svg
+ns0f4a0e230101	resources/sources/add_pcb_target.svg	/^   inkscape:version="1.0.2 (1.0.2+r75+1)">$/;"	n	uri:http://www.w3.org/2000/svg
+ns159a47e40101	resources/sources/add_zone.svg	/^   xml:space="preserve"><metadata$/;"	n	uri:http://www.w3.org/2000/svg
+ns1681f1500101	resources/sources/add_board.svg	/^   inkscape:export-ydpi="96">$/;"	n	uri:http://www.w3.org/2000/svg
+ns1800b8b20101	resources/sources/add_junction.svg	/^   inkscape:version="1.0.1 (c497b03c, 2020-09-10)">$/;"	n	uri:http://www.w3.org/2000/svg
+ns18b5ba500101	resources/sources/add_symbol_to_schematic.svg	/^   inkscape:export-ydpi="96">$/;"	n	uri:http://www.w3.org/2000/svg
+ns192d7bbd0101	resources/sources/add_keepout_area.svg	/^   inkscape:version="1.0.1 (1.0.1+r74)"><metadata$/;"	n	uri:http://www.w3.org/2000/svg
+ns19d0d0850101	resources/sources/text.svg	/^   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)">$/;"	n	uri:http://www.w3.org/2000/svg
+ns1f58e9f00101	resources/sources/add_tracks.svg	/^   inkscape:version="1.0.1 (c497b03c, 2020-09-10)">$/;"	n	uri:http://www.w3.org/2000/svg
+ns2290a3880101	resources/sources/add_via.svg	/^   inkscape:version="1.0.2 (1.0.2+r75+1)">$/;"	n	uri:http://www.w3.org/2000/svg
+ns275c28ea0101	resources/sources/add_orthogonal_dimension.svg	/^   inkscape:version="1.0.1 (c497b03c, 2020-09-10)">$/;"	n	uri:http://www.w3.org/2000/svg
+ns2acda3c70101	resources/sources/add_document.svg	/^   inkscape:export-ydpi="96">$/;"	n	uri:http://www.w3.org/2000/svg
+ns2d10b96c0101	resources/sources/add_line2bus.svg	/^   inkscape:version="1.0.1 (c497b03c, 2020-09-10)">$/;"	n	uri:http://www.w3.org/2000/svg
+ns2e8a27490101	resources/sources/add_hierar_pin.svg	/^   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)">$/;"	n	uri:http://www.w3.org/2000/svg
+ns3245ef2d0101	resources/sources/add_footprint.svg	/^   xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/">$/;"	n	uri:http://www.w3.org/2000/svg
+ns35f560780101	resources/sources/add_dashed_line.svg	/^   inkscape:version="1.0.1 (c497b03c, 2020-09-10)">$/;"	n	uri:http://www.w3.org/2000/svg
+ns3c4785120101	resources/sources/add_bus.svg	/^   inkscape:version="1.0.1 (1.0.1+r74)">$/;"	n	uri:http://www.w3.org/2000/svg
+ns41f2d53a0101	resources/sources/add_radial_dimension.svg	/^   inkscape:version="1.0.2 (e86c8708, 2021-01-15)">$/;"	n	uri:http://www.w3.org/2000/svg
+ns539bd4550101	resources/sources/add_leader.svg	/^   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)">$/;"	n	uri:http://www.w3.org/2000/svg
+ns5c2337100101	resources/sources/add_line.svg	/^   inkscape:version="1.0.1 (1.0.1+r74)">$/;"	n	uri:http://www.w3.org/2000/svg
+ns6e3ea6b10101	resources/sources/add_corner.svg	/^   xmlns:inkscape="http:\/\/www.inkscape.org\/namespaces\/inkscape" id="Слой_1" data-name="С/;"	n	uri:http://www.w3.org/2000/svg
+ns73fc423a0101	resources/sources/add_circle.svg	/^   inkscape:version="1.0.2 (1.0.2+r75+1)">$/;"	n	uri:http://www.w3.org/2000/svg
+ns7bb133270101	resources/sources/add_zone_cutout.svg	/^   inkscape:version="1.0.1 (c497b03c, 2020-09-10)">$/;"	n	uri:http://www.w3.org/2000/svg
+ns86d20b010101	resources/sources/add_aligned_dimension.svg	/^   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)">$/;"	n	uri:http://www.w3.org/2000/svg
+ns883323370101	resources/sources/add_class_flag.svg	/^   inkscape:version="1.0.2 (e86c8708, 2021-01-15)">$/;"	n	uri:http://www.w3.org/2000/svg
+ns9ce00f7d0101	resources/sources/add_rectangle.svg	/^   inkscape:version="1.0.2 (1.0.2+r75+1)">$/;"	n	uri:http://www.w3.org/2000/svg
+nsafcbebee0101	resources/sources/add_center_dimension.svg	/^   inkscape:version="1.0.2 (e86c8708, 2021-01-15)">$/;"	n	uri:http://www.w3.org/2000/svg
+nsc1fb88150101	resources/sources/pad.svg	/^   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)">$/;"	n	uri:http://www.w3.org/2000/svg
+nscc620f890101	resources/sources/add_hierarchical_subsheet.svg	/^   inkscape:export-ydpi="96">$/;"	n	uri:http://www.w3.org/2000/svg
+nscfd86c1b0101	resources/sources/add_component.svg	/^   inkscape:version="1.0.1 (1.0.1+r74)">$/;"	n	uri:http://www.w3.org/2000/svg
+nsd46d092f0101	resources/sources/add_glabel.svg	/^   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)">$/;"	n	uri:http://www.w3.org/2000/svg
+nse29ebe180101	resources/sources/add_graphical_segments.svg	/^   inkscape:version="1.0.1 (c497b03c, 2020-09-10)">$/;"	n	uri:http://www.w3.org/2000/svg
+nse4bfdd4f0101	resources/sources/add_line_label.svg	/^   sodipodi:docname="add_line_label.svg">$/;"	n	uri:http://www.w3.org/2000/svg
+nse6fca7a80101	resources/sources/add_label.svg	/^   inkscape:version="1.0.1 (c497b03c, 2020-09-10)">$/;"	n	uri:http://www.w3.org/2000/svg
+nse72c465e0101	resources/sources/add_arc.svg	/^   inkscape:version="1.0.1 (c497b03c, 2020-09-10)">$/;"	n	uri:http://www.w3.org/2000/svg
+nse7426d260101	resources/sources/add_hierarchical_label.svg	/^   inkscape:version="1.0.1 (c497b03c, 2020-09-10)">$/;"	n	uri:http://www.w3.org/2000/svg
+nsf185657a0101	resources/sources/add_graphical_polygon.svg	/^   inkscape:version="1.0.2 (1.0.2+r75+1)">$/;"	n	uri:http://www.w3.org/2000/svg
+nsf57b9ed50101	resources/sources/add_power.svg	/^   inkscape:version="1.0.1 (1.0.1+r74)">$/;"	n	uri:http://www.w3.org/2000/svg
+ok	src/GUI.py	/^    def ok(self, e):$/;"	m	class:GUI
+path11	resources/sources/add_board.svg	/^       transform="matrix(0.875,0,0,0.875,-33,-2)" \/>$/;"	i
+path115607	resources/sources/add_leader.svg	/^     id="path115607" \/>$/;"	i
+path115613	resources/sources/add_leader.svg	/^     id="path115613" \/>$/;"	i
+path115615	resources/sources/add_leader.svg	/^     id="path115615" \/>$/;"	i
+path115695	resources/sources/add_orthogonal_dimension.svg	/^     style="stroke-width:1" \/>$/;"	i
+path115697	resources/sources/add_orthogonal_dimension.svg	/^     style="stroke-width:1" \/>$/;"	i
+path115699	resources/sources/add_orthogonal_dimension.svg	/^     id="path115699" \/>$/;"	i
+path115701	resources/sources/add_orthogonal_dimension.svg	/^     id="path115701" \/>$/;"	i
+path115721	resources/sources/add_pcb_target.svg	/^     style="stroke-width:1;fill:#999999;fill-opacity:1" \/>$/;"	i
+path115723	resources/sources/add_pcb_target.svg	/^     style="stroke-width:1;fill:#999999;fill-opacity:1" \/>$/;"	i
+path115794	resources/sources/add_zone_cutout.svg	/^     id="path115794" \/>$/;"	i
+path115796	resources/sources/add_zone_cutout.svg	/^     id="path115796" \/>$/;"	i
+path115798	resources/sources/add_zone_cutout.svg	/^     id="path115798" \/>$/;"	i
+path115800	resources/sources/add_zone_cutout.svg	/^     id="path115800" \/>$/;"	i
+path116827	resources/sources/add_document.svg	/^       inkscape:connector-curvature="0" \/>$/;"	i
+path116837	resources/sources/add_document.svg	/^       inkscape:connector-curvature="0" \/>$/;"	i
+path12135	resources/sources/add_hierarchical_subsheet.svg	/^     id="path12135" \/>$/;"	i
+path12137	resources/sources/add_hierarchical_subsheet.svg	/^     sodipodi:nodetypes="cc" \/>$/;"	i
+path12139	resources/sources/add_hierarchical_subsheet.svg	/^     inkscape:connector-curvature="0" \/>$/;"	i
+path1243	resources/sources/add_hierarchical_subsheet.svg	/^         sodipodi:nodetypes="sssssssss" \/>$/;"	i
+path1245	resources/sources/add_hierarchical_subsheet.svg	/^     d="M 11.709505,23.000889 A 8,8 0 0 1 9.3427905,14.683291 8,8 0 0 1 15.923499,9.0727593 8,8 /;"	i
+path12817	resources/sources/add_hierarchical_label.svg	/^     id="path12817" \/>$/;"	i
+path1390	resources/sources/add_document.svg	/^           ry="3.9967" \/>$/;"	i
+path157883	resources/sources/add_hierar_pin.svg	/^     id="path157883" \/>$/;"	i
+path158706	resources/sources/pad.svg	/^       id="path158706" \/>$/;"	i
+path158720	resources/sources/pad.svg	/^       id="path158720" \/>$/;"	i
+path158722	resources/sources/pad.svg	/^       id="path158722" \/>$/;"	i
+path158724	resources/sources/pad.svg	/^       id="path158724" \/>$/;"	i
+path158738	resources/sources/pad.svg	/^       id="path158738" \/>$/;"	i
+path158742	resources/sources/pad.svg	/^       id="path158742" \/>$/;"	i
+path158746	resources/sources/pad.svg	/^     id="path158746" \/>$/;"	i
+path158748	resources/sources/pad.svg	/^     id="path158748" \/>$/;"	i
+path15966	resources/sources/add_label.svg	/^     id="path15966" \/>$/;"	i
+path17	resources/sources/add_symbol_to_schematic.svg	/^     style="stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke:none" \/>$/;"	i
+path17250	resources/sources/add_component.svg	/^     sodipodi:nodetypes="cc" \/>$/;"	i
+path17250	resources/sources/add_symbol_to_schematic.svg	/^     sodipodi:nodetypes="cc" \/>$/;"	i
+path17252	resources/sources/add_component.svg	/^     sodipodi:nodetypes="cc" \/>$/;"	i
+path17252	resources/sources/add_symbol_to_schematic.svg	/^     sodipodi:nodetypes="cc" \/>$/;"	i
+path182	resources/sources/add_glabel.svg	/^     id="path182" \/>$/;"	i
+path2253	resources/sources/add_board.svg	/^       transform="matrix(0.875,0,0,0.875,-33,-2)" \/>$/;"	i
+path2265	resources/sources/add_board.svg	/^       transform="matrix(0.875,0,0,0.875,-32.561898,-2)" \/>$/;"	i
+path241451	resources/sources/add_line2bus.svg	/^     id="path241451" \/>$/;"	i
+path241453	resources/sources/add_line2bus.svg	/^     sodipodi:nodetypes="cc" \/>$/;"	i
+path241455	resources/sources/add_line2bus.svg	/^     sodipodi:nodetypes="cc" \/>$/;"	i
+path241457	resources/sources/add_line2bus.svg	/^     sodipodi:nodetypes="cc" \/>$/;"	i
+path241460	resources/sources/add_line2bus.svg	/^     sodipodi:nodetypes="cc" \/>$/;"	i
+path262	resources/sources/add_hierarchical_subsheet.svg	/^     sodipodi:nodetypes="sssssssss" \/>$/;"	i
+path27353	resources/sources/text.svg	/^     sodipodi:nodetypes="ccccccccc" \/>$/;"	i
+path27898	resources/sources/add_center_dimension.svg	/^     id="path27898" \/>$/;"	i
+path27898	resources/sources/add_radial_dimension.svg	/^     id="path27898" \/>$/;"	i
+path27900	resources/sources/add_radial_dimension.svg	/^     id="path27900" \/>$/;"	i
+path27959	resources/sources/add_corner.svg	/^   <path class="cls-3" d="M 6,3 A 3,3 0 1 1 3,0 3,3 0 0 1 6,3 Z" id="path27959" \/>$/;"	i
+path27961	resources/sources/add_corner.svg	/^   <path class="cls-3" d="M 6,21 A 3,3 0 1 1 3,18 3,3 0 0 1 6,21 Z" id="path27961" \/>$/;"	i
+path27963	resources/sources/add_corner.svg	/^   <path class="cls-3" d="M 18,3 A 3,3 0 1 1 15,0 3,3 0 0 1 18,3 Z" id="path27963" \/>$/;"	i
+path27965	resources/sources/add_corner.svg	/^   <path class="cls-4" d="m 24,12 a 3,3 0 1 1 -3,-3 3,3 0 0 1 3,3 z" id="path27965" \/>$/;"	i
+path27967	resources/sources/add_corner.svg	/^   <path class="cls-3" d="m 18,21 a 3,3 0 1 1 -3,-3 3,3 0 0 1 3,3 z" id="path27967" \/>$/;"	i
+path290	resources/sources/add_hierarchical_subsheet.svg	/^     style="fill:#545454;fill-opacity:1;stroke-width:1.45279" \/>$/;"	i
+path292	resources/sources/add_hierarchical_subsheet.svg	/^     sodipodi:nodetypes="ccccccc" \/>$/;"	i
+path294	resources/sources/add_hierarchical_subsheet.svg	/^     style="fill:#545454;fill-opacity:1;stroke-width:1.45279" \/>$/;"	i
+path2987	resources/sources/add_line_label.svg	/^     sodipodi:nodetypes="cc" \/>$/;"	i
+path314	resources/sources/add_junction.svg	/^     style="fill:#42B8EB;fill-opacity:1;stroke-width:1.32661417;stroke-miterlimit:4;stroke-dasha/;"	i
+path3757	resources/sources/add_bus2bus.svg	/^   <path style="opacity:0.5;fill:none;stroke:#4d4d4d;stroke-width:4;stroke-linecap:square;stroke/;"	i
+path3763	resources/sources/add_bus2bus.svg	/^   <path sodipodi:nodetypes="cc" inkscape:connector-curvature="0" id="path3763" d="M 1,3.5435511/;"	i
+path3765	resources/sources/add_bus2bus.svg	/^   <path style="fill:none;stroke:#0000c8;stroke-width:4;stroke-linecap:round;stroke-linejoin:mit/;"	i
+path3767	resources/sources/add_bus2bus.svg	/^   <path style="opacity:0.5;fill:none;stroke:#4d4d4d;stroke-width:4;stroke-linecap:butt;stroke-l/;"	i
+path3769	resources/sources/add_bus2bus.svg	/^   <path sodipodi:nodetypes="cc" inkscape:connector-curvature="0" id="path3769" d="m 13,13 10,7./;"	i
+path4866	resources/sources/add_graphical_segments.svg	/^     id="path4866" \/>$/;"	i
+path80	resources/sources/add_aligned_dimension.svg	/^     id="path80" \/>$/;"	i
+path82	resources/sources/add_aligned_dimension.svg	/^     id="path82" \/>$/;"	i
+path843	resources/sources/add_class_flag.svg	/^     ry="3.6851389" \/>$/;"	i
+path844	resources/sources/add_center_dimension.svg	/^     id="path844" \/>$/;"	i
+path844	resources/sources/add_radial_dimension.svg	/^     id="path844" \/>$/;"	i
+path846	resources/sources/add_center_dimension.svg	/^     id="path846" \/>$/;"	i
+path846	resources/sources/add_radial_dimension.svg	/^     id="path846" \/>$/;"	i
+path858	resources/sources/add_board.svg	/^       style="display:inline;fill:#ffffff;fill-opacity:1;stroke-width:0.999998" \/>$/;"	i
+path858	resources/sources/add_document.svg	/^       style="display:inline;fill:#ffffff;fill-opacity:1;stroke-width:0.999998" \/>$/;"	i
+path867	resources/sources/add_zone.svg	/^   r="2" \/><rect$/;"	i
+path886	resources/sources/add_board.svg	/^       transform="matrix(0.875,0,0,0.875,-33,-1.25)" \/>$/;"	i
+path888	resources/sources/add_board.svg	/^       transform="matrix(0.875,0,0,0.875,-33,-1.25)" \/>$/;"	i
+path888	resources/sources/add_library.svg	/^         <path id="path888" style="fill:none;stroke:#8f8f8f;stroke-width:1;stroke-linecap:round;/;"	i
+path890	resources/sources/add_board.svg	/^       transform="matrix(0.875,0,0,0.875,-33,-1.25)" \/>$/;"	i
+path890	resources/sources/add_library.svg	/^         <path id="path890" style="fill:none;stroke:#8f8f8f;stroke-width:1;stroke-linecap:round;/;"	i
+path892	resources/sources/add_board.svg	/^       inkscape:connector-curvature="0" \/>$/;"	i
+path892	resources/sources/add_library.svg	/^         <path id="path892" style="fill:none;stroke:#8f8f8f;stroke-width:1;stroke-linecap:round;/;"	i
+path90	resources/sources/add_aligned_dimension.svg	/^     id="path90" \/>$/;"	i
+path92	resources/sources/add_aligned_dimension.svg	/^     id="path92" \/>$/;"	i
+path936	resources/sources/add_board.svg	/^       ry="1.6027977" \/>$/;"	i
+path949	resources/sources/add_library.svg	/^         <path id="path949" style="fill:none;stroke:#8f8f8f;stroke-width:1;stroke-linecap:round;/;"	i
+path951	resources/sources/add_library.svg	/^         <path id="path951" style="fill:none;stroke:#8f8f8f;stroke-width:1;stroke-linecap:round;/;"	i
+path953	resources/sources/add_library.svg	/^         <path id="path953" style="fill:none;stroke:#8f8f8f;stroke-width:1;stroke-linecap:round;/;"	i
+path955	resources/sources/add_library.svg	/^         <path id="path955" style="fill:none;stroke:#8f8f8f;stroke-width:1;stroke-linecap:round;/;"	i
+path973	resources/sources/add_library.svg	/^            <path id="path973" style="fill:none;stroke:#8f8f8f;stroke-width:1;stroke-linecap:rou/;"	i
+path975	resources/sources/add_library.svg	/^            <path id="path975" style="fill:none;stroke:#8f8f8f;stroke-width:1;stroke-linecap:rou/;"	i
+path977	resources/sources/add_library.svg	/^            <path id="path977" style="fill:none;stroke:#8f8f8f;stroke-width:1;stroke-linecap:rou/;"	i
+path979	resources/sources/add_library.svg	/^            <path id="path979" style="fill:none;stroke:#8f8f8f;stroke-width:1;stroke-linecap:rou/;"	i
+path988	resources/sources/add_arc.svg	/^     style="stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke/;"	i
+pcb	complex_plugin_action.py	/^pcb = pcbnew.GetBoard()$/;"	v
+place_element	src/GUI.py	/^    def place_element(self, parent, ui_element):$/;"	m	class:GUI
+place_elements	src/GUI.py	/^    def place_elements(self, parent):$/;"	m	class:GUI
+polygon115611	resources/sources/add_leader.svg	/^     transform="translate(-1,-1)" \/>$/;"	i
+polygon115705	resources/sources/add_orthogonal_dimension.svg	/^     style="stroke-width:1.02472" \/>$/;"	i
+polygon115707	resources/sources/add_orthogonal_dimension.svg	/^     style="stroke-width:1.02481" \/>$/;"	i
+polygon157881	resources/sources/add_hierar_pin.svg	/^     transform="translate(-1,-1)" \/>$/;"	i
+polygon180	resources/sources/add_glabel.svg	/^     transform="translate(-1,-1)" \/>$/;"	i
+polygon200	resources/sources/add_hierarchical_label.svg	/^     sodipodi:nodetypes="ccccc" \/>$/;"	i
+polygon27928	resources/sources/add_component.svg	/^     transform="translate(-1,-1)" \/>$/;"	i
+polygon27928	resources/sources/add_symbol_to_schematic.svg	/^     style="fill:none;stroke:#DED3DD;stroke-width:2px;stroke-linecap:round;stroke-linejoin:round/;"	i
+polygon27957	resources/sources/add_corner.svg	/^   <polygon class="cls-2" points="4,22.004 4,4.008 16.504,4.008 22.504,12.959 16.504,22.004 " id/;"	i
+polygon27981	resources/sources/add_dashed_line.svg	/^     sodipodi:nodetypes="cccccc" \/>$/;"	i
+polygon27981-2	resources/sources/add_graphical_polygon.svg	/^     sodipodi:nodetypes="cccccc" \/>$/;"	i
+polygon838	resources/sources/add_zone.svg	/^   d="M 8 2 L 8 12 L 2 12 L 2 22 L 22 22 L 22 14 L 19.644531 14 A 4 4 0 0 1 17 15 A 4 4 0 0 1 13/;"	i
+polygon844	resources/sources/add_keepout_area.svg	/^   sodipodi:nodetypes="ccccc" \/>$/;"	i
+polygon846	resources/sources/add_keepout_area.svg	/^   id="polygon846" \/>$/;"	i
+polygon848	resources/sources/add_keepout_area.svg	/^   id="polygon848" \/>$/;"	i
+polygon850	resources/sources/add_keepout_area.svg	/^   id="polygon850" \/>$/;"	i
+polygon852	resources/sources/add_keepout_area.svg	/^   sodipodi:nodetypes="cccccc" \/>$/;"	i
+polygon854	resources/sources/add_keepout_area.svg	/^   id="polygon854" \/>$/;"	i
+polygon856	resources/sources/add_keepout_area.svg	/^   id="polygon856" \/>$/;"	i
+polygon858	resources/sources/add_keepout_area.svg	/^   sodipodi:nodetypes="ccccccc" \/>$/;"	i
+polygon86	resources/sources/add_aligned_dimension.svg	/^     transform="translate(-1,-1)" \/>$/;"	i
+polygon88	resources/sources/add_aligned_dimension.svg	/^     transform="translate(-1,-1)" \/>$/;"	i
+polygon9	resources/sources/add_footprint.svg	/^     sodipodi:nodetypes="ccccccccccc" \/>$/;"	i
+polyline115609	resources/sources/add_leader.svg	/^     transform="translate(-1,-1)" \/>$/;"	i
+polyline115792	resources/sources/add_zone_cutout.svg	/^     sodipodi:nodetypes="cccc" \/>$/;"	i
+polyline158712	resources/sources/pad.svg	/^       id="polyline158712" \/>$/;"	i
+polyline158714	resources/sources/pad.svg	/^       id="polyline158714" \/>$/;"	i
+polyline21	resources/sources/add_symbol_to_schematic.svg	/^     style="stroke:#ffffff;stroke-opacity:1" \/>$/;"	i
+polyline404	resources/sources/add_tracks.svg	/^     sodipodi:nodetypes="cccc" \/>$/;"	i
+put	src/kicad/arc.py	/^        def put(self, value):$/;"	m	class:GraphicArc.__arcAngle
+put	src/kicad/arc.py	/^        def put(self, value):$/;"	m	class:GraphicArc.__endX
+put	src/kicad/arc.py	/^        def put(self, value):$/;"	m	class:GraphicArc.__endY
+put	src/kicad/arc.py	/^        def put(self, value):$/;"	m	class:GraphicArc.__startX
+put	src/kicad/arc.py	/^        def put(self, value):$/;"	m	class:GraphicArc.__startY
+put	src/kicad/arc.py	/^        def put(self, value):$/;"	m	class:GraphicArc.__width
+put	src/kicad/circle.py	/^        def put(self, value):$/;"	m	class:GraphicCircle.__radius
+put	src/kicad/circle.py	/^        def put(self, value):$/;"	m	class:GraphicCircle.__width
+put	src/kicad/circle.py	/^        def put(self, value):$/;"	m	class:GraphicCircle.__x
+put	src/kicad/circle.py	/^        def put(self, value):$/;"	m	class:GraphicCircle.__y
+put	src/kicad/footprint.py	/^        def put(self, value):$/;"	m	class:Footprint.__orientation
+put	src/kicad/footprint.py	/^        def put(self, value):$/;"	m	class:Footprint.__reference
+put	src/kicad/footprint.py	/^        def put(self, value):$/;"	m	class:Footprint.__x
+put	src/kicad/footprint.py	/^        def put(self, value):$/;"	m	class:Footprint.__y
+put	src/kicad/line.py	/^        def put(self, value):$/;"	m	class:GraphicLine.__endX
+put	src/kicad/line.py	/^        def put(self, value):$/;"	m	class:GraphicLine.__endY
+put	src/kicad/line.py	/^        def put(self, value):$/;"	m	class:GraphicLine.__startX
+put	src/kicad/line.py	/^        def put(self, value):$/;"	m	class:GraphicLine.__startY
+put	src/kicad/line.py	/^        def put(self, value):$/;"	m	class:GraphicLine.__width
+put	src/kicad/polygon.py	/^        def put(self, value):$/;"	m	class:GraphicPolygon.__width
+put	src/kicad/rect.py	/^        def put(self, value):$/;"	m	class:GraphicRect.__endX
+put	src/kicad/rect.py	/^        def put(self, value):$/;"	m	class:GraphicRect.__endY
+put	src/kicad/rect.py	/^        def put(self, value):$/;"	m	class:GraphicRect.__startX
+put	src/kicad/rect.py	/^        def put(self, value):$/;"	m	class:GraphicRect.__startY
+put	src/kicad/rect.py	/^        def put(self, value):$/;"	m	class:GraphicRect.__width
+put	src/kicad/text.py	/^        def put(self, value):$/;"	m	class:GraphicText.__orientation
+put	src/kicad/text.py	/^        def put(self, value):$/;"	m	class:GraphicText.__text
+put	src/kicad/text.py	/^        def put(self, value):$/;"	m	class:GraphicText.__textHeight
+put	src/kicad/text.py	/^        def put(self, value):$/;"	m	class:GraphicText.__textWidth
+put	src/kicad/text.py	/^        def put(self, value):$/;"	m	class:GraphicText.__width
+put	src/kicad/text.py	/^        def put(self, value):$/;"	m	class:GraphicText.__x
+put	src/kicad/text.py	/^        def put(self, value):$/;"	m	class:GraphicText.__y
+put	src/ui_properties.py	/^    def put(self, value):$/;"	m	class:Ui_property
+put_ui_value	src/property.py	/^    def put_ui_value(self, ui_val, origin=((0,0), 0)):$/;"	m	class:Property
+put_ui_value	src/property.py	/^    def put_ui_value(self, value, origin=((0,0),0)):$/;"	m	class:Properties_array
+python_field_variables	tests/python_field_variables.py	/^def  python_field_variables():$/;"	f
+rdf	resources/sources/add_aligned_dimension.svg	/^   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)">$/;"	n	uri:http://www.w3.org/1999/02/22-rdf-syntax-ns#
+rdf	resources/sources/add_arc.svg	/^   inkscape:version="1.0.1 (c497b03c, 2020-09-10)">$/;"	n	uri:http://www.w3.org/1999/02/22-rdf-syntax-ns#
+rdf	resources/sources/add_board.svg	/^   inkscape:export-ydpi="96">$/;"	n	uri:http://www.w3.org/1999/02/22-rdf-syntax-ns#
+rdf	resources/sources/add_bus.svg	/^   inkscape:version="1.0.1 (1.0.1+r74)">$/;"	n	uri:http://www.w3.org/1999/02/22-rdf-syntax-ns#
+rdf	resources/sources/add_bus2bus.svg	/^   xmlns:inkscape="http:\/\/www.inkscape.org\/namespaces\/inkscape" height="26" width="26" versi/;"	n	uri:http://www.w3.org/1999/02/22-rdf-syntax-ns#
+rdf	resources/sources/add_center_dimension.svg	/^   inkscape:version="1.0.2 (e86c8708, 2021-01-15)">$/;"	n	uri:http://www.w3.org/1999/02/22-rdf-syntax-ns#
+rdf	resources/sources/add_circle.svg	/^   inkscape:version="1.0.2 (1.0.2+r75+1)">$/;"	n	uri:http://www.w3.org/1999/02/22-rdf-syntax-ns#
+rdf	resources/sources/add_class_flag.svg	/^   inkscape:version="1.0.2 (e86c8708, 2021-01-15)">$/;"	n	uri:http://www.w3.org/1999/02/22-rdf-syntax-ns#
+rdf	resources/sources/add_component.svg	/^   inkscape:version="1.0.1 (1.0.1+r74)">$/;"	n	uri:http://www.w3.org/1999/02/22-rdf-syntax-ns#
+rdf	resources/sources/add_corner.svg	/^   xmlns:inkscape="http:\/\/www.inkscape.org\/namespaces\/inkscape" id="Слой_1" data-name="С/;"	n	uri:http://www.w3.org/1999/02/22-rdf-syntax-ns#
+rdf	resources/sources/add_dashed_line.svg	/^   inkscape:version="1.0.1 (c497b03c, 2020-09-10)">$/;"	n	uri:http://www.w3.org/1999/02/22-rdf-syntax-ns#
+rdf	resources/sources/add_document.svg	/^   inkscape:export-ydpi="96">$/;"	n	uri:http://www.w3.org/1999/02/22-rdf-syntax-ns#
+rdf	resources/sources/add_footprint.svg	/^   xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/">$/;"	n	uri:http://www.w3.org/1999/02/22-rdf-syntax-ns#
+rdf	resources/sources/add_glabel.svg	/^   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)">$/;"	n	uri:http://www.w3.org/1999/02/22-rdf-syntax-ns#
+rdf	resources/sources/add_graphical_polygon.svg	/^   inkscape:version="1.0.2 (1.0.2+r75+1)">$/;"	n	uri:http://www.w3.org/1999/02/22-rdf-syntax-ns#
+rdf	resources/sources/add_graphical_segments.svg	/^   inkscape:version="1.0.1 (c497b03c, 2020-09-10)">$/;"	n	uri:http://www.w3.org/1999/02/22-rdf-syntax-ns#
+rdf	resources/sources/add_hierar_pin.svg	/^   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)">$/;"	n	uri:http://www.w3.org/1999/02/22-rdf-syntax-ns#
+rdf	resources/sources/add_hierarchical_label.svg	/^   inkscape:version="1.0.1 (c497b03c, 2020-09-10)">$/;"	n	uri:http://www.w3.org/1999/02/22-rdf-syntax-ns#
+rdf	resources/sources/add_hierarchical_subsheet.svg	/^   inkscape:export-ydpi="96">$/;"	n	uri:http://www.w3.org/1999/02/22-rdf-syntax-ns#
+rdf	resources/sources/add_junction.svg	/^   inkscape:version="1.0.1 (c497b03c, 2020-09-10)">$/;"	n	uri:http://www.w3.org/1999/02/22-rdf-syntax-ns#
+rdf	resources/sources/add_keepout_area.svg	/^   inkscape:version="1.0.1 (1.0.1+r74)"><metadata$/;"	n	uri:http://www.w3.org/1999/02/22-rdf-syntax-ns#
+rdf	resources/sources/add_label.svg	/^   inkscape:version="1.0.1 (c497b03c, 2020-09-10)">$/;"	n	uri:http://www.w3.org/1999/02/22-rdf-syntax-ns#
+rdf	resources/sources/add_leader.svg	/^   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)">$/;"	n	uri:http://www.w3.org/1999/02/22-rdf-syntax-ns#
+rdf	resources/sources/add_library.svg	/^   xmlns:inkscape="http:\/\/www.inkscape.org\/namespaces\/inkscape" id="Слой_1" data-name="С/;"	n	uri:http://www.w3.org/1999/02/22-rdf-syntax-ns#
+rdf	resources/sources/add_line.svg	/^   inkscape:version="1.0.1 (1.0.1+r74)">$/;"	n	uri:http://www.w3.org/1999/02/22-rdf-syntax-ns#
+rdf	resources/sources/add_line2bus.svg	/^   inkscape:version="1.0.1 (c497b03c, 2020-09-10)">$/;"	n	uri:http://www.w3.org/1999/02/22-rdf-syntax-ns#
+rdf	resources/sources/add_line_label.svg	/^   sodipodi:docname="add_line_label.svg">$/;"	n	uri:http://www.w3.org/1999/02/22-rdf-syntax-ns#
+rdf	resources/sources/add_orthogonal_dimension.svg	/^   inkscape:version="1.0.1 (c497b03c, 2020-09-10)">$/;"	n	uri:http://www.w3.org/1999/02/22-rdf-syntax-ns#
+rdf	resources/sources/add_pcb_target.svg	/^   inkscape:version="1.0.2 (1.0.2+r75+1)">$/;"	n	uri:http://www.w3.org/1999/02/22-rdf-syntax-ns#
+rdf	resources/sources/add_power.svg	/^   inkscape:version="1.0.1 (1.0.1+r74)">$/;"	n	uri:http://www.w3.org/1999/02/22-rdf-syntax-ns#
+rdf	resources/sources/add_radial_dimension.svg	/^   inkscape:version="1.0.2 (e86c8708, 2021-01-15)">$/;"	n	uri:http://www.w3.org/1999/02/22-rdf-syntax-ns#
+rdf	resources/sources/add_rectangle.svg	/^   inkscape:version="1.0.2 (1.0.2+r75+1)">$/;"	n	uri:http://www.w3.org/1999/02/22-rdf-syntax-ns#
+rdf	resources/sources/add_symbol_to_schematic.svg	/^   inkscape:export-ydpi="96">$/;"	n	uri:http://www.w3.org/1999/02/22-rdf-syntax-ns#
+rdf	resources/sources/add_tracks.svg	/^   inkscape:version="1.0.1 (c497b03c, 2020-09-10)">$/;"	n	uri:http://www.w3.org/1999/02/22-rdf-syntax-ns#
+rdf	resources/sources/add_via.svg	/^   inkscape:version="1.0.2 (1.0.2+r75+1)">$/;"	n	uri:http://www.w3.org/1999/02/22-rdf-syntax-ns#
+rdf	resources/sources/add_zone.svg	/^   xml:space="preserve"><metadata$/;"	n	uri:http://www.w3.org/1999/02/22-rdf-syntax-ns#
+rdf	resources/sources/add_zone_cutout.svg	/^   inkscape:version="1.0.1 (c497b03c, 2020-09-10)">$/;"	n	uri:http://www.w3.org/1999/02/22-rdf-syntax-ns#
+rdf	resources/sources/pad.svg	/^   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)">$/;"	n	uri:http://www.w3.org/1999/02/22-rdf-syntax-ns#
+rdf	resources/sources/text.svg	/^   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)">$/;"	n	uri:http://www.w3.org/1999/02/22-rdf-syntax-ns#
+rect11	resources/sources/add_library.svg	/^            <rect class="cls-2" x="2" y="3" width="5" height="20" id="rect11" style="stroke-widt/;"	i
+rect115739	resources/sources/add_rectangle.svg	/^     style="fill:#8f8f8f;fill-opacity:1;stroke-width:2;stroke-linecap:butt;stroke-linejoin:round/;"	i
+rect116807	resources/sources/add_document.svg	/^       d="M 3.4973309,0 H 17.502669 C 19.44019,0 21,1.5598096 21,3.4973309 V 17.502669 C 21,19.4/;"	i
+rect116829	resources/sources/add_document.svg	/^       d="m 9,-1 h 4 V 4 H 9 Z" \/>$/;"	i
+rect116831	resources/sources/add_document.svg	/^       d="m 7,-23.91757 h 4 v 6.153849 H 7 Z" \/>$/;"	i
+rect158699	resources/sources/pad.svg	/^         id="rect158699" \/>$/;"	i
+rect158708	resources/sources/pad.svg	/^       id="rect158708" \/>$/;"	i
+rect158710	resources/sources/pad.svg	/^       id="rect158710" \/>$/;"	i
+rect158726	resources/sources/pad.svg	/^       id="rect158726" \/>$/;"	i
+rect158728	resources/sources/pad.svg	/^       id="rect158728" \/>$/;"	i
+rect158730	resources/sources/pad.svg	/^       id="rect158730" \/>$/;"	i
+rect158732	resources/sources/pad.svg	/^       id="rect158732" \/>$/;"	i
+rect158734	resources/sources/pad.svg	/^       id="rect158734" \/>$/;"	i
+rect158736	resources/sources/pad.svg	/^       id="rect158736" \/>$/;"	i
+rect158740	resources/sources/pad.svg	/^       id="rect158740" \/>$/;"	i
+rect19	resources/sources/add_footprint.svg	/^     style="fill:#42B8EB;stroke-width:1" \/>$/;"	i
+rect280	resources/sources/add_hierarchical_subsheet.svg	/^     style="fill:#545454;fill-opacity:1;stroke-width:2.44704" \/>$/;"	i
+rect845	resources/sources/add_class_flag.svg	/^     y="14.00015" \/>$/;"	i
+rect855	resources/sources/add_library.svg	/^         <rect class="cls-2" x="2" y="3" width="5" height="20" id="rect855" style="stroke-width:/;"	i
+rect869	resources/sources/add_zone.svg	/^   y="10" \/><\/svg>$/;"	i
+rect875	resources/sources/add_footprint.svg	/^     style="fill:#42B8EB;stroke-width:1" \/>$/;"	i
+rect875-3	resources/sources/add_footprint.svg	/^     style="fill:#42b8eb;stroke-width:1" \/>$/;"	i
+rect877	resources/sources/add_footprint.svg	/^     style="display:none;fill:#42B8EB;stroke-width:1" \/>$/;"	i
+rect878	resources/sources/add_board.svg	/^       transform="matrix(0.875,0,0,0.875,-33,-1.25)" \/>$/;"	i
+rect879	resources/sources/add_footprint.svg	/^     style="fill:#42B8EB;stroke-width:1" \/>$/;"	i
+rect880	resources/sources/add_board.svg	/^       transform="matrix(0.875,0,0,0.875,-33,-1.25)" \/>$/;"	i
+rect881	resources/sources/add_footprint.svg	/^     style="fill:#42B8EB;stroke-width:1" \/>$/;"	i
+rect882	resources/sources/add_board.svg	/^       transform="matrix(0.875,0,0,0.875,-33,-1.25)" \/>$/;"	i
+rect883	resources/sources/add_footprint.svg	/^     style="fill:#42B8EB;stroke-width:1" \/>$/;"	i
+rect884	resources/sources/add_board.svg	/^       transform="matrix(0.875,0,0,0.875,-33,-1.25)" \/>$/;"	i
+rect9	resources/sources/add_board.svg	/^       transform="matrix(0.875,0,0,0.875,-33,-2)" \/>$/;"	i
+rect935	resources/sources/add_library.svg	/^            <rect class="cls-2" x="2" y="3" width="5" height="20" id="rect935" style="stroke-wid/;"	i
+rect947	resources/sources/add_library.svg	/^         <rect class="cls-2" x="2" y="3" width="5" height="20" id="rect947" style="stroke-width:/;"	i
+rect956	resources/sources/add_board.svg	/^         ry="3.4854646" \/>$/;"	i
+rect959	resources/sources/add_library.svg	/^               <rect class="cls-2" x="2" y="3" width="5" height="20" id="rect959" style="stroke-/;"	i
+rect971	resources/sources/add_library.svg	/^            <rect class="cls-2" x="2" y="3" width="5" height="20" id="rect971" style="fill:#42B8/;"	i
+regex	src/field_evaluation/regex.py	/^def regex(string):$/;"	f
+rotate_around	src/utils.py	/^    def rotate_around(coord, pivot, angle):$/;"	m	class:utils
+rotate_around	tests/rotate_around.py	/^class rotate_around:$/;"	c
+round	src/utils.py	/^    def round(val):$/;"	m	class:utils
+sin	src/field_evaluation/math.py	/^def sin(x):$/;"	f
+snap	src/field_evaluation/math.py	/^def snap(x, amount):$/;"	f
+sodipodi	resources/sources/add_aligned_dimension.svg	/^   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)">$/;"	n	uri:http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd
+sodipodi	resources/sources/add_arc.svg	/^   inkscape:version="1.0.1 (c497b03c, 2020-09-10)">$/;"	n	uri:http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd
+sodipodi	resources/sources/add_board.svg	/^   inkscape:export-ydpi="96">$/;"	n	uri:http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd
+sodipodi	resources/sources/add_bus.svg	/^   inkscape:version="1.0.1 (1.0.1+r74)">$/;"	n	uri:http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd
+sodipodi	resources/sources/add_bus2bus.svg	/^   xmlns:inkscape="http:\/\/www.inkscape.org\/namespaces\/inkscape" height="26" width="26" versi/;"	n	uri:http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd
+sodipodi	resources/sources/add_center_dimension.svg	/^   inkscape:version="1.0.2 (e86c8708, 2021-01-15)">$/;"	n	uri:http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd
+sodipodi	resources/sources/add_circle.svg	/^   inkscape:version="1.0.2 (1.0.2+r75+1)">$/;"	n	uri:http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd
+sodipodi	resources/sources/add_class_flag.svg	/^   inkscape:version="1.0.2 (e86c8708, 2021-01-15)">$/;"	n	uri:http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd
+sodipodi	resources/sources/add_component.svg	/^   inkscape:version="1.0.1 (1.0.1+r74)">$/;"	n	uri:http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd
+sodipodi	resources/sources/add_corner.svg	/^   xmlns:inkscape="http:\/\/www.inkscape.org\/namespaces\/inkscape" id="Слой_1" data-name="С/;"	n	uri:http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd
+sodipodi	resources/sources/add_dashed_line.svg	/^   inkscape:version="1.0.1 (c497b03c, 2020-09-10)">$/;"	n	uri:http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd
+sodipodi	resources/sources/add_document.svg	/^   inkscape:export-ydpi="96">$/;"	n	uri:http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd
+sodipodi	resources/sources/add_footprint.svg	/^   xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/">$/;"	n	uri:http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd
+sodipodi	resources/sources/add_glabel.svg	/^   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)">$/;"	n	uri:http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd
+sodipodi	resources/sources/add_graphical_polygon.svg	/^   inkscape:version="1.0.2 (1.0.2+r75+1)">$/;"	n	uri:http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd
+sodipodi	resources/sources/add_graphical_segments.svg	/^   inkscape:version="1.0.1 (c497b03c, 2020-09-10)">$/;"	n	uri:http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd
+sodipodi	resources/sources/add_hierar_pin.svg	/^   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)">$/;"	n	uri:http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd
+sodipodi	resources/sources/add_hierarchical_label.svg	/^   inkscape:version="1.0.1 (c497b03c, 2020-09-10)">$/;"	n	uri:http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd
+sodipodi	resources/sources/add_hierarchical_subsheet.svg	/^   inkscape:export-ydpi="96">$/;"	n	uri:http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd
+sodipodi	resources/sources/add_junction.svg	/^   inkscape:version="1.0.1 (c497b03c, 2020-09-10)">$/;"	n	uri:http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd
+sodipodi	resources/sources/add_keepout_area.svg	/^   inkscape:version="1.0.1 (1.0.1+r74)"><metadata$/;"	n	uri:http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd
+sodipodi	resources/sources/add_label.svg	/^   inkscape:version="1.0.1 (c497b03c, 2020-09-10)">$/;"	n	uri:http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd
+sodipodi	resources/sources/add_leader.svg	/^   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)">$/;"	n	uri:http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd
+sodipodi	resources/sources/add_library.svg	/^   xmlns:inkscape="http:\/\/www.inkscape.org\/namespaces\/inkscape" id="Слой_1" data-name="С/;"	n	uri:http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd
+sodipodi	resources/sources/add_line.svg	/^   inkscape:version="1.0.1 (1.0.1+r74)">$/;"	n	uri:http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd
+sodipodi	resources/sources/add_line2bus.svg	/^   inkscape:version="1.0.1 (c497b03c, 2020-09-10)">$/;"	n	uri:http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd
+sodipodi	resources/sources/add_line_label.svg	/^   sodipodi:docname="add_line_label.svg">$/;"	n	uri:http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd
+sodipodi	resources/sources/add_orthogonal_dimension.svg	/^   inkscape:version="1.0.1 (c497b03c, 2020-09-10)">$/;"	n	uri:http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd
+sodipodi	resources/sources/add_pcb_target.svg	/^   inkscape:version="1.0.2 (1.0.2+r75+1)">$/;"	n	uri:http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd
+sodipodi	resources/sources/add_power.svg	/^   inkscape:version="1.0.1 (1.0.1+r74)">$/;"	n	uri:http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd
+sodipodi	resources/sources/add_radial_dimension.svg	/^   inkscape:version="1.0.2 (e86c8708, 2021-01-15)">$/;"	n	uri:http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd
+sodipodi	resources/sources/add_rectangle.svg	/^   inkscape:version="1.0.2 (1.0.2+r75+1)">$/;"	n	uri:http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd
+sodipodi	resources/sources/add_symbol_to_schematic.svg	/^   inkscape:export-ydpi="96">$/;"	n	uri:http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd
+sodipodi	resources/sources/add_tracks.svg	/^   inkscape:version="1.0.1 (c497b03c, 2020-09-10)">$/;"	n	uri:http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd
+sodipodi	resources/sources/add_via.svg	/^   inkscape:version="1.0.2 (1.0.2+r75+1)">$/;"	n	uri:http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd
+sodipodi	resources/sources/add_zone.svg	/^   xml:space="preserve"><metadata$/;"	n	uri:http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd
+sodipodi	resources/sources/add_zone_cutout.svg	/^   inkscape:version="1.0.1 (c497b03c, 2020-09-10)">$/;"	n	uri:http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd
+sodipodi	resources/sources/pad.svg	/^   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)">$/;"	n	uri:http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd
+sodipodi	resources/sources/text.svg	/^   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)">$/;"	n	uri:http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd
+split_ignoring_escaped	src/field_evaluation/regex.py	/^def split_ignoring_escaped(string):$/;"	f
+sqrt	src/field_evaluation/math.py	/^def sqrt(x):$/;"	f
+stop27946	resources/sources/add_corner.svg	/^         <stop offset="0" stop-color="#ececec" id="stop27946" \/>$/;"	i
+stop27948	resources/sources/add_corner.svg	/^         <stop offset="1" stop-color="#c6c6c5" id="stop27948" \/>$/;"	i
+stop978	resources/sources/add_arc.svg	/^         id="stop978" \/>$/;"	i
+stop980	resources/sources/add_arc.svg	/^         id="stop980" \/>$/;"	i
+style115601	resources/sources/add_leader.svg	/^       id="style115601">.cls-1{fill:#42B8EB;}.cls-2{fill:none;stroke:#DED3DD;stroke-linecap:roun/;"	d
+style115601	resources/sources/add_leader.svg	/^       id="style115601">.cls-1{fill:#42B8EB;}.cls-2{fill:none;stroke:#DED3DD;stroke-linecap:roun/;"	i
+style115669	resources/sources/add_line2bus.svg	/^       id="style115669">.cls-1{fill:#DED3DD;}.cls-2{fill:#42B8EB;}<\/style>$/;"	d
+style115669	resources/sources/add_line2bus.svg	/^       id="style115669">.cls-1{fill:#DED3DD;}.cls-2{fill:#42B8EB;}<\/style>$/;"	i
+style115689	resources/sources/add_orthogonal_dimension.svg	/^       id="style115689">.cls-1{fill:#DED3DD;}.cls-2{fill:#42B8EB;}.cls-3{fill:none;stroke:#DED3D/;"	d
+style115689	resources/sources/add_orthogonal_dimension.svg	/^       id="style115689">.cls-1{fill:#DED3DD;}.cls-2{fill:#42B8EB;}.cls-3{fill:none;stroke:#DED3D/;"	i
+style115713	resources/sources/add_pcb_target.svg	/^       id="style115713">.cls-1{fill:#8f8f8f;}.cls-2{fill:#DED3DD;}.cls-3{fill:none;stroke:#E0E0E/;"	d
+style115713	resources/sources/add_pcb_target.svg	/^       id="style115713">.cls-1{fill:#8f8f8f;}.cls-2{fill:#DED3DD;}.cls-3{fill:none;stroke:#E0E0E/;"	i
+style115733	resources/sources/add_rectangle.svg	/^       id="style115733">.cls-1{fill:none;stroke:#DED3DD;stroke-linecap:round;stroke-linejoin:rou/;"	d
+style115733	resources/sources/add_rectangle.svg	/^       id="style115733">.cls-1{fill:none;stroke:#DED3DD;stroke-linecap:round;stroke-linejoin:rou/;"	i
+style115770	resources/sources/add_via.svg	/^       id="style115770">.cls-1{fill:#f29100;}.cls-2{fill:#8f8f8f;}<\/style>$/;"	d
+style115770	resources/sources/add_via.svg	/^       id="style115770">.cls-1{fill:#f29100;}.cls-2{fill:#8f8f8f;}<\/style>$/;"	i
+style115784	resources/sources/add_zone_cutout.svg	/^       id="style115784">.cls-1{fill:#8f8f8f;}.cls-2{fill:none;stroke:#DED3DD;stroke-linecap:roun/;"	d
+style115784	resources/sources/add_zone_cutout.svg	/^       id="style115784">.cls-1{fill:#8f8f8f;}.cls-2{fill:none;stroke:#DED3DD;stroke-linecap:roun/;"	i
+style122	resources/sources/add_document.svg	/^       id="style122">.cls-1{fill:#8f8f8f;}.cls-2,.cls-3,.cls-4,.cls-5,.cls-9{fill:none;stroke-li/;"	d
+style122	resources/sources/add_document.svg	/^       id="style122">.cls-1{fill:#8f8f8f;}.cls-2,.cls-3,.cls-4,.cls-5,.cls-9{fill:none;stroke-li/;"	i
+style157873	resources/sources/add_hierar_pin.svg	/^       id="style157873">.cls-1{fill:none;stroke:#42B8EB;stroke-linecap:round;stroke-linejoin:rou/;"	d
+style157873	resources/sources/add_hierar_pin.svg	/^       id="style157873">.cls-1{fill:none;stroke:#42B8EB;stroke-linecap:round;stroke-linejoin:rou/;"	i
+style157959	resources/sources/add_class_flag.svg	/^       id="style157959">.cls-1{fill:#545454;}.cls-2{fill:#1a81c4;}<\/style>$/;"	d
+style157959	resources/sources/add_class_flag.svg	/^       id="style157959">.cls-1{fill:#545454;}.cls-2{fill:#1a81c4;}<\/style>$/;"	i
+style157959	resources/sources/add_label.svg	/^       id="style157959">.cls-1{fill:#DED3DD;}.cls-2{fill:#42B8EB;}<\/style>$/;"	d
+style157959	resources/sources/add_label.svg	/^       id="style157959">.cls-1{fill:#DED3DD;}.cls-2{fill:#42B8EB;}<\/style>$/;"	i
+style158697	resources/sources/pad.svg	/^       id="style158697">.cls-1,.cls-5,.cls-6{fill:none;}.cls-2{clip-path:url(#clip-path);}.cls-3/;"	d
+style158697	resources/sources/pad.svg	/^       id="style158697">.cls-1,.cls-5,.cls-6{fill:none;}.cls-2{clip-path:url(#clip-path);}.cls-3/;"	i
+style172	resources/sources/add_glabel.svg	/^       id="style172">.cls-1,.cls-2{fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-w/;"	d
+style172	resources/sources/add_glabel.svg	/^       id="style172">.cls-1,.cls-2{fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-w/;"	i
+style188	resources/sources/add_hierarchical_label.svg	/^       id="style188">.cls-1,.cls-3,.cls-4{fill:none;stroke-linejoin:round;}.cls-1{stroke:#f2647e/;"	d
+style188	resources/sources/add_hierarchical_label.svg	/^       id="style188">.cls-1,.cls-3,.cls-4{fill:none;stroke-linejoin:round;}.cls-1{stroke:#f2647e/;"	i
+style220	resources/sources/add_hierarchical_subsheet.svg	/^       id="style220">.cls-1{fill:none;stroke:#bf2641;stroke-linecap:round;stroke-linejoin:round;/;"	d
+style220	resources/sources/add_hierarchical_subsheet.svg	/^       id="style220">.cls-1{fill:none;stroke:#bf2641;stroke-linecap:round;stroke-linejoin:round;/;"	i
+style25893	resources/sources/add_footprint.svg	/^       id="style25893">.cls-1,.cls-4{fill:none;stroke-linecap:round;stroke-linejoin:round;}.cls-/;"	d
+style25893	resources/sources/add_footprint.svg	/^       id="style25893">.cls-1,.cls-4{fill:none;stroke-linecap:round;stroke-linejoin:round;}.cls-/;"	i
+style27347	resources/sources/text.svg	/^       id="style27347">.cls-1{fill:#DED3DD;}<\/style>$/;"	d
+style27347	resources/sources/text.svg	/^       id="style27347">.cls-1{fill:#DED3DD;}<\/style>$/;"	i
+style27838	resources/sources/add_board.svg	/^       id="style27838">.cls-1{fill:#8f8f8f;}.cls-2{fill:#DED3DD;}.cls-3,.cls-6{fill:none;}.cls-3/;"	d
+style27838	resources/sources/add_board.svg	/^       id="style27838">.cls-1{fill:#8f8f8f;}.cls-2{fill:#DED3DD;}.cls-3,.cls-6{fill:none;}.cls-3/;"	i
+style27874	resources/sources/add_bus.svg	/^       id="style27874">.cls-1{fill:#42B8EB;}.cls-2{fill:#309ad6;}<\/style>$/;"	d
+style27874	resources/sources/add_bus.svg	/^       id="style27874">.cls-1{fill:#42B8EB;}.cls-2{fill:#309ad6;}<\/style>$/;"	i
+style27888	resources/sources/add_center_dimension.svg	/^       id="style27888">.cls-1{fill:#DED3DD;}.cls-2{fill:#42B8EB;}<\/style>$/;"	d
+style27888	resources/sources/add_center_dimension.svg	/^       id="style27888">.cls-1{fill:#DED3DD;}.cls-2{fill:#42B8EB;}<\/style>$/;"	i
+style27888	resources/sources/add_radial_dimension.svg	/^       id="style27888">.cls-1{fill:#DED3DD;}.cls-2{fill:#42B8EB;}<\/style>$/;"	d
+style27888	resources/sources/add_radial_dimension.svg	/^       id="style27888">.cls-1{fill:#DED3DD;}.cls-2{fill:#42B8EB;}<\/style>$/;"	i
+style27906	resources/sources/add_circle.svg	/^       id="style27906">.cls-1{fill:none;stroke:#DED3DD;stroke-linecap:round;stroke-linejoin:roun/;"	d
+style27906	resources/sources/add_circle.svg	/^       id="style27906">.cls-1{fill:none;stroke:#DED3DD;stroke-linecap:round;stroke-linejoin:roun/;"	i
+style27922	resources/sources/add_component.svg	/^       id="style27922">.cls-1{fill:none;stroke:#DED3DD;stroke-linecap:round;stroke-linejoin:roun/;"	d
+style27922	resources/sources/add_component.svg	/^       id="style27922">.cls-1{fill:none;stroke:#DED3DD;stroke-linecap:round;stroke-linejoin:roun/;"	i
+style27944	resources/sources/add_corner.svg	/^      <style id="style27944">.cls-1,.cls-2{fill:none;stroke-linecap:round;stroke-linejoin:round;/;"	d
+style27944	resources/sources/add_corner.svg	/^      <style id="style27944">.cls-1,.cls-2{fill:none;stroke-linecap:round;stroke-linejoin:round;/;"	i
+style27975	resources/sources/add_dashed_line.svg	/^       id="style27975">.cls-1{fill:none;stroke:#DED3DD;stroke-linecap:round;stroke-linejoin:roun/;"	d
+style27975	resources/sources/add_dashed_line.svg	/^       id="style27975">.cls-1{fill:none;stroke:#DED3DD;stroke-linecap:round;stroke-linejoin:roun/;"	i
+style27997	resources/sources/add_graphical_polygon.svg	/^       id="style27997">.cls-1{fill:#8f8f8f;stroke:#DED3DD;stroke-linecap:round;stroke-linejoin:r/;"	d
+style27997	resources/sources/add_graphical_polygon.svg	/^       id="style27997">.cls-1{fill:#8f8f8f;stroke:#DED3DD;stroke-linecap:round;stroke-linejoin:r/;"	i
+style28017	resources/sources/add_graphical_segments.svg	/^       id="style28017">.cls-1{fill:none;stroke:#DED3DD;stroke-linecap:round;stroke-linejoin:roun/;"	d
+style28017	resources/sources/add_graphical_segments.svg	/^       id="style28017">.cls-1{fill:none;stroke:#DED3DD;stroke-linecap:round;stroke-linejoin:roun/;"	i
+style3	resources/sources/add_library.svg	/^      <style id="style3">.cls-1{fill:#8f8f8f;}.cls-2{fill:#DED3DD;}.cls-3{fill:none;stroke:#8f8f/;"	d
+style3	resources/sources/add_library.svg	/^      <style id="style3">.cls-1{fill:#8f8f8f;}.cls-2{fill:#DED3DD;}.cls-3{fill:none;stroke:#8f8f/;"	i
+style3	resources/sources/add_symbol_to_schematic.svg	/^       id="style3">.cls-1{fill:#8f8f8f;}.cls-2{fill:#DED3DD;}.cls-3{fill:#f2647e;}.cls-4{fill:no/;"	d
+style3	resources/sources/add_symbol_to_schematic.svg	/^       id="style3">.cls-1{fill:#8f8f8f;}.cls-2{fill:#DED3DD;}.cls-3{fill:#f2647e;}.cls-4{fill:no/;"	i
+style304	resources/sources/add_junction.svg	/^       id="style304">.cls-1{fill:none;stroke:#DED3DD;stroke-linecap:round;stroke-linejoin:round;/;"	d
+style304	resources/sources/add_junction.svg	/^       id="style304">.cls-1{fill:none;stroke:#DED3DD;stroke-linecap:round;stroke-linejoin:round;/;"	i
+style340	resources/sources/add_line.svg	/^       id="style340">.cls-1{fill:none;stroke:#42B8EB;stroke-linecap:round;stroke-linejoin:round;/;"	d
+style340	resources/sources/add_line.svg	/^       id="style340">.cls-1{fill:none;stroke:#42B8EB;stroke-linecap:round;stroke-linejoin:round;/;"	i
+style352	resources/sources/add_power.svg	/^       id="style352">.cls-1{fill:none;stroke:#f2647e;stroke-linecap:round;stroke-linejoin:round;/;"	d
+style352	resources/sources/add_power.svg	/^       id="style352">.cls-1{fill:none;stroke:#f2647e;stroke-linecap:round;stroke-linejoin:round;/;"	i
+style398	resources/sources/add_tracks.svg	/^       id="style398">.cls-1{fill:none;stroke:#DED3DD;stroke-linecap:round;stroke-linejoin:round;/;"	d
+style398	resources/sources/add_tracks.svg	/^       id="style398">.cls-1{fill:none;stroke:#DED3DD;stroke-linecap:round;stroke-linejoin:round;/;"	i
+style74	resources/sources/add_aligned_dimension.svg	/^       id="style74">.cls-1{fill:#DED3DD;}.cls-2{fill:none;stroke:#DED3DD;stroke-linecap:round;st/;"	d
+style74	resources/sources/add_aligned_dimension.svg	/^       id="style74">.cls-1{fill:#DED3DD;}.cls-2{fill:none;stroke:#DED3DD;stroke-linecap:round;st/;"	i
+style833	resources/sources/add_keepout_area.svg	/^   id="style833">$/;"	i
+style833	resources/sources/add_zone.svg	/^   id="style833">$/;"	i
+style976	resources/sources/add_arc.svg	/^       id="style976">.cls-1,.cls-2,.cls-3{fill:none;stroke-linecap:round;stroke-linejoin:round;s/;"	d
+style976	resources/sources/add_arc.svg	/^       id="style976">.cls-1,.cls-2,.cls-3{fill:none;stroke-linecap:round;stroke-linejoin:round;s/;"	i
+svg	resources/sources/add_aligned_dimension.svg	/^   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)">$/;"	n	uri:http://www.w3.org/2000/svg
+svg	resources/sources/add_arc.svg	/^   inkscape:version="1.0.1 (c497b03c, 2020-09-10)">$/;"	n	uri:http://www.w3.org/2000/svg
+svg	resources/sources/add_board.svg	/^   inkscape:export-ydpi="96">$/;"	n	uri:http://www.w3.org/2000/svg
+svg	resources/sources/add_bus.svg	/^   inkscape:version="1.0.1 (1.0.1+r74)">$/;"	n	uri:http://www.w3.org/2000/svg
+svg	resources/sources/add_bus2bus.svg	/^   xmlns:inkscape="http:\/\/www.inkscape.org\/namespaces\/inkscape" height="26" width="26" versi/;"	n	uri:http://www.w3.org/2000/svg
+svg	resources/sources/add_center_dimension.svg	/^   inkscape:version="1.0.2 (e86c8708, 2021-01-15)">$/;"	n	uri:http://www.w3.org/2000/svg
+svg	resources/sources/add_circle.svg	/^   inkscape:version="1.0.2 (1.0.2+r75+1)">$/;"	n	uri:http://www.w3.org/2000/svg
+svg	resources/sources/add_class_flag.svg	/^   inkscape:version="1.0.2 (e86c8708, 2021-01-15)">$/;"	n	uri:http://www.w3.org/2000/svg
+svg	resources/sources/add_component.svg	/^   inkscape:version="1.0.1 (1.0.1+r74)">$/;"	n	uri:http://www.w3.org/2000/svg
+svg	resources/sources/add_corner.svg	/^   xmlns:inkscape="http:\/\/www.inkscape.org\/namespaces\/inkscape" id="Слой_1" data-name="С/;"	n	uri:http://www.w3.org/2000/svg
+svg	resources/sources/add_dashed_line.svg	/^   inkscape:version="1.0.1 (c497b03c, 2020-09-10)">$/;"	n	uri:http://www.w3.org/2000/svg
+svg	resources/sources/add_document.svg	/^   inkscape:export-ydpi="96">$/;"	n	uri:http://www.w3.org/2000/svg
+svg	resources/sources/add_footprint.svg	/^   xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/">$/;"	n	uri:http://www.w3.org/2000/svg
+svg	resources/sources/add_glabel.svg	/^   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)">$/;"	n	uri:http://www.w3.org/2000/svg
+svg	resources/sources/add_graphical_polygon.svg	/^   inkscape:version="1.0.2 (1.0.2+r75+1)">$/;"	n	uri:http://www.w3.org/2000/svg
+svg	resources/sources/add_graphical_segments.svg	/^   inkscape:version="1.0.1 (c497b03c, 2020-09-10)">$/;"	n	uri:http://www.w3.org/2000/svg
+svg	resources/sources/add_hierar_pin.svg	/^   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)">$/;"	n	uri:http://www.w3.org/2000/svg
+svg	resources/sources/add_hierarchical_label.svg	/^   inkscape:version="1.0.1 (c497b03c, 2020-09-10)">$/;"	n	uri:http://www.w3.org/2000/svg
+svg	resources/sources/add_hierarchical_subsheet.svg	/^   inkscape:export-ydpi="96">$/;"	n	uri:http://www.w3.org/2000/svg
+svg	resources/sources/add_junction.svg	/^   inkscape:version="1.0.1 (c497b03c, 2020-09-10)">$/;"	n	uri:http://www.w3.org/2000/svg
+svg	resources/sources/add_keepout_area.svg	/^   inkscape:version="1.0.1 (1.0.1+r74)"><metadata$/;"	n	uri:http://www.w3.org/2000/svg
+svg	resources/sources/add_label.svg	/^   inkscape:version="1.0.1 (c497b03c, 2020-09-10)">$/;"	n	uri:http://www.w3.org/2000/svg
+svg	resources/sources/add_leader.svg	/^   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)">$/;"	n	uri:http://www.w3.org/2000/svg
+svg	resources/sources/add_library.svg	/^   xmlns:inkscape="http:\/\/www.inkscape.org\/namespaces\/inkscape" id="Слой_1" data-name="С/;"	n	uri:http://www.w3.org/2000/svg
+svg	resources/sources/add_line.svg	/^   inkscape:version="1.0.1 (1.0.1+r74)">$/;"	n	uri:http://www.w3.org/2000/svg
+svg	resources/sources/add_line2bus.svg	/^   inkscape:version="1.0.1 (c497b03c, 2020-09-10)">$/;"	n	uri:http://www.w3.org/2000/svg
+svg	resources/sources/add_line_label.svg	/^   sodipodi:docname="add_line_label.svg">$/;"	n	uri:http://www.w3.org/2000/svg
+svg	resources/sources/add_orthogonal_dimension.svg	/^   inkscape:version="1.0.1 (c497b03c, 2020-09-10)">$/;"	n	uri:http://www.w3.org/2000/svg
+svg	resources/sources/add_pcb_target.svg	/^   inkscape:version="1.0.2 (1.0.2+r75+1)">$/;"	n	uri:http://www.w3.org/2000/svg
+svg	resources/sources/add_power.svg	/^   inkscape:version="1.0.1 (1.0.1+r74)">$/;"	n	uri:http://www.w3.org/2000/svg
+svg	resources/sources/add_radial_dimension.svg	/^   inkscape:version="1.0.2 (e86c8708, 2021-01-15)">$/;"	n	uri:http://www.w3.org/2000/svg
+svg	resources/sources/add_rectangle.svg	/^   inkscape:version="1.0.2 (1.0.2+r75+1)">$/;"	n	uri:http://www.w3.org/2000/svg
+svg	resources/sources/add_symbol_to_schematic.svg	/^   inkscape:export-ydpi="96">$/;"	n	uri:http://www.w3.org/2000/svg
+svg	resources/sources/add_tracks.svg	/^   inkscape:version="1.0.1 (c497b03c, 2020-09-10)">$/;"	n	uri:http://www.w3.org/2000/svg
+svg	resources/sources/add_via.svg	/^   inkscape:version="1.0.2 (1.0.2+r75+1)">$/;"	n	uri:http://www.w3.org/2000/svg
+svg	resources/sources/add_zone.svg	/^   xml:space="preserve"><metadata$/;"	n	uri:http://www.w3.org/2000/svg
+svg	resources/sources/add_zone_cutout.svg	/^   inkscape:version="1.0.1 (c497b03c, 2020-09-10)">$/;"	n	uri:http://www.w3.org/2000/svg
+svg	resources/sources/pad.svg	/^   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)">$/;"	n	uri:http://www.w3.org/2000/svg
+svg	resources/sources/text.svg	/^   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)">$/;"	n	uri:http://www.w3.org/2000/svg
+svg2	resources/sources/add_bus2bus.svg	/^   xmlns:inkscape="http:\/\/www.inkscape.org\/namespaces\/inkscape" height="26" width="26" versi/;"	i
+svg2	resources/sources/add_line_label.svg	/^   sodipodi:docname="add_line_label.svg">$/;"	i
+tan	src/field_evaluation/math.py	/^def tan(x):$/;"	f
+template	__init__.py	/^    template = "An exception of type {0} occurred. Arguments:\\n{1!r}"$/;"	v
+test	tests/rotate_around.py	/^    def test():$/;"	m	class:rotate_around
+text12815	resources/sources/add_hierarchical_label.svg	/^     transform="scale(0.97687588,1.0236715)"><tspan$/;"	i
+text15403	resources/sources/add_class_flag.svg	/^     transform="scale(0.98961654,1.0104924)"><tspan$/;"	i
+text15403	resources/sources/add_label.svg	/^     transform="scale(0.98961652,1.0104924)"><tspan$/;"	i
+text3840	resources/sources/add_line_label.svg	/^     id="text3840">           <\/text>$/;"	i
+text3857-6	resources/sources/add_line_label.svg	/^     id="text3857-6">$/;"	i
+text5125-0	resources/sources/add_line_label.svg	/^       transform="scale(1.011965,0.98817647)"><tspan$/;"	i
+title115605	resources/sources/add_leader.svg	/^     id="title115605">add_leader<\/title>$/;"	i
+title115673	resources/sources/add_line2bus.svg	/^     id="title115673">add_line2bus<\/title>$/;"	i
+title115693	resources/sources/add_orthogonal_dimension.svg	/^     id="title115693">add_orthogonal_dimension<\/title>$/;"	i
+title115717	resources/sources/add_pcb_target.svg	/^     id="title115717">add_pcb_target<\/title>$/;"	i
+title115737	resources/sources/add_rectangle.svg	/^     id="title115737">add_rectangle<\/title>$/;"	i
+title115774	resources/sources/add_via.svg	/^     id="title115774">add_via<\/title>$/;"	i
+title115788	resources/sources/add_zone_cutout.svg	/^     id="title115788">add_zone_cutout<\/title>$/;"	i
+title126	resources/sources/add_document.svg	/^     id="title126">add_document<\/title>$/;"	i
+title13	resources/sources/add_zone.svg	/^   id="title13">add_zone_2<\/title>$/;"	i
+title157877	resources/sources/add_hierar_pin.svg	/^     id="title157877">import_part копия<\/title>$/;"	i
+title157963	resources/sources/add_class_flag.svg	/^     id="title157963">label<\/title>$/;"	i
+title157963	resources/sources/add_label.svg	/^     id="title157963">label<\/title>$/;"	i
+title158704	resources/sources/pad.svg	/^     id="title158704">pad<\/title>$/;"	i
+title176	resources/sources/add_glabel.svg	/^     id="title176">add_glabel<\/title>$/;"	i
+title192	resources/sources/add_hierarchical_label.svg	/^     id="title192">add_hierarchical_label<\/title>$/;"	i
+title224	resources/sources/add_hierarchical_subsheet.svg	/^     id="title224">add_hierarchical_subshet<\/title>$/;"	i
+title25897	resources/sources/add_footprint.svg	/^     id="title25897">new_footprint<\/title>$/;"	i
+title27351	resources/sources/text.svg	/^     id="title27351">text<\/title>$/;"	i
+title27842	resources/sources/add_board.svg	/^     id="title27842">add_board<\/title>$/;"	i
+title27878	resources/sources/add_bus.svg	/^     id="title27878">add_bus<\/title>$/;"	i
+title27892	resources/sources/add_center_dimension.svg	/^     id="title27892">add_center_dimension<\/title>$/;"	i
+title27892	resources/sources/add_radial_dimension.svg	/^     id="title27892">add_center_dimension<\/title>$/;"	i
+title27910	resources/sources/add_circle.svg	/^     id="title27910">add_circle<\/title>$/;"	i
+title27926	resources/sources/add_component.svg	/^     id="title27926">add_component<\/title>$/;"	i
+title27953	resources/sources/add_corner.svg	/^   <title id="title27953">add_corner<\/title>$/;"	i
+title27979	resources/sources/add_dashed_line.svg	/^     id="title27979">add_dashed_line<\/title>$/;"	i
+title28001	resources/sources/add_graphical_polygon.svg	/^     id="title28001">add_graphical_polygon<\/title>$/;"	i
+title28021	resources/sources/add_graphical_segments.svg	/^     id="title28021">add_graphical_segments<\/title>$/;"	i
+title308	resources/sources/add_junction.svg	/^     id="title308">add_junction<\/title>$/;"	i
+title324	resources/sources/add_keepout_area.svg	/^   id="title324">add_keepout_area<\/title>$/;"	i
+title344	resources/sources/add_line.svg	/^     id="title344">add_line<\/title>$/;"	i
+title356	resources/sources/add_power.svg	/^     id="title356">add_power<\/title>$/;"	i
+title402	resources/sources/add_tracks.svg	/^     id="title402">add_tracks<\/title>$/;"	i
+title7	resources/sources/add_library.svg	/^   <title id="title7">library<\/title>$/;"	i
+title7	resources/sources/add_symbol_to_schematic.svg	/^     id="title7">add_symbol_to_schematic<\/title>$/;"	i
+title78	resources/sources/add_aligned_dimension.svg	/^     id="title78">add_aligned_dimension<\/title>$/;"	i
+title842	resources/sources/add_keepout_area.svg	/^   id="title842">add_keepout_area<\/title>$/;"	i
+title986	resources/sources/add_arc.svg	/^     id="title986">add_arc<\/title>$/;"	i
+toUnit	src/kicad/kicad.py	/^    def toUnit(self, value):$/;"	m	class:Kicad_info
+toUnit	src/unit.py	/^def toUnit(x):$/;"	f
+tspan12813	resources/sources/add_hierarchical_label.svg	/^       dy="0">A<\/tspan><\/text>$/;"	i
+tspan15401	resources/sources/add_class_flag.svg	/^       style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-/;"	i
+tspan15401	resources/sources/add_label.svg	/^       style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-siz/;"	i
+tspan5123-9	resources/sources/add_line_label.svg	/^         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-s/;"	i
+update	src/kicad/kicad.py	/^    def update(self):$/;"	m	class:Kicad_info
+update	src/ui_properties.py	/^    def update(self, origin):$/;"	m	class:Ui_property
+update_origin	src/GUI.py	/^    def update_origin(self, e):$/;"	m	class:GUI
+update_value	src/update_value.py	/^    def update_value(self):$/;"	m	class:Property
+use1388	resources/sources/add_document.svg	/^         id="use1388">$/;"	i
+utils	src/utils.py	/^class utils:$/;"	c
+xlink	resources/sources/add_arc.svg	/^   inkscape:version="1.0.1 (c497b03c, 2020-09-10)">$/;"	n	uri:http://www.w3.org/1999/xlink
+Безымянный_градиент_19	resources/sources/add_arc.svg	/^       gradientUnits="userSpaceOnUse">$/;"	d
+Безымянный_градиент_19	resources/sources/add_arc.svg	/^       gradientUnits="userSpaceOnUse">$/;"	i
+Безымянный_градиент_19	resources/sources/add_corner.svg	/^      <linearGradient id="Безымянный_градиент_19" x1="16" y1="3" x2="16" y2="2/;"	d
+Безымянный_градиент_19	resources/sources/add_corner.svg	/^      <linearGradient id="Безымянный_градиент_19" x1="16" y1="3" x2="16" y2="2/;"	i
+Безымянный_градиент_19-2	resources/sources/add_arc.svg	/^       xlink:href="#Безымянный_градиент_19" \/>$/;"	d
+Безымянный_градиент_19-2	resources/sources/add_arc.svg	/^       xlink:href="#Безымянный_градиент_19" \/>$/;"	i
+Слой_1	resources/sources/add_aligned_dimension.svg	/^   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)">$/;"	i
+Слой_1	resources/sources/add_arc.svg	/^   inkscape:version="1.0.1 (c497b03c, 2020-09-10)">$/;"	i
+Слой_1	resources/sources/add_board.svg	/^   inkscape:export-ydpi="96">$/;"	i
+Слой_1	resources/sources/add_bus.svg	/^   inkscape:version="1.0.1 (1.0.1+r74)">$/;"	i
+Слой_1	resources/sources/add_center_dimension.svg	/^   inkscape:version="1.0.2 (e86c8708, 2021-01-15)">$/;"	i
+Слой_1	resources/sources/add_circle.svg	/^   inkscape:version="1.0.2 (1.0.2+r75+1)">$/;"	i
+Слой_1	resources/sources/add_class_flag.svg	/^   inkscape:version="1.0.2 (e86c8708, 2021-01-15)">$/;"	i
+Слой_1	resources/sources/add_component.svg	/^   inkscape:version="1.0.1 (1.0.1+r74)">$/;"	i
+Слой_1	resources/sources/add_corner.svg	/^   xmlns:inkscape="http:\/\/www.inkscape.org\/namespaces\/inkscape" id="Слой_1" data-name="С/;"	i
+Слой_1	resources/sources/add_dashed_line.svg	/^   inkscape:version="1.0.1 (c497b03c, 2020-09-10)">$/;"	i
+Слой_1	resources/sources/add_document.svg	/^   inkscape:export-ydpi="96">$/;"	i
+Слой_1	resources/sources/add_footprint.svg	/^   xmlns:dc="http:\/\/purl.org\/dc\/elements\/1.1\/">$/;"	i
+Слой_1	resources/sources/add_glabel.svg	/^   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)">$/;"	i
+Слой_1	resources/sources/add_graphical_polygon.svg	/^   inkscape:version="1.0.2 (1.0.2+r75+1)">$/;"	i
+Слой_1	resources/sources/add_graphical_segments.svg	/^   inkscape:version="1.0.1 (c497b03c, 2020-09-10)">$/;"	i
+Слой_1	resources/sources/add_hierar_pin.svg	/^   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)">$/;"	i
+Слой_1	resources/sources/add_hierarchical_label.svg	/^   inkscape:version="1.0.1 (c497b03c, 2020-09-10)">$/;"	i
+Слой_1	resources/sources/add_hierarchical_subsheet.svg	/^   inkscape:export-ydpi="96">$/;"	i
+Слой_1	resources/sources/add_junction.svg	/^   inkscape:version="1.0.1 (c497b03c, 2020-09-10)">$/;"	i
+Слой_1	resources/sources/add_keepout_area.svg	/^   transform="rotate(-90,12,12)">$/;"	i
+Слой_1	resources/sources/add_label.svg	/^   inkscape:version="1.0.1 (c497b03c, 2020-09-10)">$/;"	i
+Слой_1	resources/sources/add_leader.svg	/^   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)">$/;"	i
+Слой_1	resources/sources/add_library.svg	/^   xmlns:inkscape="http:\/\/www.inkscape.org\/namespaces\/inkscape" id="Слой_1" data-name="С/;"	i
+Слой_1	resources/sources/add_line.svg	/^   inkscape:version="1.0.1 (1.0.1+r74)">$/;"	i
+Слой_1	resources/sources/add_line2bus.svg	/^   inkscape:version="1.0.1 (c497b03c, 2020-09-10)">$/;"	i
+Слой_1	resources/sources/add_orthogonal_dimension.svg	/^   inkscape:version="1.0.1 (c497b03c, 2020-09-10)">$/;"	i
+Слой_1	resources/sources/add_pcb_target.svg	/^   inkscape:version="1.0.2 (1.0.2+r75+1)">$/;"	i
+Слой_1	resources/sources/add_power.svg	/^   inkscape:version="1.0.1 (1.0.1+r74)">$/;"	i
+Слой_1	resources/sources/add_radial_dimension.svg	/^   inkscape:version="1.0.2 (e86c8708, 2021-01-15)">$/;"	i
+Слой_1	resources/sources/add_rectangle.svg	/^   inkscape:version="1.0.2 (1.0.2+r75+1)">$/;"	i
+Слой_1	resources/sources/add_symbol_to_schematic.svg	/^   inkscape:export-ydpi="96">$/;"	i
+Слой_1	resources/sources/add_tracks.svg	/^   inkscape:version="1.0.1 (c497b03c, 2020-09-10)">$/;"	i
+Слой_1	resources/sources/add_via.svg	/^   inkscape:version="1.0.2 (1.0.2+r75+1)">$/;"	i
+Слой_1	resources/sources/add_zone.svg	/^   xml:space="preserve"><metadata$/;"	i
+Слой_1	resources/sources/add_zone_cutout.svg	/^   inkscape:version="1.0.1 (c497b03c, 2020-09-10)">$/;"	i
+Слой_1	resources/sources/pad.svg	/^   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)">$/;"	i
+Слой_1	resources/sources/text.svg	/^   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)">$/;"	i

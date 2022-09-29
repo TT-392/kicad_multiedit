@@ -19,6 +19,17 @@ class rotate_around:
         assert(check(utils.rotate_around((1, 9), (5, 9), 170), [8.939231012048833, 8.305407289332278], 0.001))
         assert(check(utils.rotate_around((1, 9), (5, 9), 333), [1.4359739032465275, 10.815961998958185], 0.001))
 
+        
+        assert(check(utils.translate((0, 0), ((10, 5), 0)), (-10, -5), 0))
+        assert(check(utils.translate((34.2, 20.2), ((30, 20), 0)), (4.2, .2), 0))
+        assert(check(utils.translate((38, 20), ((30, 20), 45)), (math.sqrt(math.pow(8, 2)/2), math.sqrt(math.pow(8, 2)/2)), 0.001))
+        assert(check(utils.translate((-10, 10 + math.sqrt(2*math.pow(8, 2))), ((-10, 10), -45)), (8, 8), 0))
+
+
+        assert(check(utils.reverse_translate((-10, -5), ((10, 5), 0)), (0, 0), 0))
+        assert(check(utils.reverse_translate((4.2, .2), ((30, 20), 0)), (34.2, 20.2), 0))
+        assert(check(utils.reverse_translate((math.sqrt(math.pow(8, 2)/2), math.sqrt(math.pow(8, 2)/2)), ((30, 20), 45)), (38, 20), 0.001))
+        assert(check(utils.reverse_translate((0, math.sqrt(2*math.pow(8, 2))), ((-20, 10), -45)), (-28, 18), 0))
 
 
 
