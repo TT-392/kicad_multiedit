@@ -1,5 +1,6 @@
 import math
 from ..property import *
+from ..item import *
 
 # footprint attributes:
 # Footprint type:
@@ -10,13 +11,13 @@ from ..property import *
 # 0b00100: exclude from position files
 # 0b01000: exclude from bom
 
-class GraphicCircle:
+class GraphicCircle(Item):
     def __init__(self, obj):
         self.obj = obj
-        self.x = self.__x(self)
-        self.y = self.__y(self)
-        self.radius = self.__radius(self)
-        self.width = self.__width(self)
+        self.x = self.translated_x(self, self.__x, self.__y)
+        self.y = self.translated_y(self, self.__y, self.__x)
+        self.radius = self.to_user_unit(self, self.__radius)
+        self.width = self.to_user_unit(self, self.__width)
 
         self.icon = "add_circle"
 
@@ -44,7 +45,7 @@ class GraphicCircle:
             self.s = Self
             
         def put(self, value):
-            self.s.obj.SetCenter(pcbnew.wxPoint(value, self.s.y.get()))
+            self.s.obj.SetCenter(pcbnew.wxPoint(value, self.s.obj.GetCenter().y))
 
         def get(self):
             return self.s.obj.GetCenter().x
@@ -54,7 +55,7 @@ class GraphicCircle:
             self.s = Self
             
         def put(self, value):
-            self.s.obj.SetCenter(pcbnew.wxPoint(self.s.x.get(), value))
+            self.s.obj.SetCenter(pcbnew.wxPoint(self.s.obj.GetCenter().x, value))
 
         def get(self):
             return self.s.obj.GetCenter().y

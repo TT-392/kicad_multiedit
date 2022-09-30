@@ -1,5 +1,6 @@
 import pcbnew
 from ..property import *
+from ..item import *
 
 # footprint attributes:
 # Footprint type:
@@ -10,13 +11,13 @@ from ..property import *
 # 0b00100: exclude from position files
 # 0b01000: exclude from bom
 
-class Footprint:
+class Footprint(Item):
     def __init__(self, obj):
         self.obj = obj
         self.reference = self.__reference(self)
-        self.x = self.__x(self)
-        self.y = self.__y(self)
-        self.orientation = self.__orientation(self)
+        self.x = self.translated_x(self, self.__x, self.__y)
+        self.y = self.translated_y(self, self.__y, self.__x)
+        self.orientation = self.translated_orientation(self, self.__orientation)
 
         self.icon = "add_footprint"
 
@@ -53,7 +54,7 @@ class Footprint:
             self.s = Self
             
         def put(self, value):
-            self.s.obj.SetPosition(pcbnew.wxPoint(value, self.s.y.get()))
+            self.s.obj.SetPosition(pcbnew.wxPoint(value, self.s.obj.GetPosition().y))
 
         def get(self):
             return self.s.obj.GetPosition().x
@@ -63,7 +64,7 @@ class Footprint:
             self.s = Self
             
         def put(self, value):
-            self.s.obj.SetPosition(pcbnew.wxPoint(self.s.x.get(), value))
+            self.s.obj.SetPosition(pcbnew.wxPoint(self.s.obj.GetPosition().x, value))
 
         def get(self):
             return self.s.obj.GetPosition().y
@@ -73,8 +74,8 @@ class Footprint:
             self.s = Self
             
         def put(self, value):
-            self.s.obj.SetOrientation(value)
+            self.s.obj.SetOrientation(value * 10)
 
         def get(self):
-            return self.s.obj.GetOrientation()
+            return self.s.obj.GetOrientation() / 10
 

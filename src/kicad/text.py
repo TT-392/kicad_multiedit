@@ -1,4 +1,5 @@
 from ..property import *
+from ..item import *
 
 # footprint attributes:
 # Footprint type:
@@ -9,16 +10,16 @@ from ..property import *
 # 0b00100: exclude from position files
 # 0b01000: exclude from bom
 
-class GraphicText:
+class GraphicText(Item):
     def __init__(self, obj):
         self.obj = obj
         self.text = self.__text(self)
-        self.x = self.__x(self)
-        self.y = self.__y(self)
-        self.textWidth = self.__textWidth(self)
-        self.textHeight = self.__textHeight(self)
-        self.width = self.__width(self)
-        self.orientation = self.__orientation(self)
+        self.x = self.translated_x(self, self.__x, self.__y)
+        self.y = self.translated_y(self, self.__y, self.__x)
+        self.textWidth = self.to_user_unit(self, self.__textWidth)
+        self.textHeight = self.to_user_unit(self, self.__textHeight)
+        self.width = self.to_user_unit(self, self.__width)
+        self.orientation = self.translated_orientation(self, self.__orientation)
 
         self.icon = "text"
 
@@ -62,7 +63,7 @@ class GraphicText:
             self.s = Self
             
         def put(self, value):
-            self.s.obj.SetPosition(pcbnew.wxPoint(value, self.s.y.get()))
+            self.s.obj.SetPosition(pcbnew.wxPoint(value, self.s.GetPosition().y))
 
         def get(self):
             return self.s.obj.GetPosition().x
@@ -72,7 +73,7 @@ class GraphicText:
             self.s = Self
             
         def put(self, value):
-            self.s.obj.SetPosition(pcbnew.wxPoint(self.s.x.get(), value))
+            self.s.obj.SetPosition(pcbnew.wxPoint(self.s.GetPosition().x, value))
 
         def get(self):
             return self.s.obj.GetPosition().y
@@ -112,8 +113,8 @@ class GraphicText:
             self.s = Self
             
         def put(self, value):
-            self.s.obj.SetTextAngle(value)
+            self.s.obj.SetTextAngle(value * 10)
 
         def get(self):
-            return self.s.obj.GetTextAngle()
+            return self.s.obj.GetTextAngle() / 10
 

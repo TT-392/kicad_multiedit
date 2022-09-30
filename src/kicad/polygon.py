@@ -1,5 +1,6 @@
 import math
 from ..property import *
+from ..item import *
 
 # footprint attributes:
 # Footprint type:
@@ -10,10 +11,10 @@ from ..property import *
 # 0b00100: exclude from position files
 # 0b01000: exclude from bom
 
-class GraphicPolygon:
+class GraphicPolygon(Item):
     def __init__(self, obj):
         self.obj = obj
-        self.width = self.__width(self)
+        self.width = self.to_user_unit(self, self.__width)
 
         self.icon = "add_graphical_polygon"
 
@@ -22,7 +23,6 @@ class GraphicPolygon:
         self.properties = Properties_array([
             self.width_prop
             ])
-
 
     def __str__(self):
         return "Footprint: " + self.reference.get()

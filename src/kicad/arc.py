@@ -1,4 +1,5 @@
 from ..property import *
+from ..item import *
 
 # footprint attributes:
 # Footprint type:
@@ -9,15 +10,15 @@ from ..property import *
 # 0b00100: exclude from position files
 # 0b01000: exclude from bom
 
-class GraphicArc:
+class GraphicArc(Item):
     def __init__(self, obj):
         self.obj = obj
-        self.startX = self.__startX(self)
-        self.startY = self.__startY(self)
-        self.endX = self.__endX(self)
-        self.endY = self.__endY(self)
+        self.startX = self.translated_x(self, self.__startX, self.__startY)
+        self.startY = self.translated_y(self, self.__startY, self.__startX)
+        self.endX = self.translated_x(self, self.__endX, self.__endY)
+        self.endY = self.translated_y(self, self.__endY, self.__endX)
         self.arcAngle = self.__arcAngle(self)
-        self.width = self.__width(self)
+        self.width = self.to_user_unit(self, self.__width)
 
         self.icon = "add_arc"
 
@@ -92,10 +93,10 @@ class GraphicArc:
             self.s = Self
             
         def put(self, value):
-            self.s.obj.SetArcAngleAndEnd(value)
+            self.s.obj.SetArcAngleAndEnd(value * 10)
 
         def get(self):
-            return self.s.obj.GetArcAngle()
+            return self.s.obj.GetArcAngle() / 10
 
     class __width:
         def __init__(self, Self):

@@ -26,77 +26,21 @@ class Property:
         return "Property{" + self.name + ", " + self.category + ", " + self.data_type + ", " + str(self.get_ui_value()) + "}"
 
     def get_ui_value(self, origin=((0, 0), 0)):
-        value = self.__get_translated_value(origin)
-
-        if self.data_type == "length" or self.data_type == "length_unsigned":
-            ui_val = kicad_info.toUnit(value)
-        elif self.data_type == "angle":
-            ui_val = value / 10
+        if self.data_type == "string":
+            return self.value.get()
         else:
-            ui_val = value 
-        
-        self.__ui_val = ui_val
-        if type(ui_val) == str:
-            return ui_val
-        else:
-            return utils.round(ui_val)
+            return str(self.value.get())
 
     def put_ui_value(self, ui_val, origin=((0,0), 0)):
         if self.get_ui_value() == ui_val:
             return
 
-        value = self.__put_translated_value(float(ui_val), origin)
+        if self.data_type == "string":
+            self.value.put(ui_val)
+        else:
+            self.value.put(float(ui_val))
 
 
-    #TODO: origin translations should be done in the item put and get methods
-    def __put_translated_value(self, value, origin):
-        if self.translatable_type == None:
-            self.value.put(value)
-
-        elif self.translatable_type == "rot":
-            self.value.put((value + origin[1]) * 10)
-
-        elif self.translatable_type == "x":
-            x = value
-            y = self.y_prop.__get_translated_value(origin)
-            pos = utils.rotate_around((x, y), (0, 0), -origin[1])
-            pos[0] += origin[0][0]
-            pos[1] += origin[0][1]
-            self.value.put(kicad_info.fromUnit(pos[0]))
-            self.y_prop.value.put(kicad_info.fromUnit(pos[1]))
-
-        elif self.translatable_type == "y":
-            x = self.x_prop.__get_translated_value(origin)
-            y = value
-            pos = utils.rotate_around((x, y), (0, 0), -origin[1])
-            pos[0] += origin[0][0]
-            pos[1] += origin[0][1]
-            self.x_prop.value.put(kicad_info.fromUnit(pos[0]))
-            self.value.put(kicad_info.fromUnit(pos[1]))
-
-
-    def __get_translated_value(self, origin):
-        if self.translatable_type == None:
-            return self.value.get()
-
-        elif self.translatable_type == "rot":
-            return self.value.get() - origin[1] * 10
-
-        elif self.translatable_type == "x":
-            x = self.value.get()
-            y = self.y_prop.value.get()
-            x -= kicad_info.fromUnit(origin[0][0])
-            y -= kicad_info.fromUnit(origin[0][1])
-            x = utils.rotate_around((x, y), (0, 0), origin[1])[0]
-            return x
-
-        elif self.translatable_type == "y":
-            x = self.x_prop.value.get()
-            y = self.value.get()
-            x -= kicad_info.fromUnit(origin[0][0])
-            y -= kicad_info.fromUnit(origin[0][1])
-            y = utils.rotate_around((x, y), (0, 0), origin[1])[1]
-            return y
 
 
 class Properties_array:
