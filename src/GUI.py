@@ -87,7 +87,10 @@ class GUI(wx.Frame):
     def update_origin(self, e):
         for element in self.ui_elements.list:
             if type(element) != str:
-                element.update(eval(self.origin_field.GetValue()))
+                for item in element.properties.get_items():
+                    item.set_origin(eval(self.origin_field.GetValue()))
+
+                element.update()
 
     def cancel(self, e):
         print("cancel")

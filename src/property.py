@@ -25,13 +25,13 @@ class Property:
     def __str__(self):
         return "Property{" + self.name + ", " + self.category + ", " + self.data_type + ", " + str(self.get_ui_value()) + "}"
 
-    def get_ui_value(self, origin=((0, 0), 0)):
+    def get_ui_value(self):
         if self.data_type == "string":
             return self.value.get()
         else:
             return str(self.value.get())
 
-    def put_ui_value(self, ui_val, origin=((0,0), 0)):
+    def put_ui_value(self, ui_val):
         if self.get_ui_value() == ui_val:
             return
 
@@ -195,17 +195,17 @@ class Properties_array:
 
         return retval
     
-    def get_ui_value(self, origin=((0,0),0)):
+    def get_ui_value(self):
         assert len(self.__list) != 0, "Properties array empty"
         assert self.all_same_value(), "Mismatched ui values in properties array"
 
-        return self.__list[0].get_ui_value(origin)
+        return self.__list[0].get_ui_value()
 
-    def put_ui_value(self, value, origin=((0,0),0)):
+    def put_ui_value(self, value):
         assert len(self.__list) != 0, "Properties array empty"
 
         for prop in self.__list:
-            prop.put_ui_value(value, origin)
+            prop.put_ui_value(value)
 
     def get_list(self):
         return self.__list
