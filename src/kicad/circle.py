@@ -45,20 +45,20 @@ class GraphicCircle(Item):
             self.s = Self
             
         def put(self, value):
-            self.s.obj.SetCenter(pcbnew.wxPoint(value, self.s.obj.GetCenter().y))
+            self.s.obj.SetPosition(pcbnew.wxPoint(value, self.s.obj.GetCenter().y))
 
         def get(self):
-            return self.s.obj.GetCenter().x
+            return self.s.obj.GetPosition().x
 
     class __y:
         def __init__(self, Self):
             self.s = Self
             
         def put(self, value):
-            self.s.obj.SetCenter(pcbnew.wxPoint(self.s.obj.GetCenter().x, value))
+            self.s.obj.SetPosition(pcbnew.wxPoint(self.s.obj.GetCenter().x, value))
 
         def get(self):
-            return self.s.obj.GetCenter().y
+            return self.s.obj.GetPosition().y
 
     class __radius:
         def __init__(self, Self):
