@@ -4,7 +4,7 @@ from src.item import *
 from tests.resources.kicad_footprint import *
 from src.GUI import *
 from src.ui_properties import *
-from src.field_evaluation.python_defines import *
+from src.field_evaluation.python_env import *
 import wx
 
 def  python_field_variables():

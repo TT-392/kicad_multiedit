@@ -88,9 +88,15 @@ class GUI(wx.Frame):
         for element in self.ui_elements.list:
             if type(element) != str:
                 for item in element.properties.get_items():
-                    item.set_origin(eval(self.origin_field.GetValue()))
+                    item.set_origin(item.python_eval(self.origin_field.GetValue()))
 
                 element.update()
+
+        #TODO: this has become a real mess
+        for element in self.ui_elements.list:
+            if type(element) != str:
+                for item in element.properties.get_items():
+                    item.python_env.update()
 
     def cancel(self, e):
         print("cancel")

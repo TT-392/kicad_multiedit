@@ -21,6 +21,10 @@ class ComplexPluginAction(pcbnew.ActionPlugin):
         # The entry function of the plugin that is executed on user action
         try:
             selected = get_selected()
+
+            for item in selected.list:
+                item.init_python_env(selected)
+
             app = wx.App(0)
             GUI(None, Ui_elements(selected.get_properties()))
             app.MainLoop()

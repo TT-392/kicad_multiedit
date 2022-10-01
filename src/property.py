@@ -38,7 +38,7 @@ class Property:
         if self.data_type == "string":
             self.value.put(ui_val)
         else:
-            self.value.put(float(ui_val))
+            self.value.put(self.item.python_eval(ui_val))
 
 
 
@@ -215,4 +215,3 @@ class Properties_array:
             
 
 
-from .update_value import *

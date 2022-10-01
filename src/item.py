@@ -1,12 +1,19 @@
 from .property import *
 from .utils import *
 from .kicad.kicad import *
+from .field_evaluation.python_env import *
 
 class Item:
     origin=((0,0), 0)
 
     def set_origin(self, origin):
         self.origin = origin
+
+    def init_python_env(self, items):
+        self.python_env = Python_env(items, self)
+
+    def python_eval(self, string):
+        return self.python_env.eval(string)
 
     # OPTIMIZATION: x_class and y_class can be combined into one class for items
     class translated_x:
@@ -65,12 +72,12 @@ class Item:
 
 class Items:
     def __init__(self, items):
-        self.__list = items
+        self.list = items
 
     def get_properties(self):
         properties = Properties_array([])
         
-        for item in self.__list:
+        for item in self.list:
             properties += item.properties
 
 
@@ -78,7 +85,7 @@ class Items:
     
     def get_icons(self):
         retval = []
-        for item in self.__list:
+        for item in self.list:
             if not item.icon in retval:
                 retval.append(item.icon)
         

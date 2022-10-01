@@ -27,6 +27,9 @@ def snap(x, amount):
     return x * amount
 
 
-def evaluate(string, prop):
-    x = prop.get_ui_value()
+
+def eval_in_container(defines_string, string):
+    exec(defines_string)
+
     return eval(string)
+
