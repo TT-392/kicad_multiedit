@@ -22,8 +22,18 @@ class ComplexPluginAction(pcbnew.ActionPlugin):
         try:
             selected = get_selected()
 
+            i = 0
             for item in selected.list:
-                item.init_python_env(selected)
+                item.init_python_env(selected, i)
+                i += 1
+
+            sys_appearance = wx.SystemSettings.GetAppearance()
+            dark = sys_appearance.IsDark()
+            if dark:
+                print("dark")
+            else:
+                print("light")
+
 
             app = wx.App(0)
             GUI(None, Ui_elements(selected.get_properties()))
