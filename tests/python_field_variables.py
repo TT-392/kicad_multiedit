@@ -29,12 +29,13 @@ def  python_field_variables():
     selected = Items([footprint1, footprint2])
 
     selected.get_properties()
-    python_env = Python_env(selected)
+    python_env = Python_env(selected, footprint1, 5)
+    python_env.update()
 
-    print("x:", python_env.eval(footprint1, "x"))
-    print("y:", python_env.eval(footprint1, "y"))
-    print("rot:", python_env.eval(footprint1, "y"))
-    print("900*(y*x + 5):", python_env.eval(footprint1, "900*(y*x + 5)"))
+    print("x:", python_env.eval("x"))
+    print("y:", python_env.eval("y"))
+    print("rot:", python_env.eval("y"))
+    print("900*(y*x + 5):", python_env.eval("900*(y*x + 5)"))
 
 
 

@@ -9,8 +9,8 @@ class Item:
     def set_origin(self, origin):
         self.origin = origin
 
-    def init_python_env(self, items):
-        self.python_env = Python_env(items, self)
+    def init_python_env(self, items, i):
+        self.python_env = Python_env(items, self, i)
 
     def python_eval(self, string):
         return self.python_env.eval(string)

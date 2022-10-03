@@ -3,6 +3,7 @@ import wx
 import wx.xrc
 import pcbnew
 
+
 #GUI: Frame
 #    outer_sizer: BoxSizer
 #        self.scroll_box: ScrolledWindow
