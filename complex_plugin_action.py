@@ -27,12 +27,6 @@ class ComplexPluginAction(pcbnew.ActionPlugin):
                 item.init_python_env(selected, i)
                 i += 1
 
-            sys_appearance = wx.SystemSettings.GetAppearance()
-            dark = sys_appearance.IsDark()
-            if dark:
-                print("dark")
-            else:
-                print("light")
 
 
             app = wx.App(0)

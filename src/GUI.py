@@ -168,7 +168,10 @@ class GUI(wx.Frame):
 
 
         for icon in icons:
-            path = os.path.join(os.path.dirname(__file__), "../resources/output/" + icon + ".png")
+            sys_appearance = wx.SystemSettings.GetAppearance()
+            theme = "dark" if sys_appearance.IsDark() else "light"
+
+            path = os.path.join(os.path.dirname(__file__), "../resources/output/" + theme + "/" + icon + ".png")
             bitmap = wx.StaticBitmap(self.scroll_box, wx.ID_ANY, wx.Bitmap(path, wx.BITMAP_TYPE_ANY), wx.DefaultPosition, wx.Size(20,20), 0)
             icon_sizer.Add(bitmap, 0, wx.ALL, 0)
 
