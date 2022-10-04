@@ -11,11 +11,11 @@ import pcbnew
 #        toolbar: ToolBar
 
 
-class GUI(wx.Frame):
+class GUI(wx.Dialog):
     def __init__(self, parent, ui_elements):
         self.ui_elements = ui_elements
 
-        wx.Frame.__init__(self, parent, id = wx.ID_ANY, title = wx.EmptyString, pos = wx.DefaultPosition, size = wx.Size(400,800), style = wx.FRAME_FLOAT_ON_PARENT|wx.TAB_TRAVERSAL)
+        wx.Dialog.__init__(self, parent, id = wx.ID_ANY, title = wx.EmptyString, pos = wx.DefaultPosition, size = wx.Size(400,400), style = wx.DEFAULT_FRAME_STYLE|wx.FRAME_FLOAT_ON_PARENT|wx.TAB_TRAVERSAL)
 
         self.SetSizeHints(wx.DefaultSize, wx.DefaultSize)
 

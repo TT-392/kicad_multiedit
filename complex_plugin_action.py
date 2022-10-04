@@ -27,10 +27,9 @@ class ComplexPluginAction(pcbnew.ActionPlugin):
                 item.init_python_env(selected, i)
                 i += 1
 
-
-
             app = wx.App(0)
-            GUI(None, Ui_elements(selected.get_properties()))
+            dialog = GUI(None, Ui_elements(selected.get_properties()))
+            dialog.ShowModal()
             app.MainLoop()
 
 
