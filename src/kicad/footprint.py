@@ -27,7 +27,7 @@ class Footprint(Item):
         self.y_prop.x_prop = self.x_prop
 
         self.ref_prop = Property("Ref", "Strings", "string", self.reference, self, "ref")
-        self.orientation_prop = Property("Angle", "Orientation", "angle", self.orientation, self, "Rot", "rot")
+        self.orientation_prop = Property("Angle", "Orientation", "angle", self.orientation, self, "rot", "rot")
 
         self.properties = Properties_array([
             self.x_prop,
