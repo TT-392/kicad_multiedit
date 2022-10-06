@@ -75,7 +75,7 @@ class Items:
         self.list = items
 
     def get_properties(self):
-        properties = Properties_array([])
+        properties = Properties([])
         
         for item in self.list:
             properties += item.properties

@@ -1,6 +1,7 @@
 from .src.get_selected import *
 from .src.GUI import *
-from .src.ui_properties import *
+from .src.ui_elements import *
+from .src.config import *
 import os
 import wx
 import traceback
@@ -20,15 +21,23 @@ class ComplexPluginAction(pcbnew.ActionPlugin):
     def Run(self):
         # The entry function of the plugin that is executed on user action
         try:
+            config.extended_checks = False
+
+            print("getting selected")
             selected = get_selected()
 
+            print("initting python envs")
             i = 0
             for item in selected.list:
                 item.init_python_env(selected, i)
                 i += 1
 
+            print("fetching ui elements")
+            ui_elements = Ui_elements(selected.get_properties())
+
+            print("starting gui")
             app = wx.App(0)
-            dialog = GUI(None, Ui_elements(selected.get_properties()))
+            dialog = GUI(None, ui_elements)
             dialog.ShowModal()
             app.MainLoop()
 

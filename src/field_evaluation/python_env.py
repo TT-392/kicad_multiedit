@@ -8,7 +8,7 @@ class Python_env:
         props = items.get_properties()
         self.item = item
 
-        self.varnames = props.get_varnames()
+        self.varnames = props.get_all("varname")
 
         self.defines_string = ""
 
@@ -21,10 +21,11 @@ class Python_env:
 
     def update(self):
         props = self.item.properties
-        varnames = props.get_varnames()
+        varnames = props.get_all("varname")
+        
         self.populated_defines_string = self.defines_string
 
-        for prop in props.get_list():
+        for prop in props:
             if prop.varname != None:
                 if prop.varname == "ref":
                     number = re.findall("[\d]*$", prop.get_ui_value())[0]

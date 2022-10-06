@@ -20,7 +20,7 @@ class GraphicPolygon(Item):
 
         self.width_prop = Property("width", "Line", "length_unsigned", self.width, self, "width")
 
-        self.properties = Properties_array([
+        self.properties = Properties([
             self.width_prop
             ])
 

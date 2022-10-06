@@ -28,3 +28,16 @@ class utils:
             val = 0
         return round(val, 14)
 
+    # Improves speed over to eval("obj." + membername)
+    def get_member(obj, membername):
+        if membername == "name":
+            return obj.name
+        elif membername == "data_type":
+            return obj.data_type
+        elif membername == "varname":
+            return obj.varname
+        elif membername == "category":
+            return obj.category
+        else:
+            assert 0, "get_member, membername, " + membername + " isn't implemented"
+

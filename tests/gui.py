@@ -3,7 +3,7 @@ from src.kicad.footprint import *
 from src.item import *
 from tests.resources.kicad_footprint import *
 from src.GUI import *
-from src.ui_properties import *
+from src.ui_elements import *
 import wx
 
 def  gui():

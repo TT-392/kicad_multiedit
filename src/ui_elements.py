@@ -2,7 +2,7 @@ from .item import *
 from .kicad.kicad import *
 
 
-class Ui_property:
+class Ui_element:
     def __init__(self, name, category, widget_type, field_value, properties, items, unit=None):
         self.name = name
         self.category = category
@@ -39,8 +39,8 @@ class Ui_property:
 
 class Ui_elements:
     def __init__(self, properties):
-        names = properties.get_names()
-        categories = properties.get_categories()
+        names = properties.get_all("name")
+        categories = properties.get_all("category")
 
         self.list = []
         for category in categories:
@@ -49,23 +49,24 @@ class Ui_elements:
             for name in names:
                 props = properties.get_in_category_and_with_name(category, name)
 
-                if not props.is_empty():
-                    widget_type = self.__widget_type_from_data_type(props.get_data_type())
+                if len(props) != 0:
+                    widget_type = self.__widget_type_from_data_type(props.get("data_type"))
 
                     if props.all_same_value():
                         field_value = str(props.get_ui_value())
                     else:
-                        if props.get_data_type() != "string" and props.get_data_type() != "bool":
-                            if props.get_variable_name() != None:
-                                field_value = props.get_variable_name()
+                        if props.get("data_type") != "string" and props.get("data_type") != "bool":
+                            varname = props.get("varname")
+                            if varname != None:
+                                field_value = varname
                             else:
                                 field_value = "None"
                         else:
                             field_value = "*"
 
                     items = Items(props.get_items())
-                    unit = self.__unit_from_data_type(props.get_data_type())
-                    self.list.append(Ui_property(name, category, widget_type, field_value, props, items, unit))
+                    unit = self.__unit_from_data_type(props.get("data_type"))
+                    self.list.append(Ui_element(name, category, widget_type, field_value, props, items, unit))
 
     def __widget_type_from_data_type(self, data_type):
         if data_type == "string" or data_type == "length" or data_type == "length_unsigned" or data_type == "angle":
@@ -88,7 +89,7 @@ class Ui_elements:
 
 
     def __str__(self):
-        retval = "Ui_properties {"
+        retval = "Ui_elements {"
 
         for ui_prop in self.list:
             retval += "\n"

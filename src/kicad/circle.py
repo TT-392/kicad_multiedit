@@ -29,7 +29,7 @@ class GraphicCircle(Item):
         self.radius_prop = Property("Radius", "Shape", "length_unsigned", self.radius, self, "r")
         self.width_prop = Property("width", "Line", "length_unsigned", self.width, self, "width")
 
-        self.properties = Properties_array([
+        self.properties = Properties([
             self.x_prop,
             self.y_prop,
             self.radius_prop,

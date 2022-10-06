@@ -104,12 +104,15 @@ class GUI(wx.Dialog):
         pass
 
     def apply(self, e):
+        update = False
         for element in self.ui_elements.list:
             if type(element) != str:
                 if element.field_value != element.wx_field.GetValue():
+                    update = True
                     element.put(element.wx_field.GetValue())
 
-        pcbnew.Refresh()
+        if update:
+            pcbnew.Refresh()
 
     def ok(self, e):
         print("ok")

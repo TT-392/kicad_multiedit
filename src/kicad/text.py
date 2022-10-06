@@ -34,7 +34,7 @@ class GraphicText(Item):
         self.width_prop = Property("Width", "Line", "length_unsigned", self.width, self, "width")
         self.orientation_prop = Property("Angle", "Orientation", "angle", self.orientation, self, "rot", "rot")
 
-        self.properties = Properties_array([
+        self.properties = Properties([
             self.text_prop,
             self.x_prop,
             self.y_prop,

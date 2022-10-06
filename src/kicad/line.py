@@ -33,7 +33,7 @@ class GraphicLine(Item):
 
         self.width_prop = Property("width", "Line", "length_unsigned", self.width, self, "width")
 
-        self.properties = Properties_array([
+        self.properties = Properties([
             self.startX_prop,
             self.startY_prop,
             self.endX_prop,
