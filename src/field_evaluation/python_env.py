@@ -13,7 +13,8 @@ class Python_env:
         self.defines_string = ""
 
         for varname in self.varnames:
-            self.defines_string += varname + "=0\n"
+            if varname != None:
+                self.defines_string += varname + "=0\n"
 
         self.defines_string += "i=" + str(i) + "\n"
 

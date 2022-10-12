@@ -63,7 +63,7 @@ class GraphicText(Item):
             self.s = Self
             
         def put(self, value):
-            self.s.obj.SetPosition(pcbnew.wxPoint(value, self.s.GetPosition().y))
+            self.s.obj.SetPosition(pcbnew.wxPoint(value, self.s.obj.GetPosition().y))
 
         def get(self):
             return self.s.obj.GetPosition().x
@@ -73,7 +73,7 @@ class GraphicText(Item):
             self.s = Self
             
         def put(self, value):
-            self.s.obj.SetPosition(pcbnew.wxPoint(self.s.GetPosition().x, value))
+            self.s.obj.SetPosition(pcbnew.wxPoint(self.s.obj.GetPosition().x, value))
 
         def get(self):
             return self.s.obj.GetPosition().y
