@@ -15,7 +15,7 @@ class GUI(wx.Dialog):
     def __init__(self, parent, ui_elements):
         self.ui_elements = ui_elements
 
-        wx.Dialog.__init__(self, parent, id = wx.ID_ANY, title = wx.EmptyString, pos = wx.DefaultPosition, size = wx.Size(400,400), style = wx.DEFAULT_FRAME_STYLE|wx.FRAME_FLOAT_ON_PARENT|wx.TAB_TRAVERSAL)
+        wx.Dialog.__init__(self, parent, id = wx.ID_ANY, title = wx.EmptyString, pos = wx.DefaultPosition, size = wx.Size(400,800), style = wx.DEFAULT_FRAME_STYLE|wx.FRAME_FLOAT_ON_PARENT|wx.TAB_TRAVERSAL)
 
         self.SetSizeHints(wx.DefaultSize, wx.DefaultSize)
 
@@ -69,15 +69,15 @@ class GUI(wx.Dialog):
 
         button_cancel = wx.Button(toolbar, wx.ID_ANY, "Cancel", wx.DefaultPosition, wx.DefaultSize, 0)
         toolbar.AddControl(button_cancel)
-        button_cancel.Bind(wx.EVT_BUTTON, self.cancel)
+        button_cancel.Bind(wx.EVT_BUTTON, self.cancel_press)
 
         button_apply = wx.Button(toolbar, wx.ID_ANY, "Apply", wx.DefaultPosition, wx.DefaultSize, 0)
         toolbar.AddControl(button_apply)
-        button_apply.Bind(wx.EVT_BUTTON, self.apply)
+        button_apply.Bind(wx.EVT_BUTTON, self.apply_press)
 
         button_ok = wx.Button(toolbar, wx.ID_ANY, "Ok", wx.DefaultPosition, wx.DefaultSize, 0)
         toolbar.AddControl(button_ok)
-        button_ok.Bind(wx.EVT_BUTTON, self.ok)
+        button_ok.Bind(wx.EVT_BUTTON, self.ok_press)
 
 
         self.place_elements(main_grid)
@@ -99,11 +99,11 @@ class GUI(wx.Dialog):
                 for item in element.properties.get_items():
                     item.python_env.update()
 
-    def cancel(self, e):
+    def cancel_press(self, e):
         print("cancel")
-        pass
+        self.Close()
 
-    def apply(self, e):
+    def apply(self):
         update = False
         for element in self.ui_elements.list:
             if type(element) != str:
@@ -114,9 +114,13 @@ class GUI(wx.Dialog):
         if update:
             pcbnew.Refresh()
 
-    def ok(self, e):
-        print("ok")
-        pass
+
+    def apply_press(self, e):
+        self.apply()
+
+    def ok_press(self, e):
+        self.apply()
+        self.Close()
 
     def place_elements(self, parent):
         for element in self.ui_elements.list:
