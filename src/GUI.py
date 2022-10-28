@@ -143,6 +143,7 @@ class GUI(wx.Dialog):
 
     def add_value(self, parent, name, value, unit = None):
         staticText = wx.StaticText(self.scroll_box, wx.ID_ANY, name + ":", wx.DefaultPosition, wx.DefaultSize, 0)
+        staticText.SetToolTip(name)
 
         parent.Add(staticText, 0, wx.ALL, 5)
 
@@ -169,6 +170,8 @@ class GUI(wx.Dialog):
 
         return input_field
 
+    def aaa(self, e):
+        print("aaa")
 
     def add_icons(self, parent, icons):
         icon_sizer = wx.BoxSizer(wx.HORIZONTAL)
@@ -181,6 +184,8 @@ class GUI(wx.Dialog):
             path = os.path.join(os.path.dirname(__file__), "../resources/output/" + theme + "/" + icon + ".png")
             bitmap = wx.StaticBitmap(self.scroll_box, wx.ID_ANY, wx.Bitmap(path, wx.BITMAP_TYPE_ANY), wx.DefaultPosition, wx.Size(20,20), 0)
             icon_sizer.Add(bitmap, 0, wx.ALL, 0)
+
+            bitmap.Bind(wx.EVT_LEFT_UP, self.aaa)
 
         parent.Add(icon_sizer, 1, wx.EXPAND, len(icons))
 
