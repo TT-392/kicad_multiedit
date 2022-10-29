@@ -2,6 +2,7 @@ import os
 import wx
 import wx.xrc
 import pcbnew
+from .gui.elements import *
 
 
 #GUI: Frame
@@ -130,7 +131,7 @@ class GUI(wx.Dialog):
         if type(ui_element) == str:
             self.add_category(parent, ui_element)
         else:
-            ui_element.wx_field = self.add_value(parent, ui_element.name, ui_element.field_value, ui_element.unit)
+            ui_element.wx_field = add_control(self.scroll_box, parent, ui_element.name, "aa", ui_element.field_value, Type_python(ui_element.unit))
             self.add_icons(parent, ui_element.items.get_icons())
 
     def add_category(self, parent, name):
