@@ -49,6 +49,7 @@ class Ui_elements:
                     if props.all_same_value():
                         field_value = props.get_ui_value()
                     else:
+                        varname = props.get("varname")
                         field_value = varname
 
                     items = Items(props.get_items())

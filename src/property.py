@@ -54,10 +54,19 @@ class Properties:
 
     def get(self, name):
         if config.extended_checks:
-            val0 = utils.get_member(self.__list[0], name)
+            if name == "widget_type": #TODO When new property type system is written, they should actually be the same object, and this exception shouldn't be needed anymore
+                val0 = type(utils.get_member(self.__list[0], name))
+            else:
+                val0 = utils.get_member(self.__list[0], name)
 
             for i in self.__list: 
-                if eval("i." + name) != val0:
+                if name == "widget_type": #TODO When new property type system is written, they should actually be the same object, and this exception shouldn't be needed anymore
+                    val = type(eval("i." + name))
+                else:
+                    val = eval("i." + name)
+
+                if val != val0:
+                    print(str(val0) + " != " + str(eval("i." + name)))
                     assert 0, "ERROR: mismatched " + name + " values"
 
         return utils.get_member(self.__list[0], name)
