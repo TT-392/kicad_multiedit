@@ -29,4 +29,8 @@ class python_control:
 
 
     def SetValue(self, value):
-         self.control.SetValue(value)
+        self.control.SetValue(value)
+
+    def GetValue(self):
+        return self.control.GetValue()
+

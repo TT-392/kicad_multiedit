@@ -12,10 +12,20 @@ class checkbox_control:
         self.control.SetToolTip(varname)
 
     def SetValue(self, value):
-        print(value)
+        self.old_value = value
+
         if value == "True":
             self.control.Set3StateValue(1)
         elif value == "False":
             self.control.Set3StateValue(0)
         else:
             self.control.Set3StateValue(2)
+
+    def GetValue(self):
+        value = self.control.Get3StateValue()
+        if value == 1:
+            return "True"
+        elif value == 0:
+            return "False"
+        else:
+            return self.old_value

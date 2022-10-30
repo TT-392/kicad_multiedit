@@ -24,7 +24,7 @@ class Ui_element:
     def update(self):
         if self.properties.all_same_value():
             self.field_value = str(self.properties.get_ui_value())
-            self.wx_field.SetValue(self.field_value)
+            self.widget_obj.SetValue(self.field_value)
 
     def put(self, value):
         print(self, "updated")

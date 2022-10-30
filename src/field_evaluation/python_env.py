@@ -28,11 +28,7 @@ class Python_env:
 
         for prop in props:
             if prop.varname != None:
-                if prop.varname == "ref":
-                    number = re.findall("[\d]*$", prop.get_ui_value())[0]
-                    self.populated_defines_string += prop.varname + "=" + number + "\n"
-                else:
-                    self.populated_defines_string += prop.varname + "=" + str(prop.get_ui_value()) + "\n"
+                self.populated_defines_string += prop.varname + "=" + str(prop.get_ui_value()) + "\n"
 
     def eval(self, string):
         return eval_in_container(self.populated_defines_string, string)

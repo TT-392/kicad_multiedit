@@ -108,9 +108,9 @@ class GUI(wx.Dialog):
         update = False
         for element in self.ui_elements.list:
             if type(element) != str:
-                if element.field_value != element.wx_field.GetValue():
+                if element.field_value != element.widget_obj.GetValue():
                     update = True
-                    element.put(element.wx_field.GetValue())
+                    element.put(element.widget_obj.GetValue())
 
         if update:
             pcbnew.Refresh()
@@ -130,7 +130,7 @@ class GUI(wx.Dialog):
         if type(ui_element) == str:
             self.add_category(parent, ui_element)
         else:
-            ui_element.wx_field = add_control(self.scroll_box, parent, ui_element.name, "aa", ui_element.field_value, ui_element.widget_type)
+            ui_element.widget_obj = add_control(self.scroll_box, parent, ui_element.name, "aa", ui_element.field_value, ui_element.widget_type)
             self.add_icons(parent, ui_element.items.get_icons())
 
     def add_category(self, parent, name):

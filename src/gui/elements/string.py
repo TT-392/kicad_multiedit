@@ -1,4 +1,5 @@
 import wx
+from ...utils import *
 
 class Type_string:
     def __init__(self):
@@ -14,9 +15,16 @@ class string_control:
         self.control.SetToolTip(varname)
 
     def SetValue(self, value):
+        self.old_value = value
+
         if value[:1] == "\"" and value[-1:] == "\"":
             self.control.SetValue(eval(value))
         else:
             self.control.SetValue("*")
 
+    def GetValue(self):
+        if self.control.GetValue() == "*":
+            return self.old_value
+        else:
+            return utils.to_parseable_string(self.control.GetValue())
 

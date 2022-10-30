@@ -30,7 +30,7 @@ class Footprint(Item):
 
         self.ref_prop = Property("Ref", "Strings", Type_string(), self.reference, self, "ref")
         self.orientation_prop = Property("Angle", "Orientation", Type_python(), self.orientation, self, "rot")
-        self.not_in_schematic_prop= Property("Not in schematic", "Fabrication Attributes", Type_checkbox(), self.not_in_schematic, self, "not_in_schematic")
+        self.not_in_schematic_prop = Property("Not in schematic", "Fabrication Attributes", Type_checkbox(), self.not_in_schematic, self, "not_in_schematic")
 
         self.properties = Properties([
             self.x_prop,
