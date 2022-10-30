@@ -2,20 +2,13 @@ from .kicad.kicad import *
 from .utils import *
 from .config import *
 
-# data_types: 'bool', 'string', 'length', 'lenght_unsigned', 'angle'
-# Anything expressed in meters, inches, feet, lightyears is considered to be
-# expressed in a unit of length, even if a coordinate or thickness isn't
-# neccesarely considered "length'
-# translatable_types: 'None', 'x', 'y', 'rot'
-
 class Property:
-    def __init__(self, name, category, data_type, value, item, varname=None, translatable_type=None):
+    def __init__(self, name, category, widget_type, value, item, varname):
         self.name = name
         self.category = category
-        self.data_type = data_type
+        self.widget_type = widget_type
         self.item = item
         self.varname = varname
-        self.translatable_type = translatable_type
 
         self.value = value
 
@@ -24,22 +17,16 @@ class Property:
         kicad_info.update()
 
     def __str__(self):
-        return "Property{" + self.name + ", " + self.category + ", " + self.data_type + ", " + str(self.get_ui_value()) + "}"
+        return "Property{" + self.name + ", " + self.category + ", " + str(self.widget_type) + ", " + str(self.get_ui_value()) + "}"
 
     def get_ui_value(self):
-        if self.data_type == "string":
-            return self.value.get()
-        else:
-            return str(self.value.get())
+        return utils.to_parseable_string(self.value.get())
 
     def put_ui_value(self, ui_val):
         if self.get_ui_value() == ui_val:
             return
 
-        if self.data_type == "string":
-            self.value.put(ui_val)
-        else:
-            self.value.put(self.item.python_eval(ui_val))
+        self.value.put(self.item.python_eval(ui_val))
 
 
 

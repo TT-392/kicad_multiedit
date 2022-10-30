@@ -32,12 +32,29 @@ class utils:
     def get_member(obj, membername):
         if membername == "name":
             return obj.name
-        elif membername == "data_type":
-            return obj.data_type
+        elif membername == "widget_type":
+            return obj.widget_type
         elif membername == "varname":
             return obj.varname
         elif membername == "category":
             return obj.category
         else:
             assert 0, "get_member, membername, " + membername + " isn't implemented"
+
+    def to_parseable_string(data):
+        special_chars = {"\"": "\\\"", "\\": "\\\\", "\'": "\\\'", "\n": "\\n"}
+
+        if type(data) == str:
+            retval = ""
+            for c in data:
+                if c in special_chars:
+                    retval += special_chars[c]
+
+                else:
+                    retval += c
+
+            return "\"" + retval + "\""
+
+        else:
+            return str(data)
 

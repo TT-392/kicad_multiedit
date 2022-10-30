@@ -9,10 +9,13 @@ class checkbox_control:
         self.control = wx.CheckBox(parent_window, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, wx.CHK_3STATE)
         parent.Add(self.control, 1, wx.ALL|wx.EXPAND, 5)
 
+        self.control.SetToolTip(varname)
+
     def SetValue(self, value):
-        if value == True:
+        print(value)
+        if value == "True":
             self.control.Set3StateValue(1)
-        elif value == False:
+        elif value == "False":
             self.control.Set3StateValue(0)
         else:
             self.control.Set3StateValue(2)

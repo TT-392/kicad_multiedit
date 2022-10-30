@@ -1,5 +1,6 @@
 from ..property import *
 from ..item import *
+from ..gui.elements import *
 
 # footprint attributes:
 # Footprint type:
@@ -21,17 +22,17 @@ class GraphicLine(Item):
 
         self.icon = "add_line"
 
-        self.startX_prop = Property("startX", "Points", "length", self.startX, self, "x1", "x")
-        self.startY_prop = Property("startY", "Points", "length", self.startY, self, "y1", "y")
+        self.startX_prop = Property("startX", "Points", Type_python(kicad_info.unit_string), self.startX, self, "x1")
+        self.startY_prop = Property("startY", "Points", Type_python(kicad_info.unit_string), self.startY, self, "y1")
         self.startX_prop.y_prop = self.startY_prop
         self.startY_prop.x_prop = self.startX_prop
 
-        self.endX_prop = Property("endX", "Points", "length", self.endX, self, "x2", "x")
-        self.endY_prop = Property("endY", "Points", "length", self.endY, self, "y2", "y")
+        self.endX_prop = Property("endX", "Points", Type_python(kicad_info.unit_string), self.endX, self, "x2")
+        self.endY_prop = Property("endY", "Points", Type_python(kicad_info.unit_string), self.endY, self, "y2")
         self.endX_prop.y_prop = self.endY_prop
         self.endY_prop.x_prop = self.endX_prop
 
-        self.width_prop = Property("width", "Line", "length_unsigned", self.width, self, "width")
+        self.width_prop = Property("width", "Line", Type_python(), self.width, self, "width")
 
         self.properties = Properties([
             self.startX_prop,

@@ -1,5 +1,6 @@
 from ..property import *
 from ..item import *
+from ..gui.elements import *
 
 # footprint attributes:
 # Footprint type:
@@ -23,16 +24,16 @@ class GraphicText(Item):
 
         self.icon = "text"
 
-        self.text_prop = Property("Text", "Strings", "string", self.text, self)
-        self.x_prop = Property("X", "Position", "length", self.x, self, "x", "x")
-        self.y_prop = Property("Y", "Position", "length", self.y, self, "y", "y")
+        self.text_prop = Property("Text", "Strings", Type_string(), self.text, self, "text")
+        self.x_prop = Property("X", "Position", Type_python(kicad_info.unit_string), self.x, self, "x")
+        self.y_prop = Property("Y", "Position", Type_python(kicad_info.unit_string), self.y, self, "y")
         self.x_prop.y_prop = self.y_prop
         self.y_prop.x_prop = self.x_prop
 
-        self.textWidth_prop = Property("Width", "Text", "length_unsigned", self.textWidth, self, "textWidth")
-        self.textHeight_prop = Property("Height", "Text", "length_unsigned", self.textHeight, self, "textHeight")
-        self.width_prop = Property("Width", "Line", "length_unsigned", self.width, self, "width")
-        self.orientation_prop = Property("Angle", "Orientation", "angle", self.orientation, self, "rot", "rot")
+        self.textWidth_prop = Property("Width", "Text", Type_python(), self.textWidth, self, "textWidth")
+        self.textHeight_prop = Property("Height", "Text", Type_python(), self.textHeight, self, "textHeight")
+        self.width_prop = Property("width", "Line", Type_python(), self.width, self, "width")
+        self.orientation_prop = Property("Angle", "Orientation", Type_python(), self.orientation, self, "rot")
 
         self.properties = Properties([
             self.text_prop,

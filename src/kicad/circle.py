@@ -1,6 +1,7 @@
 import math
 from ..property import *
 from ..item import *
+from ..gui.elements import *
 
 # footprint attributes:
 # Footprint type:
@@ -21,13 +22,13 @@ class GraphicCircle(Item):
 
         self.icon = "add_circle"
 
-        self.x_prop = Property("X", "Position", "length", self.x, self, "x", "x")
-        self.y_prop = Property("Y", "Position", "length", self.y, self, "y", "y")
+        self.x_prop = Property("X", "Position", Type_python(kicad_info.unit_string), self.x, self, "x")
+        self.y_prop = Property("Y", "Position", Type_python(kicad_info.unit_string), self.y, self, "y")
         self.x_prop.y_prop = self.y_prop
         self.y_prop.x_prop = self.x_prop
 
-        self.radius_prop = Property("Radius", "Shape", "length_unsigned", self.radius, self, "r")
-        self.width_prop = Property("width", "Line", "length_unsigned", self.width, self, "width")
+        self.radius_prop = Property("Radius", "Shape", Type_python(), self.radius, self, "r")
+        self.width_prop = Property("width", "Line", Type_python(), self.width, self, "width")
 
         self.properties = Properties([
             self.x_prop,

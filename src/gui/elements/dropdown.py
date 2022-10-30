@@ -11,6 +11,8 @@ class dropdown_control:
         self.control = wx.Choice(parent_window, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, self.type.choices, 0)
         parent.Add(self.control, 1, wx.ALL|wx.EXPAND, 5)
 
+        self.control.SetToolTip(varname)
+
     def SetValue(self, value):
         if value[:1] == "\"" and value[-1:] == "\"":
             isString = True

@@ -115,7 +115,6 @@ class GUI(wx.Dialog):
         if update:
             pcbnew.Refresh()
 
-
     def apply_press(self, e):
         self.apply()
 
@@ -131,7 +130,7 @@ class GUI(wx.Dialog):
         if type(ui_element) == str:
             self.add_category(parent, ui_element)
         else:
-            ui_element.wx_field = add_control(self.scroll_box, parent, ui_element.name, "aa", ui_element.field_value, Type_python(ui_element.unit))
+            ui_element.wx_field = add_control(self.scroll_box, parent, ui_element.name, "aa", ui_element.field_value, ui_element.widget_type)
             self.add_icons(parent, ui_element.items.get_icons())
 
     def add_category(self, parent, name):
@@ -140,39 +139,6 @@ class GUI(wx.Dialog):
         parent.Add(staticText, 0, wx.ALL, 5)
         parent.Add((0, 0), 1, wx.EXPAND, 5)
         parent.Add((0, 0), 1, wx.EXPAND, 5)
-
-
-    def add_value(self, parent, name, value, unit = None):
-        staticText = wx.StaticText(self.scroll_box, wx.ID_ANY, name + ":", wx.DefaultPosition, wx.DefaultSize, 0)
-        staticText.SetToolTip(name)
-
-        parent.Add(staticText, 0, wx.ALL, 5)
-
-        if unit != None:
-            box_unit_grid = wx.FlexGridSizer(0, 2, 0, 0)
-            box_unit_grid.SetFlexibleDirection(wx.BOTH)
-            box_unit_grid.SetNonFlexibleGrowMode(wx.FLEX_GROWMODE_SPECIFIED)
-
-            input_field = wx.TextCtrl(self.scroll_box, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0)
-            box_unit_grid.Add(input_field, 0, wx.ALL|wx.EXPAND, 5)
-
-
-            staticText = wx.StaticText(self.scroll_box, wx.ID_ANY, unit, wx.DefaultPosition, wx.DefaultSize, 0)
-            staticText.Wrap(-1)
-
-            box_unit_grid.Add(staticText, 0, wx.ALL, 5)
-
-            parent.Add(box_unit_grid, 1, wx.EXPAND, 5)
-        else:
-            input_field = wx.TextCtrl(self.scroll_box, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0)
-            parent.Add(input_field, 0, wx.ALL|wx.EXPAND, 5)
-
-        input_field.SetValue(value)
-
-        return input_field
-
-    def aaa(self, e):
-        print("aaa")
 
     def add_icons(self, parent, icons):
         icon_sizer = wx.BoxSizer(wx.HORIZONTAL)
@@ -186,10 +152,7 @@ class GUI(wx.Dialog):
             bitmap = wx.StaticBitmap(self.scroll_box, wx.ID_ANY, wx.Bitmap(path, wx.BITMAP_TYPE_ANY), wx.DefaultPosition, wx.Size(20,20), 0)
             icon_sizer.Add(bitmap, 0, wx.ALL, 0)
 
-            bitmap.Bind(wx.EVT_LEFT_UP, self.aaa)
-
         parent.Add(icon_sizer, 1, wx.EXPAND, len(icons))
-
 
 
 

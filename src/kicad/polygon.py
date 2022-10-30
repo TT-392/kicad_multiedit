@@ -1,6 +1,6 @@
-import math
 from ..property import *
 from ..item import *
+from ..gui.elements import *
 
 # footprint attributes:
 # Footprint type:
@@ -18,7 +18,7 @@ class GraphicPolygon(Item):
 
         self.icon = "add_graphical_polygon"
 
-        self.width_prop = Property("width", "Line", "length_unsigned", self.width, self, "width")
+        self.width_prop = Property("width", "Line", Type_python(), self.width, self, "width")
 
         self.properties = Properties([
             self.width_prop
