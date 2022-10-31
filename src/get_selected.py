@@ -1,6 +1,7 @@
 import pcbnew
 from .item import *
 from .kicad.footprint import *
+from .kicad.footprint_text import *
 from .kicad.line import *
 from .kicad.arc import *
 from .kicad.rect import *
@@ -24,6 +25,17 @@ def get_selected():
     for footprint in pcb.GetFootprints():
         if footprint.IsSelected():
             item_list.append(Footprint(footprint))
+
+        for item in footprint.GraphicalItems():
+            if item.IsSelected():
+                print(FootprintText(item))
+                item_list.append(FootprintText(item))
+
+        reference = footprint.Reference()
+        if reference.IsSelected():
+            item_list.append(FootprintText(reference))
+
+
 
     for drawing in pcb.GetDrawings():
         if drawing.IsSelected():
