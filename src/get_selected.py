@@ -27,9 +27,9 @@ def get_selected():
             item_list.append(Footprint(footprint))
 
         for item in footprint.GraphicalItems():
-            if item.IsSelected():
-                print(FootprintText(item))
-                item_list.append(FootprintText(item))
+            if type(item) == pcbnew.FP_TEXT:
+                if item.IsSelected():
+                    item_list.append(FootprintText(item))
 
         reference = footprint.Reference()
         if reference.IsSelected():
