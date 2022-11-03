@@ -29,6 +29,19 @@ def snap(x, amount):
     x = round(x, 0)
     return x * amount
 
+# Eventually I want the normal function to accept self or just have a normal variable for any item with an x1, y1, x2 and y2
+def normal(x1, y1, x2, y2):
+    x_distance = x2 - x1
+    y_distance = y2 - y1
+    angle = math.degrees(math.atan2(x_distance, y_distance))
+    normal = angle - 90
+
+    if normal < 0:
+        normal += 360
+
+    return normal
+
+
 class fp:
     def __init__(self, prefix, postfix):
         found = False
