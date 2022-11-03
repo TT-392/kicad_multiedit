@@ -2,15 +2,6 @@ from ..property import *
 from ..item import *
 from ..gui.elements import *
 
-# footprint attributes:
-# Footprint type:
-#    0b00000: other
-#    0b00001: through hole
-#    0b00010: smd
-# 0b10000: not in schematic
-# 0b00100: exclude from position files
-# 0b01000: exclude from bom
-
 class GraphicText(Item):
     def __init__(self, obj):
         self.obj = obj
@@ -21,6 +12,7 @@ class GraphicText(Item):
         self.textHeight = self.to_user_unit(self, self.__textHeight)
         self.width = self.to_user_unit(self, self.__width)
         self.orientation = self.translated_orientation(self, self.__orientation)
+        self.layer = self.__layer(self)
 
         self.icon = "text"
 
@@ -35,6 +27,8 @@ class GraphicText(Item):
         self.width_prop = Property("width", "Line", Type_python(), self.width, self, "width")
         self.orientation_prop = Property("Angle", "Orientation", Type_python(), self.orientation, self, "rot")
 
+        self.layer_prop = Property("Layer", "Miscellaneous", Type_dropdown(kicad_info.get_layers()), self.layer, self, "Layer")
+
         self.properties = Properties([
             self.text_prop,
             self.x_prop,
@@ -42,7 +36,8 @@ class GraphicText(Item):
             self.textWidth_prop,
             self.textHeight_prop,
             self.width_prop,
-            self.orientation_prop
+            self.orientation_prop,
+            self.layer_prop
             ])
 
 
@@ -119,3 +114,12 @@ class GraphicText(Item):
         def get(self):
             return self.s.obj.GetTextAngle() / 10
 
+    class __layer:
+        def __init__(self, Self):
+            self.s = Self
+            
+        def put(self, value):
+            self.s.obj.SetLayer(kicad_info.get_layer_id(value))
+
+        def get(self):
+            return pcbnew.LayerName(self.s.obj.GetLayer())

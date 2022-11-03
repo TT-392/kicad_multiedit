@@ -19,6 +19,7 @@ class GraphicRect(Item):
         self.endX = self.translated_x(self, self.__endX, self.__endY)
         self.endY = self.translated_y(self, self.__endY, self.__endX)
         self.width = self.to_user_unit(self, self.__width)
+        self.layer = self.__layer(self)
 
         self.icon = "add_rectangle"
 
@@ -33,13 +34,16 @@ class GraphicRect(Item):
         self.endY_prop.x_prop = self.endX_prop        
 
         self.width_prop = Property("width", "Line", Type_python(), self.width, self, "width")
+        self.layer_prop = Property("Layer", "Miscellaneous", Type_dropdown(kicad_info.get_layers()), self.layer, self, "Layer")
+        self.layer_prop = Property("Layer", "Miscellaneous", Type_dropdown(kicad_info.get_layers()), self.layer, self, "Layer")
 
         self.properties = Properties([
             self.startX_prop,
             self.startY_prop,
             self.endX_prop,
             self.endY_prop,
-            self.width_prop
+            self.width_prop,
+            self.layer_prop
             ])
 
 
@@ -97,3 +101,12 @@ class GraphicRect(Item):
         def get(self):
             return self.s.obj.GetWidth()
 
+    class __layer:
+        def __init__(self, Self):
+            self.s = Self
+            
+        def put(self, value):
+            self.s.obj.SetLayer(kicad_info.get_layer_id(value))
+
+        def get(self):
+            return pcbnew.LayerName(self.s.obj.GetLayer())

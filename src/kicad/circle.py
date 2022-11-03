@@ -19,6 +19,7 @@ class GraphicCircle(Item):
         self.y = self.translated_y(self, self.__y, self.__x)
         self.radius = self.to_user_unit(self, self.__radius)
         self.width = self.to_user_unit(self, self.__width)
+        self.layer = self.__layer(self)
 
         self.icon = "add_circle"
 
@@ -29,12 +30,14 @@ class GraphicCircle(Item):
 
         self.radius_prop = Property("Radius", "Shape", Type_python(), self.radius, self, "r")
         self.width_prop = Property("width", "Line", Type_python(), self.width, self, "width")
+        self.layer_prop = Property("Layer", "Miscellaneous", Type_dropdown(kicad_info.get_layers()), self.layer, self, "Layer")
 
         self.properties = Properties([
             self.x_prop,
             self.y_prop,
             self.radius_prop,
-            self.width_prop
+            self.width_prop,
+            self.layer_prop
             ])
 
 
@@ -84,3 +87,12 @@ class GraphicCircle(Item):
         def get(self):
             return self.s.obj.GetWidth()
 
+    class __layer:
+        def __init__(self, Self):
+            self.s = Self
+            
+        def put(self, value):
+            self.s.obj.SetLayer(kicad_info.get_layer_id(value))
+
+        def get(self):
+            return pcbnew.LayerName(self.s.obj.GetLayer())

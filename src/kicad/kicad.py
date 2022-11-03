@@ -39,5 +39,32 @@ class Kicad_info:
         elif self.units == UNIT_IN:
             return pcbnew.FromMils(value * 1000)
 
+    def get_layers(self):
+        layers = []
+        pcb = pcbnew.GetBoard()
+
+        for i in pcb.GetEnabledLayers().UIOrder():
+            layers.append(pcbnew.LayerName(i))
+
+        return layers
+
+    def get_copper_layers(self):
+        layers = []
+        pcb = pcbnew.GetBoard()
+
+        for i in pcb.GetEnabledLayers().CuStack():
+            layers += pcbnew.LayerName(i)
+
+        return layers
+
+    def get_layer_id(self, layer_name):
+        pcb = pcbnew.GetBoard()
+
+        for layer_id in pcb.GetEnabledLayers().UIOrder():
+            if pcbnew.LayerName(layer_id) == layer_name:
+                return layer_id
+
+        assert 0, "Error, layer " + layer_name + " does not exist"
+
 kicad_info = Kicad_info()
 

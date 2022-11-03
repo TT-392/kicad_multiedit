@@ -1,15 +1,8 @@
+import pcbnew
+from kicad import *
 from ..property import *
 from ..item import *
 from ..gui.elements import *
-
-# footprint attributes:
-# Footprint type:
-#    0b00000: other
-#    0b00001: through hole
-#    0b00010: smd
-# 0b10000: not in schematic
-# 0b00100: exclude from position files
-# 0b01000: exclude from bom
 
 class GraphicArc(Item):
     def __init__(self, obj):
@@ -20,6 +13,7 @@ class GraphicArc(Item):
         self.endY = self.translated_y(self, self.__endY, self.__endX)
         self.arcAngle = self.__arcAngle(self)
         self.width = self.to_user_unit(self, self.__width)
+        self.layer = self.__layer(self)
 
         self.icon = "add_arc"
 
@@ -35,6 +29,7 @@ class GraphicArc(Item):
 
         self.arcAngle_prop = Property("arcangle", "Line", Type_python(), self.arcAngle, self, "arcAngle")
         self.width_prop = Property("width", "Line", Type_python(), self.width, self, "width")
+        self.layer_prop = Property("Layer", "Miscellaneous", Type_dropdown(kicad_info.get_layers()), self.layer, self, "Layer")
 
         self.properties = Properties([
             self.startX_prop,
@@ -42,7 +37,8 @@ class GraphicArc(Item):
             self.endX_prop,
             self.endY_prop,
             self.arcAngle_prop,
-            self.width_prop
+            self.width_prop,
+            self.layer_prop
             ])
 
 
@@ -109,3 +105,12 @@ class GraphicArc(Item):
         def get(self):
             return self.s.obj.GetWidth()
 
+    class __layer:
+        def __init__(self, Self):
+            self.s = Self
+            
+        def put(self, value):
+            self.s.obj.SetLayer(kicad_info.get_layer_id(value))
+
+        def get(self):
+            return pcbnew.LayerName(self.s.obj.GetLayer())

@@ -1,3 +1,4 @@
+import pcbnew
 from .src.get_selected import *
 from .src.GUI import *
 from .src.ui_elements import *
@@ -22,8 +23,8 @@ class ComplexPluginAction(pcbnew.ActionPlugin):
     def Run(self):
         # The entry function of the plugin that is executed on user action
         try:
+            
             config.extended_checks = True #TODO: set this to False for more speed
-
 
             kicad_info.update()
 

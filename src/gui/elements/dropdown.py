@@ -25,3 +25,5 @@ class dropdown_control:
         else:
             self.control.SetSelection(self.type.choices.index(value[1:-1]))
 
+    def GetValue(self):
+        return "\"" + self.control.GetString(self.control.GetSelection()) + "\""

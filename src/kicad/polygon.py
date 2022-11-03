@@ -15,13 +15,16 @@ class GraphicPolygon(Item):
     def __init__(self, obj):
         self.obj = obj
         self.width = self.to_user_unit(self, self.__width)
+        self.layer = self.__layer(self)
 
         self.icon = "add_graphical_polygon"
 
         self.width_prop = Property("width", "Line", Type_python(), self.width, self, "width")
+        self.layer_prop = Property("Layer", "Miscellaneous", Type_dropdown(kicad_info.get_layers()), self.layer, self, "Layer")
 
         self.properties = Properties([
-            self.width_prop
+            self.width_prop,
+            self.layer_prop
             ])
 
     def __str__(self):
@@ -37,3 +40,12 @@ class GraphicPolygon(Item):
         def get(self):
             return self.s.obj.GetWidth()
 
+    class __layer:
+        def __init__(self, Self):
+            self.s = Self
+            
+        def put(self, value):
+            self.s.obj.SetLayer(kicad_info.get_layer_id(value))
+
+        def get(self):
+            return pcbnew.LayerName(self.s.obj.GetLayer())
