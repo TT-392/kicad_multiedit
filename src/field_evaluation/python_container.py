@@ -29,6 +29,28 @@ def snap(x, amount):
     x = round(x, 0)
     return x * amount
 
+def prefix(designator):
+    retval = ""
+
+    for c in designator:
+        if c in "0123456789":
+            break
+        retval += c
+
+    return retval
+
+def postfix(designator):
+    retval = ""
+
+    for c in designator[::-1]:
+        if not c in "0123456789":
+            break
+        retval = c + retval
+
+    return int(retval)
+
+
+
 # Eventually I want the normal function to accept self or just have a normal variable for any item with an x1, y1, x2 and y2
 def normal(x1, y1, x2, y2):
     x_distance = x2 - x1
