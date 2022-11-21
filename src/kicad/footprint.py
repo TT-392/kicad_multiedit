@@ -2,6 +2,7 @@ import pcbnew
 from ..property import *
 from ..item import *
 from ..gui.elements import *
+from ..ui_layout import *
 
 # footprint attributes:
 # Footprint type:
@@ -20,6 +21,12 @@ class Footprint(Item):
         self.y = self.translated_y(self, self.__y, self.__x)
         self.orientation = self.translated_orientation(self, self.__orientation)
         self.not_in_schematic = self.__not_in_schematic(self)
+
+        ui_layout["Position"]["X"].register(self.x)
+        ui_layout["Position"]["Y"].register(self.y)
+        ui_layout["Orientation"]["Angle"].register(self.orientation)
+        ui_layout["Text Items"]["Ref"].register(self.reference)
+        ui_layout["Fabrication Attributes"]["Not in schematic"].register(self.not_in_schematic)
 
         self.icon = "add_footprint"
 
@@ -44,51 +51,51 @@ class Footprint(Item):
         return "Footprint: " + self.reference.get()
 
     class __reference:
-        def __init__(self, Self):
-            self.s = Self
+        def __init__(self, item):
+            self.item = item
             
         def put(self, value):
-            self.s.obj.SetReference(value)
+            self.item.obj.SetReference(value)
 
         def get(self):
-            return self.s.obj.GetReference()
+            return self.item.obj.GetReference()
 
     class __x:
-        def __init__(self, Self):
-            self.s = Self
+        def __init__(self, item):
+            self.item = item
             
         def put(self, value):
-            self.s.obj.SetPosition(pcbnew.wxPoint(value, self.s.obj.GetPosition().y))
+            self.item.obj.SetPosition(pcbnew.wxPoint(value, self.item.obj.GetPosition().y))
 
         def get(self):
-            return self.s.obj.GetPosition().x
+            return self.item.obj.GetPosition().x
 
     class __y:
-        def __init__(self, Self):
-            self.s = Self
+        def __init__(self, item):
+            self.item = item
             
         def put(self, value):
-            self.s.obj.SetPosition(pcbnew.wxPoint(self.s.obj.GetPosition().x, value))
+            self.item.obj.SetPosition(pcbnew.wxPoint(self.item.obj.GetPosition().x, value))
 
         def get(self):
-            return self.s.obj.GetPosition().y
+            return self.item.obj.GetPosition().y
 
     class __orientation:
-        def __init__(self, Self):
-            self.s = Self
+        def __init__(self, item):
+            self.item = item
             
         def put(self, value):
-            self.s.obj.SetOrientation(value * 10)
+            self.item.obj.SetOrientation(value * 10)
 
         def get(self):
-            return self.s.obj.GetOrientation() / 10
+            return self.item.obj.GetOrientation() / 10
 
     class __not_in_schematic:
-        def __init__(self, Self):
-            self.s = Self
+        def __init__(self, item):
+            self.item = item
             
         def put(self, value):
-            attributes = self.s.obj.GetAttributes()
+            attributes = self.item.obj.GetAttributes()
 
             if True:
                 attributes |= 0b10000
@@ -97,11 +104,11 @@ class Footprint(Item):
             else:
                 assert 0, "value not True or False"
 
-            self.s.obj.SetAttributes(attributes)
+            self.item.obj.SetAttributes(attributes)
 
 
         def get(self):
-            if self.s.obj.GetAttributes() & 0b10000:
+            if self.item.obj.GetAttributes() & 0b10000:
                 return True
             else:
                 return False

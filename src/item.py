@@ -17,57 +17,57 @@ class Item:
 
     # OPTIMIZATION: x_class and y_class can be combined into one class for items
     class translated_x:
-        def __init__(self, obj, x_class, y_class):
-            self.x_obj = obj.to_user_unit(obj, x_class)
-            self.y_obj = obj.to_user_unit(obj, y_class)
-            self.obj = obj
+        def __init__(self, item, x_class, y_class):
+            self.x_obj = item.to_user_unit(item, x_class)
+            self.y_obj = item.to_user_unit(item, y_class)
+            self.item = item
 
         def put(self, value):
-            coords = utils.translate((self.x_obj.get(), self.y_obj.get()), self.obj.origin)
+            coords = utils.translate((self.x_obj.get(), self.y_obj.get()), self.item.origin)
             coords[0] = value
-            coords = utils.reverse_translate(coords, self.obj.origin)
+            coords = utils.reverse_translate(coords, self.item.origin)
             self.x_obj.put(coords[0])
             self.y_obj.put(coords[1])
 
         def get(self):
-            return utils.translate((self.x_obj.get(), self.y_obj.get()), self.obj.origin)[0]
+            return utils.translate((self.x_obj.get(), self.y_obj.get()), self.item.origin)[0]
 
     class translated_y:
-        def __init__(self, obj, y_class, x_class):
-            self.x_obj = obj.to_user_unit(obj, x_class)
-            self.y_obj = obj.to_user_unit(obj, y_class)
-            self.obj = obj
+        def __init__(self, item, y_class, x_class):
+            self.x_obj = item.to_user_unit(item, x_class)
+            self.y_obj = item.to_user_unit(item, y_class)
+            self.item = item
 
         def put(self, value):
-            coords = utils.translate((self.x_obj.get(), self.y_obj.get()), self.obj.origin)
+            coords = utils.translate((self.x_obj.get(), self.y_obj.get()), self.item.origin)
             coords[1] = value
-            coords = utils.reverse_translate(coords, self.obj.origin)
+            coords = utils.reverse_translate(coords, self.item.origin)
             self.x_obj.put(coords[0])
             self.y_obj.put(coords[1])
 
         def get(self):
-            return utils.translate((self.x_obj.get(), self.y_obj.get()), self.obj.origin)[1]
+            return utils.translate((self.x_obj.get(), self.y_obj.get()), self.item.origin)[1]
         
     class translated_orientation:
-        def __init__(self, obj, rot_class):
-            self.rot_obj = rot_class(obj)
-            self.obj = obj
+        def __init__(self, item, rot_class):
+            self.rot_obj = rot_class(item)
+            self.item = item
 
         def put(self, value):
-            self.rot_obj.put(value + self.obj.origin[1])
+            self.rot_obj.put(value + self.item.origin[1])
 
         def get(self):
-            return self.rot_obj.get() - self.obj.origin[1]
+            return self.rot_obj.get() - self.item.origin[1]
 
     class to_user_unit:
-        def __init__(self, obj, class_):
-            self.obj = class_(obj)
+        def __init__(self, item, class_):
+            self.item = class_(item)
 
         def put(self, value):
-            self.obj.put(kicad_info.fromUnit(value))
+            self.item.put(kicad_info.fromUnit(value))
 
         def get(self):
-            return kicad_info.toUnit(self.obj.get())
+            return kicad_info.toUnit(self.item.get())
 
 
 class Items:

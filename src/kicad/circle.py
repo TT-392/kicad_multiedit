@@ -45,54 +45,54 @@ class GraphicCircle(Item):
         return "Footprint: " + self.reference.get()
 
     class __x:
-        def __init__(self, Self):
-            self.s = Self
+        def __init__(self, item):
+            self.item = item
             
         def put(self, value):
-            self.s.obj.SetPosition(pcbnew.wxPoint(value, self.s.obj.GetCenter().y))
+            self.item.obj.SetPosition(pcbnew.wxPoint(value, self.item.obj.GetCenter().y))
 
         def get(self):
-            return self.s.obj.GetPosition().x
+            return self.item.obj.GetPosition().x
 
     class __y:
-        def __init__(self, Self):
-            self.s = Self
+        def __init__(self, item):
+            self.item = item
             
         def put(self, value):
-            self.s.obj.SetPosition(pcbnew.wxPoint(self.s.obj.GetCenter().x, value))
+            self.item.obj.SetPosition(pcbnew.wxPoint(self.item.obj.GetCenter().x, value))
 
         def get(self):
-            return self.s.obj.GetPosition().y
+            return self.item.obj.GetPosition().y
 
     class __radius:
-        def __init__(self, Self):
-            self.s = Self
+        def __init__(self, item):
+            self.item = item
             
         def put(self, value):
-            centerX = self.s.obj.GetStartX()
-            centerY = self.s.obj.GetStartY()
-            self.s.obj.SetEndX(value + centerX)
-            self.s.obj.SetEndY(centerY)
+            centerX = self.item.obj.GetStartX()
+            centerY = self.item.obj.GetStartY()
+            self.item.obj.SetEndX(value + centerX)
+            self.item.obj.SetEndY(centerY)
 
         def get(self):
-            return self.s.obj.GetRadius()
+            return self.item.obj.GetRadius()
 
     class __width:
-        def __init__(self, Self):
-            self.s = Self
+        def __init__(self, item):
+            self.item = item
             
         def put(self, value):
-            self.s.obj.SetWidth(value)
+            self.item.obj.SetWidth(value)
 
         def get(self):
-            return self.s.obj.GetWidth()
+            return self.item.obj.GetWidth()
 
     class __layer:
-        def __init__(self, Self):
-            self.s = Self
+        def __init__(self, item):
+            self.item = item
             
         def put(self, value):
-            self.s.obj.SetLayer(kicad_info.get_layer_id(value))
+            self.item.obj.SetLayer(kicad_info.get_layer_id(value))
 
         def get(self):
-            return pcbnew.LayerName(self.s.obj.GetLayer())
+            return pcbnew.LayerName(self.item.obj.GetLayer())

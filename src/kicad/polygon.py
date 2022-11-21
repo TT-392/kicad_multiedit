@@ -31,21 +31,21 @@ class GraphicPolygon(Item):
         return "Footprint: " + self.reference.get()
 
     class __width:
-        def __init__(self, Self):
-            self.s = Self
+        def __init__(self, item):
+            self.item = item
             
         def put(self, value):
-            self.s.obj.SetWidth(value)
+            self.item.obj.SetWidth(value)
 
         def get(self):
-            return self.s.obj.GetWidth()
+            return self.item.obj.GetWidth()
 
     class __layer:
-        def __init__(self, Self):
-            self.s = Self
+        def __init__(self, item):
+            self.item = item
             
         def put(self, value):
-            self.s.obj.SetLayer(kicad_info.get_layer_id(value))
+            self.item.obj.SetLayer(kicad_info.get_layer_id(value))
 
         def get(self):
-            return pcbnew.LayerName(self.s.obj.GetLayer())
+            return pcbnew.LayerName(self.item.obj.GetLayer())

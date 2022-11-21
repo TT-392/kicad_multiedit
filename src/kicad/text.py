@@ -45,81 +45,81 @@ class GraphicText(Item):
         return "Footprint: " + self.reference.get()
 
     class __text:
-        def __init__(self, Self):
-            self.s = Self
+        def __init__(self, item):
+            self.item = item
             
         def put(self, value):
-            self.s.obj.SetText(value)
+            self.item.obj.SetText(value)
 
         def get(self):
-            return self.s.obj.GetText()
+            return self.item.obj.GetText()
 
     class __x:
-        def __init__(self, Self):
-            self.s = Self
+        def __init__(self, item):
+            self.item = item
             
         def put(self, value):
-            self.s.obj.SetPosition(pcbnew.wxPoint(value, self.s.obj.GetPosition().y))
+            self.item.obj.SetPosition(pcbnew.wxPoint(value, self.item.obj.GetPosition().y))
 
         def get(self):
-            return self.s.obj.GetPosition().x
+            return self.item.obj.GetPosition().x
 
     class __y:
-        def __init__(self, Self):
-            self.s = Self
+        def __init__(self, item):
+            self.item = item
             
         def put(self, value):
-            self.s.obj.SetPosition(pcbnew.wxPoint(self.s.obj.GetPosition().x, value))
+            self.item.obj.SetPosition(pcbnew.wxPoint(self.item.obj.GetPosition().x, value))
 
         def get(self):
-            return self.s.obj.GetPosition().y
+            return self.item.obj.GetPosition().y
 
     class __textWidth:
-        def __init__(self, Self):
-            self.s = Self
+        def __init__(self, item):
+            self.item = item
             
         def put(self, value):
-            self.s.obj.SetTextWidth(value)
+            self.item.obj.SetTextWidth(value)
 
         def get(self):
-            return self.s.obj.GetTextWidth()
+            return self.item.obj.GetTextWidth()
 
     class __textHeight:
-        def __init__(self, Self):
-            self.s = Self
+        def __init__(self, item):
+            self.item = item
             
         def put(self, value):
-            self.s.obj.SetTextHeight(value)
+            self.item.obj.SetTextHeight(value)
 
         def get(self):
-            return self.s.obj.GetTextHeight()
+            return self.item.obj.GetTextHeight()
 
     class __width:
-        def __init__(self, Self):
-            self.s = Self
+        def __init__(self, item):
+            self.item = item
             
         def put(self, value):
-            self.s.obj.SetTextThickness(value)
+            self.item.obj.SetTextThickness(value)
 
         def get(self):
-            return self.s.obj.GetTextThickness()
+            return self.item.obj.GetTextThickness()
 
     class __orientation:
-        def __init__(self, Self):
-            self.s = Self
+        def __init__(self, item):
+            self.item = item
             
         def put(self, value):
-            self.s.obj.SetTextAngle(value * 10)
+            self.item.obj.SetTextAngle(value * 10)
 
         def get(self):
-            return self.s.obj.GetTextAngle() / 10
+            return self.item.obj.GetTextAngle() / 10
 
     class __layer:
-        def __init__(self, Self):
-            self.s = Self
+        def __init__(self, item):
+            self.item = item
             
         def put(self, value):
-            self.s.obj.SetLayer(kicad_info.get_layer_id(value))
+            self.item.obj.SetLayer(kicad_info.get_layer_id(value))
 
         def get(self):
-            return pcbnew.LayerName(self.s.obj.GetLayer())
+            return pcbnew.LayerName(self.item.obj.GetLayer())

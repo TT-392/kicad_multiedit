@@ -3,6 +3,7 @@ import wx
 import wx.xrc
 import pcbnew
 from .gui.elements import *
+from .ui_layout import *
 
 
 #GUI: Frame
@@ -14,6 +15,7 @@ from .gui.elements import *
 
 class GUI(wx.Dialog):
     def __init__(self, parent, ui_elements):
+        #TODO: abstract away a bunch of wx stuff
         self.ui_elements = ui_elements
 
         wx.Dialog.__init__(self, parent, id = wx.ID_ANY, title = wx.EmptyString, pos = wx.DefaultPosition, size = wx.Size(400,800), style = wx.DEFAULT_FRAME_STYLE|wx.FRAME_FLOAT_ON_PARENT|wx.TAB_TRAVERSAL)
@@ -70,15 +72,15 @@ class GUI(wx.Dialog):
 
         button_cancel = wx.Button(toolbar, wx.ID_ANY, "Cancel", wx.DefaultPosition, wx.DefaultSize, 0)
         toolbar.AddControl(button_cancel)
-        button_cancel.Bind(wx.EVT_BUTTON, self.cancel_press)
+        button_cancel.Bind(wx.EVT_BUTTON, self.cancel_pressed)
 
         button_apply = wx.Button(toolbar, wx.ID_ANY, "Apply", wx.DefaultPosition, wx.DefaultSize, 0)
         toolbar.AddControl(button_apply)
-        button_apply.Bind(wx.EVT_BUTTON, self.apply_press)
+        button_apply.Bind(wx.EVT_BUTTON, self.apply_pressed)
 
         button_ok = wx.Button(toolbar, wx.ID_ANY, "Ok", wx.DefaultPosition, wx.DefaultSize, 0)
         toolbar.AddControl(button_ok)
-        button_ok.Bind(wx.EVT_BUTTON, self.ok_press)
+        button_ok.Bind(wx.EVT_BUTTON, self.ok_pressed)
 
 
         self.place_elements(main_grid)
@@ -100,7 +102,7 @@ class GUI(wx.Dialog):
                 for item in element.properties.get_items():
                     item.python_env.update()
 
-    def cancel_press(self, e):
+    def cancel_pressed(self, e):
         print("cancel")
         self.Close()
 
@@ -115,16 +117,25 @@ class GUI(wx.Dialog):
         if update:
             pcbnew.Refresh()
 
-    def apply_press(self, e):
+    def apply_pressed(self, e):
         self.apply()
 
-    def ok_press(self, e):
+    def ok_pressed(self, e):
         self.apply()
         self.Close()
 
     def place_elements(self, parent):
-        for element in self.ui_elements.list:
-            self.place_element(parent, element)
+        for category in ui_layout:
+            self.add_category(parent, category)
+
+            for name in ui_layout[category]:
+                prop = ui_layout[category][name]
+                add_control(self.scroll_box, parent, name, prop.varname, prop.get_ui_value(), prop.widget_type)
+                self.add_icons(parent, prop.get_icons())
+
+
+        #for element in self.ui_elements.list:
+        #    self.place_element(parent, element)
 
     def place_element(self, parent, ui_element):
         if type(ui_element) == str:

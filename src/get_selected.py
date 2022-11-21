@@ -1,5 +1,6 @@
 import pcbnew
 from .item import *
+from .ui_layout import *
 from .kicad.footprint import *
 from .kicad.footprint_text import *
 from .kicad.line import *
@@ -16,6 +17,11 @@ def get_selected():
     CIRCLE = 3
     POLY = 4
 
+    # Reset UI
+    for category in ui_layout:
+        for name in ui_layout[category]:
+            prop = ui_layout[category][name]
+            prop.values = []
 
 
     pcb = pcbnew.GetBoard()
@@ -26,14 +32,14 @@ def get_selected():
         if footprint.IsSelected():
             item_list.append(Footprint(footprint))
 
-        for item in footprint.GraphicalItems():
-            if type(item) == pcbnew.FP_TEXT:
-                if item.IsSelected():
-                    item_list.append(FootprintText(item))
+       # for item in footprint.GraphicalItems():
+       #     if type(item) == pcbnew.FP_TEXT:
+       #         if item.IsSelected():
+       #             item_list.append(FootprintText(item))
 
-        reference = footprint.Reference()
-        if reference.IsSelected():
-            item_list.append(FootprintText(reference))
+       # reference = footprint.Reference()
+       # if reference.IsSelected():
+       #     item_list.append(FootprintText(reference))
 
 
 

@@ -1,7 +1,7 @@
 import pcbnew
 from .src.get_selected import *
 from .src.GUI import *
-from .src.ui_elements import *
+from .src.ui_layout import *
 from .src.config import *
 from .src.kicad.kicad import *
 import os

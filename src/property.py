@@ -12,21 +12,50 @@ class Property:
 
         self.value = value
 
+        self.values = []
+
         self.ui_element = None
 
         kicad_info.update()
 
-    def __str__(self):
-        return "Property{" + self.name + ", " + self.category + ", " + str(self.widget_type) + ", " + str(self.get_ui_value()) + "}"
+    #def __str__(self):
+    #    return "Property{" + self.name + ", " + self.category + ", " + str(self.widget_type) + ", " + str(self.get_ui_value()) + "}"
 
     def get_ui_value(self):
-        return utils.to_parseable_string(self.value.get())
+        # TODO: re enable this check
+        #assert len(self.values) != 0, "property without members"
+
+        if len(self.values) == 0:
+            return "Error, this value should never been shown in the UI"
+        if len(self.values) == 1:
+            return utils.to_parseable_string(self.values[0].get())
+        else:
+            firstValue = self.values[0].get()
+
+            for value in self.values[1:]:
+                if value.get() != firstValue:
+                    return self.varname
+            
+            return utils.to_parseable_string(firstValue)
+
 
     def put_ui_value(self, ui_val):
         if self.get_ui_value() == ui_val:
             return
 
         self.value.put(self.item.python_eval(ui_val))
+
+    def register(self, value_obj):
+        self.values.append(value_obj)
+
+    def get_icons(self):
+        icons = []
+
+        for value in self.values:
+            icons.append(value.item.icon)
+
+        return set(icons)
+
 
 
 

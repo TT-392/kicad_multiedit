@@ -1,37 +1,23 @@
-from .item import *
 from .kicad.kicad import *
+from .ui_element import *
+from .property import *
+from .gui.elements import *
 
-
-class Ui_element:
-    def __init__(self, name, category, widget_type, field_value, properties, items):
-        self.name = name
-        self.category = category
-        self.widget_type = widget_type
-        self.field_value = field_value
-        self.properties = properties
-        self.items = items
-
-    def __str__(self):
-        retval = self.name + ": " + str(self.field_value)
-        retval += " " + str(self.widget_type)
-
-        #for item in self.items.list:
-        #    retval += str(type(item))
-        #    retval += " "
-
-        return retval
-
-    def update(self):
-        if self.properties.all_same_value():
-            self.field_value = str(self.properties.get_ui_value())
-            self.widget_obj.SetValue(self.field_value)
-
-    def put(self, value):
-        print(self, "updated")
-        self.properties.put_ui_value(value)
-
-
-
+ui_layout = {
+    "Position": {
+        "X": Property(None, None, Type_python("mm"), None, None, "x"),
+        "Y": Property(None, None, Type_python("mm"), None, None, "y")
+    }, 
+    "Orientation": {
+        "Angle": Property(None, None, Type_python(), None, None, "rot")
+    },
+    "Text Items": {
+        "Ref": Property(None, None, Type_string(), None, None, "ref")
+    },
+    "Fabrication Attributes": {
+        "Not in schematic": Property(None, None, Type_checkbox(), None, None, "not_in_schematic")
+    }
+}
 
 class Ui_elements:
     def __init__(self, properties):
@@ -55,6 +41,10 @@ class Ui_elements:
                     items = Items(props.get_items())
                     widget_type = props.get("widget_type")
                     self.list.append(Ui_element(name, category, widget_type, field_value, props, items))
+
+
+
+
 
 
 
