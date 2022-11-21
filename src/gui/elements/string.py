@@ -14,7 +14,7 @@ class string_control:
 
         self.control.SetToolTip(varname)
 
-    def SetValue(self, value):
+    def set_value(self, value):
         self.old_value = value
 
         if value[:1] == "\"" and value[-1:] == "\"":
@@ -22,7 +22,7 @@ class string_control:
         else:
             self.control.SetValue("*")
 
-    def GetValue(self):
+    def get_value(self):
         if self.control.GetValue() == "*":
             return self.old_value
         else:

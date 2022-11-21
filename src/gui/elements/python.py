@@ -28,9 +28,9 @@ class python_control:
         self.control.SetToolTip(varname)
 
 
-    def SetValue(self, value):
+    def set_value(self, value):
         self.control.SetValue(value)
 
-    def GetValue(self):
+    def get_value(self):
         return self.control.GetValue()
 

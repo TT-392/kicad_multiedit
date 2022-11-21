@@ -24,7 +24,7 @@ def add_control(parent_window, parent, name, varname, value, Type):
     elif type(Type) == Type_dropdown or type(Type) == Type_layer: # Bitmap combo box for fancy colors with layers not yet implemented, therefore it is treated as a normal dropdown
         control = dropdown_control(parent_window, parent, name, varname, Type)
 
-    control.SetValue(value)
+    control.set_value(value)
 
 
     return control

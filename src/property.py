@@ -9,6 +9,7 @@ class Property:
         self.widget_type = widget_type
         self.item = item
         self.varname = varname
+        self.ui_element = None
 
         self.value = value
 
@@ -26,7 +27,7 @@ class Property:
         #assert len(self.values) != 0, "property without members"
 
         if len(self.values) == 0:
-            return "Error, this value should never been shown in the UI"
+            return "None"
         if len(self.values) == 1:
             return utils.to_parseable_string(self.values[0].get())
         else:
@@ -40,21 +41,46 @@ class Property:
 
 
     def put_ui_value(self, ui_val):
-        if self.get_ui_value() == ui_val:
-            return
+        for value in self.values:
+            new_value = value.item.python_eval(ui_val)
+            
+            if new_value != value.get():
+                value.put(new_value)
+                print("putting 1 value")
 
-        self.value.put(self.item.python_eval(ui_val))
 
     def register(self, value_obj):
         self.values.append(value_obj)
 
+
     def get_icons(self):
         icons = []
 
-        for value in self.values:
-            icons.append(value.item.icon)
+        for item in self.get_items():
+            icons.append(item.icon)
 
         return set(icons)
+
+
+    def get_items(self):
+        items = []
+
+        for value in self.values:
+            items.append(value.item)
+        
+        return items
+
+
+    def update_ui_value(self):
+        self.ui_element.set_value(self.get_ui_value())
+
+
+    def is_visible(self):
+        if len(self.values) == 0:
+            return False
+        else:
+            return True
+
 
 
 

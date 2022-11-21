@@ -13,7 +13,7 @@ class dropdown_control:
 
         self.control.SetToolTip(varname)
 
-    def SetValue(self, value):
+    def set_value(self, value):
         if value[:1] == "\"" and value[-1:] == "\"":
             isString = True
         else:
@@ -25,5 +25,5 @@ class dropdown_control:
         else:
             self.control.SetSelection(self.type.choices.index(value[1:-1]))
 
-    def GetValue(self):
+    def get_value(self):
         return "\"" + self.control.GetString(self.control.GetSelection()) + "\""

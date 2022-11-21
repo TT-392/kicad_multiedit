@@ -16,6 +16,9 @@ ui_layout = {
     },
     "Fabrication Attributes": {
         "Not in schematic": Property(None, None, Type_checkbox(), None, None, "not_in_schematic")
+    },
+    "Line": {
+        "Width": Property(None, None, Type_python("mm"), None, None, "width")
     }
 }
 

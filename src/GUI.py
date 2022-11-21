@@ -89,18 +89,16 @@ class GUI(wx.Dialog):
         self.Show()
 
     def update_origin(self, e):
-        for element in self.ui_elements.list:
-            if type(element) != str:
-                for item in element.properties.get_items():
-                    item.set_origin(item.python_eval(self.origin_field.GetValue()))
+        for category in ui_layout:
+            for name in ui_layout[category]:
+                prop = ui_layout[category][name]
+                if prop.is_visible():
+                    for item in prop.get_items():
+                        item.set_origin(item.python_eval(self.origin_field.GetValue()))
+                        item.python_env.update()
 
-                element.update()
+                    prop.update_ui_value()
 
-        #TODO: this has become a real mess
-        for element in self.ui_elements.list:
-            if type(element) != str:
-                for item in element.properties.get_items():
-                    item.python_env.update()
 
     def cancel_pressed(self, e):
         print("cancel")
@@ -108,12 +106,17 @@ class GUI(wx.Dialog):
 
     def apply(self):
         update = False
-        for element in self.ui_elements.list:
-            if type(element) != str:
-                if element.field_value != element.widget_obj.GetValue():
-                    update = True
-                    element.put(element.widget_obj.GetValue())
+        for category in ui_layout:
+            for name in ui_layout[category]:
+                prop = ui_layout[category][name]
 
+                if prop.is_visible():
+                    new_ui_value = prop.ui_element.get_value()
+
+                    if prop.get_ui_value() != new_ui_value:
+                        prop.put_ui_value(new_ui_value)
+                        update = True
+                        
         if update:
             pcbnew.Refresh()
 
@@ -126,16 +129,19 @@ class GUI(wx.Dialog):
 
     def place_elements(self, parent):
         for category in ui_layout:
-            self.add_category(parent, category)
+            first_prop_in_category = True
 
             for name in ui_layout[category]:
                 prop = ui_layout[category][name]
-                add_control(self.scroll_box, parent, name, prop.varname, prop.get_ui_value(), prop.widget_type)
-                self.add_icons(parent, prop.get_icons())
 
+                if prop.is_visible():
+                    if first_prop_in_category:
+                        self.add_category(parent, category)
+                        first_prop_in_category = False
 
-        #for element in self.ui_elements.list:
-        #    self.place_element(parent, element)
+                    prop.ui_element = add_control(self.scroll_box, parent, name, prop.varname, prop.get_ui_value(), prop.widget_type)
+                    self.add_icons(parent, prop.get_icons())
+
 
     def place_element(self, parent, ui_element):
         if type(ui_element) == str:
