@@ -14,9 +14,8 @@ from .ui_layout import *
 
 
 class GUI(wx.Dialog):
-    def __init__(self, parent, ui_elements):
+    def __init__(self, parent):
         #TODO: abstract away a bunch of wx stuff
-        self.ui_elements = ui_elements
 
         wx.Dialog.__init__(self, parent, id = wx.ID_ANY, title = wx.EmptyString, pos = wx.DefaultPosition, size = wx.Size(400,800), style = wx.DEFAULT_FRAME_STYLE|wx.FRAME_FLOAT_ON_PARENT|wx.TAB_TRAVERSAL)
 
