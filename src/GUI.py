@@ -1,4 +1,3 @@
-import os
 import wx
 import wx.xrc
 import pcbnew
@@ -15,7 +14,7 @@ from .ui_layout import *
 
 class GUI(wx.Dialog):
     def __init__(self, parent):
-        #TODO: abstract away a bunch of wx stuff
+        #TODO: abstract away a bunch of wx stuff, also, move to gui
 
         wx.Dialog.__init__(self, parent, id = wx.ID_ANY, title = wx.EmptyString, pos = wx.DefaultPosition, size = wx.Size(400,800), style = wx.DEFAULT_FRAME_STYLE|wx.FRAME_FLOAT_ON_PARENT|wx.TAB_TRAVERSAL)
 
@@ -96,8 +95,12 @@ class GUI(wx.Dialog):
                         item.set_origin(item.python_eval(self.origin_field.GetValue()))
                         item.python_env.update()
 
+                        prop.ui_element.set_visibility(False)
+
                     prop.update_ui_value()
 
+        # Needed after changing visibility
+        self.scroll_box.Layout()
 
     def cancel_pressed(self, e):
         print("cancel")
@@ -133,21 +136,17 @@ class GUI(wx.Dialog):
             for name in ui_layout[category]:
                 prop = ui_layout[category][name]
 
-                if prop.is_visible():
-                    if first_prop_in_category:
-                        self.add_category(parent, category)
-                        first_prop_in_category = False
+                if first_prop_in_category:
+                    category_element = passive_category(self.scroll_box, parent, category)
+                    first_prop_in_category = False
 
-                    prop.ui_element = add_control(self.scroll_box, parent, name, prop.varname, prop.get_ui_value(), prop.widget_type)
-                    self.add_icons(parent, prop.get_icons())
+                prop.ui_element = add_control(self.scroll_box, parent, category_element, name, prop.varname, prop.get_ui_value(), prop.widget_type, prop.get_icons())
 
+                visibility = prop.is_visible()
 
-    def place_element(self, parent, ui_element):
-        if type(ui_element) == str:
-            self.add_category(parent, ui_element)
-        else:
-            ui_element.widget_obj = add_control(self.scroll_box, parent, ui_element.name, "aa", ui_element.field_value, ui_element.widget_type)
-            self.add_icons(parent, ui_element.items.get_icons())
+                print("visibility:", visibility)
+                prop.ui_element.set_visibility(visibility)
+
 
     def add_category(self, parent, name):
         staticText = wx.StaticText(self.scroll_box, wx.ID_ANY, name, wx.DefaultPosition, wx.DefaultSize, 0)
@@ -156,19 +155,6 @@ class GUI(wx.Dialog):
         parent.Add((0, 0), 1, wx.EXPAND, 5)
         parent.Add((0, 0), 1, wx.EXPAND, 5)
 
-    def add_icons(self, parent, icons):
-        icon_sizer = wx.BoxSizer(wx.HORIZONTAL)
-
-
-        for icon in icons:
-            sys_appearance = wx.SystemSettings.GetAppearance()
-            theme = "dark" if sys_appearance.IsDark() else "light"
-
-            path = os.path.join(os.path.dirname(__file__), "../resources/output/" + theme + "/" + icon + ".png")
-            bitmap = wx.StaticBitmap(self.scroll_box, wx.ID_ANY, wx.Bitmap(path, wx.BITMAP_TYPE_ANY), wx.DefaultPosition, wx.Size(20,20), 0)
-            icon_sizer.Add(bitmap, 0, wx.ALL, 0)
-
-        parent.Add(icon_sizer, 1, wx.EXPAND, len(icons))
 
 
 

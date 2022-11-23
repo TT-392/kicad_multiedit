@@ -1,13 +1,19 @@
 import wx
+from .control import *
 
 class Type_checkbox:
     def __init__(self):
         pass
 
-class checkbox_control:
-    def __init__(self, parent_window, parent, name, varname, Type):
+class checkbox_control(Control):
+    def __init__(self, parent_window, parent, category, name, varname, Type):
+        Control.__init__(self)
+
+        self.category = category
+
         self.control = wx.CheckBox(parent_window, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, wx.CHK_3STATE)
         parent.Add(self.control, 1, wx.ALL|wx.EXPAND, 5)
+        self.wx_elements.append(self.control)
 
         self.control.SetToolTip(varname)
 
