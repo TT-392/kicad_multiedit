@@ -1,9 +1,20 @@
 import wx
 from .control import *
+from ...kicad.kicad import *
 
 class Type_python:
     def __init__(self, unit=None):
         self.unit = unit
+
+    def get_unit(self):
+        if self.unit == "unit user length":
+            kicad_info.update()
+            return kicad_info.unit_string
+
+        else:
+            return None
+
+
 
 class python_control(Control):
     def __init__(self, parent_window, parent, category, name, varname, Type):
@@ -20,7 +31,7 @@ class python_control(Control):
 
              ui_grid.Add(self.control, 0, wx.ALL|wx.EXPAND, 5)
 
-             ui_unit = wx.StaticText(parent_window, wx.ID_ANY, Type.unit, wx.DefaultPosition, wx.DefaultSize, 0)
+             ui_unit = wx.StaticText(parent_window, wx.ID_ANY, Type.get_unit(), wx.DefaultPosition, wx.DefaultSize, 0)
              ui_unit.Wrap(-1)
              self.wx_elements.append(ui_unit)
 
