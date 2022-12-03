@@ -3,6 +3,7 @@ from kicad import *
 from ..property import *
 from ..item import *
 from ..gui.elements import *
+from ..ui_layout import *
 
 class GraphicArc(Item):
     def __init__(self, obj):
@@ -15,32 +16,15 @@ class GraphicArc(Item):
         self.width = self.to_user_unit(self, self.__width)
         self.layer = self.__layer(self)
 
+        ui_layout["Graphic"]["Start X"].register(self.startX)
+        ui_layout["Graphic"]["Start Y"].register(self.startY)
+        ui_layout["Graphic"]["End X"].register(self.endX)
+        ui_layout["Graphic"]["End Y"].register(self.endY)
+        ui_layout["Graphic"]["Arc angle"].register(self.arcAngle)
+        ui_layout["Graphic"]["Line width"].register(self.width)
+        ui_layout["Miscellaneous"]["Layer"].register(self.layer)
+
         self.icon = "add_arc"
-
-        self.startX_prop = Property("startX", "Points", Type_python(kicad_info.unit_string), self.startX, self, "x1")
-        self.startY_prop = Property("startY", "Points", Type_python(kicad_info.unit_string), self.startY, self, "y1")
-        self.startX_prop.y_prop = self.startY_prop
-        self.startY_prop.x_prop = self.startX_prop
-
-        self.endX_prop = Property("endX", "Points", Type_python(kicad_info.unit_string), self.endX, self, "x2")
-        self.endY_prop = Property("endY", "Points", Type_python(kicad_info.unit_string), self.endY, self, "y2")
-        self.endX_prop.y_prop = self.endY_prop
-        self.endY_prop.x_prop = self.endX_prop
-
-        self.arcAngle_prop = Property("arcangle", "Line", Type_python(), self.arcAngle, self, "arcAngle")
-        self.width_prop = Property("width", "Line", Type_python(), self.width, self, "width")
-        self.layer_prop = Property("Layer", "Miscellaneous", Type_dropdown(kicad_info.get_layers()), self.layer, self, "Layer")
-
-        self.properties = Properties([
-            self.startX_prop,
-            self.startY_prop,
-            self.endX_prop,
-            self.endY_prop,
-            self.arcAngle_prop,
-            self.width_prop,
-            self.layer_prop
-            ])
-
 
     def __str__(self):
         return "Footprint: " + self.reference.get()

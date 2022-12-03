@@ -1,6 +1,7 @@
 from ..property import *
 from ..item import *
 from ..gui.elements import *
+from ..ui_layout import *
 
 # footprint attributes:
 # Footprint type:
@@ -17,15 +18,10 @@ class GraphicPolygon(Item):
         self.width = self.to_user_unit(self, self.__width)
         self.layer = self.__layer(self)
 
+        ui_layout["Graphic"]["Line width"].register(self.width)
+        ui_layout["Miscellaneous"]["Layer"].register(self.layer)
+
         self.icon = "add_graphical_polygon"
-
-        self.width_prop = Property("width", "Line", Type_python(), self.width, self, "width")
-        self.layer_prop = Property("Layer", "Miscellaneous", Type_dropdown(kicad_info.get_layers()), self.layer, self, "Layer")
-
-        self.properties = Properties([
-            self.width_prop,
-            self.layer_prop
-            ])
 
     def __str__(self):
         return "Footprint: " + self.reference.get()

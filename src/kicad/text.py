@@ -1,6 +1,7 @@
 from ..property import *
 from ..item import *
 from ..gui.elements import *
+from ..ui_layout import *
 
 class GraphicText(Item):
     def __init__(self, obj):
@@ -14,31 +15,16 @@ class GraphicText(Item):
         self.orientation = self.translated_orientation(self, self.__orientation)
         self.layer = self.__layer(self)
 
+        ui_layout["Text"]["Text"].register(self.text)
+        ui_layout["Position"]["X"].register(self.x)
+        ui_layout["Position"]["Y"].register(self.y)
+        ui_layout["Text"]["Width"].register(self.textWidth)
+        ui_layout["Text"]["Height"].register(self.textHeight)
+        ui_layout["Graphic"]["Line width"].register(self.width)
+        ui_layout["Orientation"]["Angle"].register(self.orientation)
+        ui_layout["Miscellaneous"]["Layer"].register(self.layer)
+
         self.icon = "text"
-
-        self.text_prop = Property("Text", "Strings", Type_string(), self.text, self, "text")
-        self.x_prop = Property("X", "Position", Type_python(kicad_info.unit_string), self.x, self, "x")
-        self.y_prop = Property("Y", "Position", Type_python(kicad_info.unit_string), self.y, self, "y")
-        self.x_prop.y_prop = self.y_prop
-        self.y_prop.x_prop = self.x_prop
-
-        self.textWidth_prop = Property("Width", "Text", Type_python(), self.textWidth, self, "textWidth")
-        self.textHeight_prop = Property("Height", "Text", Type_python(), self.textHeight, self, "textHeight")
-        self.width_prop = Property("width", "Line", Type_python(), self.width, self, "width")
-        self.orientation_prop = Property("Angle", "Orientation", Type_python(), self.orientation, self, "rot")
-
-        self.layer_prop = Property("Layer", "Miscellaneous", Type_dropdown(kicad_info.get_layers()), self.layer, self, "Layer")
-
-        self.properties = Properties([
-            self.text_prop,
-            self.x_prop,
-            self.y_prop,
-            self.textWidth_prop,
-            self.textHeight_prop,
-            self.width_prop,
-            self.orientation_prop,
-            self.layer_prop
-            ])
 
 
     def __str__(self):

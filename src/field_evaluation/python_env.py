@@ -5,33 +5,36 @@ from .python_container import *
 
 class Python_env:
     def __init__(self, items, item, i):
-        props = items.get_properties()
-        self.item = item
+        pass
+        #props = items.get_properties()
+        #self.item = item
 
-        self.varnames = props.get_all("varname")
+        #self.varnames = props.get_all("varname")
 
-        self.defines_string = ""
+        #self.defines_string = ""
 
-        for varname in self.varnames:
-            if varname != None:
-                self.defines_string += varname + "=0\n"
+        #for varname in self.varnames:
+        #    if varname != None:
+        #        self.defines_string += varname + "=0\n"
 
-        self.defines_string += "i=" + str(i) + "\n"
+        #self.defines_string += "i=" + str(i) + "\n"
 
-        self.update()
+        #self.update()
 
     def update(self):
-        props = self.item.properties
-        varnames = props.get_all("varname")
-        
-        self.populated_defines_string = self.defines_string
+        pass
+        #props = self.item.properties
+        #varnames = props.get_all("varname")
+        #
+        #self.populated_defines_string = self.defines_string
 
-        for prop in props:
-            if prop.varname != None:
-                self.populated_defines_string += prop.varname + "=" + str(prop.get_ui_value()) + "\n"
+        #for prop in props:
+        #    if prop.varname != None:
+        #        self.populated_defines_string += prop.varname + "=" + str(prop.get_ui_value()) + "\n"
 
     def eval(self, string):
-        return eval_in_container(self.populated_defines_string, string)
+        pass
+        #return eval_in_container(self.populated_defines_string, string)
         
 
 

@@ -2,6 +2,7 @@ import math
 from ..property import *
 from ..item import *
 from ..gui.elements import *
+from ..ui_layout import *
 
 # footprint attributes:
 # Footprint type:
@@ -21,24 +22,14 @@ class GraphicCircle(Item):
         self.width = self.to_user_unit(self, self.__width)
         self.layer = self.__layer(self)
 
+
+        ui_layout["Position"]["X"].register(self.x)
+        ui_layout["Position"]["Y"].register(self.y)
+        ui_layout["Graphic"]["Radius"].register(self.radius)
+        ui_layout["Graphic"]["Line width"].register(self.width)
+        ui_layout["Miscellaneous"]["Layer"].register(self.layer)
+
         self.icon = "add_circle"
-
-        self.x_prop = Property("X", "Position", Type_python(kicad_info.unit_string), self.x, self, "x")
-        self.y_prop = Property("Y", "Position", Type_python(kicad_info.unit_string), self.y, self, "y")
-        self.x_prop.y_prop = self.y_prop
-        self.y_prop.x_prop = self.x_prop
-
-        self.radius_prop = Property("Radius", "Shape", Type_python(), self.radius, self, "r")
-        self.width_prop = Property("width", "Line", Type_python(), self.width, self, "width")
-        self.layer_prop = Property("Layer", "Miscellaneous", Type_dropdown(kicad_info.get_layers()), self.layer, self, "Layer")
-
-        self.properties = Properties([
-            self.x_prop,
-            self.y_prop,
-            self.radius_prop,
-            self.width_prop,
-            self.layer_prop
-            ])
 
 
     def __str__(self):

@@ -59,15 +59,17 @@ class Item:
         def get(self):
             return self.rot_obj.get() - self.item.origin[1]
 
+
     class to_user_unit:
-        def __init__(self, item, class_):
-            self.item = class_(item)
+        def __init__(self, item, value_class):
+            self.item = item
+            self.value_class = value_class(item)
 
         def put(self, value):
-            self.item.put(kicad_info.fromUnit(value))
+            self.value_class.put(kicad_info.fromUnit(value))
 
         def get(self):
-            return kicad_info.toUnit(self.item.get())
+            return kicad_info.toUnit(self.value_class.get())
 
 
 class Items:

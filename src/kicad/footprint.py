@@ -30,23 +30,6 @@ class Footprint(Item):
 
         self.icon = "add_footprint"
 
-        self.x_prop = Property("X", "Position", Type_python(kicad_info.unit_string), self.x, self, "x")
-        self.y_prop = Property("Y", "Position", Type_python(kicad_info.unit_string), self.y, self, "y")
-        self.x_prop.y_prop = self.y_prop
-        self.y_prop.x_prop = self.x_prop
-
-        self.ref_prop = Property("Ref", "Strings", Type_string(), self.reference, self, "ref")
-        self.orientation_prop = Property("Angle", "Orientation", Type_python(), self.orientation, self, "rot")
-        self.not_in_schematic_prop = Property("Not in schematic", "Fabrication Attributes", Type_checkbox(), self.not_in_schematic, self, "not_in_schematic")
-
-        self.properties = Properties([
-            self.x_prop,
-            self.y_prop,
-            self.ref_prop,
-            self.orientation_prop,
-            self.not_in_schematic_prop
-            ])
-
     def __str__(self):
         return "Footprint: " + self.reference.get()
 

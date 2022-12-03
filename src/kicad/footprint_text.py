@@ -1,6 +1,7 @@
 from ..property import *
 from ..item import *
 from ..gui.elements import *
+from ..ui_layout import *
 
 # footprint attributes:
 # Footprint type:
@@ -22,34 +23,19 @@ class FootprintText(Item):
         self.width = self.to_user_unit(self, self.__width)
         self.orientation = self.translated_orientation(self, self.__orientation)
         self.visible = self.__visible(self)
+        self.layer = self.__layer(self)
+
+        ui_layout["Text"]["Text"].register(self.text)
+        ui_layout["Position"]["X"].register(self.x)
+        ui_layout["Position"]["Y"].register(self.y)
+        ui_layout["Text"]["Width"].register(self.textWidth)
+        ui_layout["Text"]["Height"].register(self.textHeight)
+        ui_layout["Graphic"]["Line width"].register(self.width)
+        ui_layout["Orientation"]["Angle"].register(self.orientation)
+        ui_layout["Miscellaneous"]["Visible"].register(self.orientation)
+        ui_layout["Miscellaneous"]["Layer"].register(self.layer)
 
         self.icon = "footprint_text"
-
-        self.text_prop = Property("Text", "Strings", Type_string(), self.text, self, "text")
-        self.x_prop = Property("X", "Position", Type_python(kicad_info.unit_string), self.x, self, "x")
-        self.y_prop = Property("Y", "Position", Type_python(kicad_info.unit_string), self.y, self, "y")
-        self.x_prop.y_prop = self.y_prop
-        self.y_prop.x_prop = self.x_prop
-
-        self.textWidth_prop = Property("Width", "Text", Type_python(), self.textWidth, self, "textWidth")
-        self.textHeight_prop = Property("Height", "Text", Type_python(), self.textHeight, self, "textHeight")
-        self.width_prop = Property("width", "Line", Type_python(), self.width, self, "width")
-        self.orientation_prop = Property("Angle", "Orientation", Type_python(), self.orientation, self, "rot")
-
-        self.visible_prop = Property("Visible", "Footprint text", Type_checkbox(), self.visible, self, "visible")
-
-        self.properties = Properties([
-            self.text_prop,
-            self.x_prop,
-            self.y_prop,
-            self.textWidth_prop,
-            self.textHeight_prop,
-            self.width_prop,
-            self.orientation_prop,
-            self.visible_prop
-            ])
-
-
 
     class __text:
         def __init__(self, item):
@@ -131,3 +117,12 @@ class FootprintText(Item):
         def get(self):
             return self.item.obj.IsVisible()
 
+    class __layer:
+        def __init__(self, item):
+            self.item = item
+            
+        def put(self, value):
+            self.item.obj.SetLayer(kicad_info.get_layer_id(value))
+
+        def get(self):
+            return pcbnew.LayerName(self.item.obj.GetLayer())
