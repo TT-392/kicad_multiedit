@@ -95,12 +95,8 @@ class GUI(wx.Dialog):
                         item.set_origin(item.python_eval(self.origin_field.GetValue()))
                         item.python_env.update()
 
-                        prop.ui_element.set_visibility(False)
 
                     prop.update_ui_value()
-
-        # Needed after changing visibility
-        self.scroll_box.Layout()
 
     def cancel_pressed(self, e):
         print("cancel")
@@ -144,7 +140,6 @@ class GUI(wx.Dialog):
 
                 visibility = prop.is_visible()
 
-                print("visibility:", visibility)
                 prop.ui_element.set_visibility(visibility)
 
 

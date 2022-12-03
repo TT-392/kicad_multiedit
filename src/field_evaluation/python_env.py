@@ -33,7 +33,7 @@ class Python_env:
         #        self.populated_defines_string += prop.varname + "=" + str(prop.get_ui_value()) + "\n"
 
     def eval(self, string):
-        pass
+        return eval(string)
         #return eval_in_container(self.populated_defines_string, string)
         
 
