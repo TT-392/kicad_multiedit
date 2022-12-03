@@ -1,1 +1,16 @@
 Have a global list of all properties, instead of per item, this is less bug prone because properties don't turn into a complex call which have to match exactly for each item, and might allow for faster python parsing, because variable names are known.
+
+
+
+concepts
+
+wx_element: the wx_python object associated with an actual on screen element
+    new name: probably not needed
+
+gui / element / control / passive: abstraction of a few wx_elements
+    new name: 
+
+
+
+
+    
