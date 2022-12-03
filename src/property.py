@@ -3,24 +3,17 @@ from .utils import *
 from .config import *
 
 class Property:
-    def __init__(self, name, category, widget_type, value, item, varname):
-        self.name = name
-        self.category = category
+    def __init__(self, widget_type, varname):
         self.widget_type = widget_type
-        self.item = item
         self.varname = varname
         self.ui_element = None
 
-        self.value = value
 
         self.values = []
 
         self.ui_element = None
 
         kicad_info.update()
-
-    #def __str__(self):
-    #    return "Property{" + self.name + ", " + self.category + ", " + str(self.widget_type) + ", " + str(self.get_ui_value()) + "}"
 
     def get_ui_value(self):
         # TODO: re enable this check

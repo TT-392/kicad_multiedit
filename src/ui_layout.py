@@ -5,35 +5,35 @@ from .gui.elements import *
 
 ui_layout = {
     "Position": {
-        "X": Property(None, None, Type_python("unit user length"), None, None, "x"),
-        "Y": Property(None, None, Type_python("unit user length"), None, None, "y")
+        "X": Property(Type_python("unit user length"), "x"),
+        "Y": Property(Type_python("unit user length"), "y")
     }, 
     "Orientation": {
-        "Angle": Property(None, None, Type_python(), None, None, "rot")
+        "Angle": Property(Type_python(), "rot")
     },
     "Graphic": {
-        "Start X": Property(None, None, Type_python("unit user length"), None, None, "x1"),
-        "Start Y": Property(None, None, Type_python("unit user length"), None, None, "y1"),
-        "End X": Property(None, None, Type_python("unit user length"), None, None, "x2"),
-        "End Y": Property(None, None, Type_python("unit user length"), None, None, "y2"),
-        "Arc angle": Property(None, None, Type_python(), None, None, "arcAngle"),
-        "Line width": Property(None, None, Type_python("unit user length"), None, None, "width"),
-        "Radius": Property(None, None, Type_python("unit user length"), None, None, "radius")
+        "Start X": Property(Type_python("unit user length"), "x1"),
+        "Start Y": Property(Type_python("unit user length"), "y1"),
+        "End X": Property(Type_python("unit user length"), "x2"),
+        "End Y": Property(Type_python("unit user length"), "y2"),
+        "Arc angle": Property(Type_python(), "arcAngle"),
+        "Line width": Property(Type_python("unit user length"), "width"),
+        "Radius": Property(Type_python("unit user length"), "radius")
     },
     "Text": {
-        "Text": Property(None, None, Type_string(), None, None, "text"),
-        "Width": Property(None, None, Type_python("unit user length"), None, None, "width"),
-        "Height": Property(None, None, Type_python("unit user length"), None, None, "height")
+        "Text": Property(Type_string(), "text"),
+        "Width": Property(Type_python("unit user length"), "width"),
+        "Height": Property(Type_python("unit user length"), "height")
     },
     "Text Items": {
-        "Ref": Property(None, None, Type_string(), None, None, "ref")
+        "Ref": Property(Type_string(), "ref")
     },
     "Fabrication Attributes": {
-        "Not in schematic": Property(None, None, Type_checkbox(), None, None, "not_in_schematic")
+        "Not in schematic": Property(Type_checkbox(), "not_in_schematic")
     },
     "Miscellaneous": {
-        "Layer": Property(None, None, Type_dropdown("all layers"), None, None, "layer"),
-        "Visible": Property(None, None, Type_checkbox(), None, None, "visible")
+        "Layer": Property(Type_dropdown("all layers"), "layer"),
+        "Visible": Property(Type_checkbox(), "visible")
     }
 }
 
