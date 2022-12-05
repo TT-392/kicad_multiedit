@@ -18,9 +18,6 @@ class Python_env:
         self.reset()
 
 
-    # DEPRICATED:
-    def update(self):
-        pass
 
     def reset(self):
         self.defines_string = "i = " + str(self.i) + "\n"
