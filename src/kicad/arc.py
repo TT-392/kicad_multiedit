@@ -1,5 +1,5 @@
 import pcbnew
-from kicad import *
+from .kicad import *
 from ..property import *
 from ..item import *
 from ..gui.elements import *
