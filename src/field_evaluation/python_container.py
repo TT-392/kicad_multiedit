@@ -19,9 +19,19 @@ def atan(x):
     return math.atan(x)
 
 def asin(x):
+    if x > 1:
+        x = 1 
+    elif x < -1:
+        x = -1
+
     return math.asin(x)
 
 def acos(x):
+    if x > 1:
+        x = 1 
+    elif x < -1:
+        x = -1
+
     return math.acos(x)
 
 def snap(x, amount):

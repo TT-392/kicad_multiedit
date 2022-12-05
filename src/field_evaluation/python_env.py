@@ -34,7 +34,8 @@ class Python_env:
             if varname in self.item.values:
                 value_string = utils.to_parseable_string(self.item.values[varname].get())
             else:
-                value_string = "None"
+                #TODO: default value should be datatype specific
+                value_string = "0"
 
             self.defines_string += varname + "=" + value_string + "\n"
 

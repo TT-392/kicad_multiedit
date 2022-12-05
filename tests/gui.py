@@ -8,7 +8,6 @@ from src.GUI import *
 import wx
 
 def gui():
-
     kicad_info.update()
 
     print("getting selected")

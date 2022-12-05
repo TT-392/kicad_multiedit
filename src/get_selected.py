@@ -46,7 +46,6 @@ def get_selected(test_mode = False):
 
     for drawing in pcb.GetDrawings():
         if drawing.IsSelected() or test_mode:
-            print(type(drawing))
             if type(drawing) == pcbnew.PCB_TEXT:
                 item_list.append(GraphicText(drawing))
 

@@ -14,5 +14,7 @@ if "gui" in sys.argv:
     from .gui import *
     gui()
 
-if "python_field_variables" in sys.argv:
-    python_field_variables()
+if "python_field_eval" in sys.argv:
+    from .python_field_eval import *
+    python_field_eval()
+    print("test python_field_eval successful")
