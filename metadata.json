@@ -1,0 +1,30 @@
+{
+    "$schema": "https://go.kicad.org/pcm/schemas/v1",
+    "name": "multiedit",
+    "description": "descriptive description",
+    "description_full": "more extensive descriptive description",
+    "identifier": "xxxx",
+    "type": "plugin",
+    "author": {
+        "name": "TT-392",
+        "contact": {
+            "github": "https://github.com/TT-392"
+        }
+    },
+    "maintainer": {
+        "name": "TT-392",
+        "contact": {
+            "github": "https://github.com/TT-392"
+        }
+    },
+    "license": "not added yet",
+    "resources": {
+    },
+    "versions": [
+        {
+            "version": "0.1",
+            "status": "test",
+            "kicad_version": "6.0"
+        }
+    ]
+}
