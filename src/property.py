@@ -31,6 +31,10 @@ class Property:
                     return self.varname
             
             return utils.to_parseable_string(firstValue)
+    
+    def prepare_variables(self, ui_val):
+        for value in self.values:
+            value.item.python_env.prepare_variables(ui_val)
 
 
     def put_ui_value(self, ui_val):
@@ -38,12 +42,14 @@ class Property:
             new_value = value.item.python_eval(ui_val)
             
             if new_value != value.get():
+                print("applying", new_value, "to", self.varname, "in", value.item)
                 value.put(new_value)
-                print("putting 1 value")
 
 
     def register(self, value_obj):
         self.values.append(value_obj)
+
+        return self
 
 
     def get_icons(self):

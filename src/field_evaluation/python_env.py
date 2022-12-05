@@ -2,39 +2,50 @@ import re
 from ..item import *
 from ..property import *
 from .python_container import *
+from ..ui_layout import *
+from ..utils import *
 
 class Python_env:
+    varnames = set([])
+    for category in ui_layout:
+        for prop in ui_layout[category]:
+            varnames.add(ui_layout[category][prop].varname)
+    
     def __init__(self, items, item, i):
-        pass
-        #props = items.get_properties()
-        #self.item = item
+        self.item = item
+        self.i = i
 
-        #self.varnames = props.get_all("varname")
+        self.reset()
 
-        #self.defines_string = ""
 
-        #for varname in self.varnames:
-        #    if varname != None:
-        #        self.defines_string += varname + "=0\n"
-
-        #self.defines_string += "i=" + str(i) + "\n"
-
-        #self.update()
-
+    # DEPRICATED:
     def update(self):
         pass
-        #props = self.item.properties
-        #varnames = props.get_all("varname")
-        #
-        #self.populated_defines_string = self.defines_string
 
-        #for prop in props:
-        #    if prop.varname != None:
-        #        self.populated_defines_string += prop.varname + "=" + str(prop.get_ui_value()) + "\n"
+    def reset(self):
+        self.defines_string = "i = " + str(self.i) + "\n"
+
+    def prepare_variables(self, string):
+        present_varnames = set([])
+
+        for varname in self.varnames:
+            if len(re.findall(r"\b" + varname + r"\b", string)) != 0:
+                present_varnames.add(varname)
+        
+
+        for varname in present_varnames:
+            if varname in self.item.values:
+                value_string = utils.to_parseable_string(self.item.values[varname].get())
+            else:
+                value_string = "None"
+
+            self.defines_string += varname + "=" + value_string + "\n"
+
+
+
 
     def eval(self, string):
-        return eval(string)
-        #return eval_in_container(self.populated_defines_string, string)
+        return eval_in_container(self.defines_string, string)
         
 
 

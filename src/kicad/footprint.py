@@ -16,17 +16,20 @@ from ..ui_layout import *
 class Footprint(Item):
     def __init__(self, obj):
         self.obj = obj
+
         self.reference = self.__reference(self)
         self.x = self.translated_x(self, self.__x, self.__y)
         self.y = self.translated_y(self, self.__y, self.__x)
         self.orientation = self.translated_orientation(self, self.__orientation)
         self.not_in_schematic = self.__not_in_schematic(self)
 
-        ui_layout["Position"]["X"].register(self.x)
-        ui_layout["Position"]["Y"].register(self.y)
-        ui_layout["Orientation"]["Angle"].register(self.orientation)
-        ui_layout["Text Items"]["Ref"].register(self.reference)
-        ui_layout["Fabrication Attributes"]["Not in schematic"].register(self.not_in_schematic)
+        self.values = {
+            ui_layout["Position"]["X"].register(self.x).varname: self.x,
+            ui_layout["Position"]["Y"].register(self.y).varname: self.y,
+            ui_layout["Orientation"]["Angle"].register(self.orientation).varname: self.orientation,
+            ui_layout["Text Items"]["Ref"].register(self.reference).varname: self.reference,
+            ui_layout["Fabrication Attributes"]["Not in schematic"].register(self.not_in_schematic).varname: self.not_in_schematic
+        }
 
         self.icon = "add_footprint"
 

@@ -87,13 +87,13 @@ class GUI(wx.Dialog):
         self.Show()
 
     def update_origin(self, e):
+        #TODO: getting all items can be abstracted
         for category in ui_layout:
             for name in ui_layout[category]:
                 prop = ui_layout[category][name]
                 if prop.is_visible():
                     for item in prop.get_items():
                         item.set_origin(item.python_eval(self.origin_field.GetValue()))
-                        item.python_env.update()
 
 
                     prop.update_ui_value()
@@ -104,6 +104,9 @@ class GUI(wx.Dialog):
 
     def apply(self):
         update = False
+
+        props_needing_update = []
+
         for category in ui_layout:
             for name in ui_layout[category]:
                 prop = ui_layout[category][name]
@@ -112,10 +115,21 @@ class GUI(wx.Dialog):
                     new_ui_value = prop.ui_element.get_value()
 
                     if prop.get_ui_value() != new_ui_value:
-                        prop.put_ui_value(new_ui_value)
-                        update = True
-                        
-        if update:
+                        props_needing_update.append(prop)
+
+        for prop in props_needing_update:
+            for item in prop.get_items():
+                item.python_env.reset()
+
+        for prop in props_needing_update:
+            new_ui_value = prop.ui_element.get_value()
+            prop.prepare_variables(new_ui_value)
+
+        for prop in props_needing_update:
+            print("new ui val", new_ui_value)
+            prop.put_ui_value(new_ui_value)
+                            
+        if len(props_needing_update) > 0:
             pcbnew.Refresh()
 
     def apply_pressed(self, e):
