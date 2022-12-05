@@ -18,6 +18,7 @@ class dropdown_control(Control):
     def __init__(self, parent_window, parent, category, name, varname, Type):
         Control.__init__(self)
 
+        self.varname = varname
         self.category = category
         self.type = Type
 
@@ -41,4 +42,7 @@ class dropdown_control(Control):
             self.control.SetSelection(self.type.get_choices().index(value[1:-1]))
 
     def get_value(self):
+        if self.control.GetString(self.control.GetSelection()) == "-- mixed values --":
+            return self.varname
+
         return "\"" + self.control.GetString(self.control.GetSelection()) + "\""

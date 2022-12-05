@@ -18,13 +18,12 @@ class GraphicPolygon(Item):
         self.width = self.to_user_unit(self, self.__width)
         self.layer = self.__layer(self)
 
-        ui_layout["Graphic"]["Line width"].register(self.width)
-        ui_layout["Miscellaneous"]["Layer"].register(self.layer)
+        self.values = {
+            ui_layout["Graphic"]["Line width"].register(self.width).varname: self.width,
+            ui_layout["Miscellaneous"]["Layer"].register(self.layer).varname: self.layer
+        }
 
         self.icon = "add_graphical_polygon"
-
-    def __str__(self):
-        return "Footprint: " + self.reference.get()
 
     class __width:
         def __init__(self, item):

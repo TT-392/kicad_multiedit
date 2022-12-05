@@ -22,17 +22,16 @@ class GraphicRect(Item):
         self.width = self.to_user_unit(self, self.__width)
         self.layer = self.__layer(self)
 
-        ui_layout["Graphic"]["Start X"].register(self.startX)
-        ui_layout["Graphic"]["Start Y"].register(self.startY)
-        ui_layout["Graphic"]["End X"].register(self.endX)
-        ui_layout["Graphic"]["End Y"].register(self.endY)
-        ui_layout["Graphic"]["Line width"].register(self.width)
-        ui_layout["Miscellaneous"]["Layer"].register(self.layer)
+        self.values = {
+            ui_layout["Graphic"]["Start X"].register(self.startX).varname: self.startX,
+            ui_layout["Graphic"]["Start Y"].register(self.startY).varname: self.startY,
+            ui_layout["Graphic"]["End X"].register(self.endX).varname: self.endX,
+            ui_layout["Graphic"]["End Y"].register(self.endY).varname: self.endY,
+            ui_layout["Graphic"]["Line width"].register(self.width).varname: self.width,
+            ui_layout["Miscellaneous"]["Layer"].register(self.layer).varname: self.layer
+        }
 
         self.icon = "add_rectangle"
-
-    def __str__(self):
-        return "Footprint: " + self.reference.get()
 
     class __startX:
         def __init__(self, item):

@@ -22,18 +22,16 @@ class GraphicCircle(Item):
         self.width = self.to_user_unit(self, self.__width)
         self.layer = self.__layer(self)
 
-
-        ui_layout["Position"]["X"].register(self.x)
-        ui_layout["Position"]["Y"].register(self.y)
-        ui_layout["Graphic"]["Radius"].register(self.radius)
-        ui_layout["Graphic"]["Line width"].register(self.width)
-        ui_layout["Miscellaneous"]["Layer"].register(self.layer)
+        self.values = {
+            ui_layout["Position"]["X"].register(self.x).varname: self.x,
+            ui_layout["Position"]["Y"].register(self.y).varname: self.y,
+            ui_layout["Graphic"]["Radius"].register(self.radius).varname: self.radius,
+            ui_layout["Graphic"]["Line width"].register(self.width).varname: self.width,
+            ui_layout["Miscellaneous"]["Layer"].register(self.layer).varname: self.layer
+        }
 
         self.icon = "add_circle"
 
-
-    def __str__(self):
-        return "Footprint: " + self.reference.get()
 
     class __x:
         def __init__(self, item):

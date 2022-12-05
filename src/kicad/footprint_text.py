@@ -25,15 +25,17 @@ class FootprintText(Item):
         self.visible = self.__visible(self)
         self.layer = self.__layer(self)
 
-        ui_layout["Text"]["Text"].register(self.text)
-        ui_layout["Position"]["X"].register(self.x)
-        ui_layout["Position"]["Y"].register(self.y)
-        ui_layout["Text"]["Width"].register(self.textWidth)
-        ui_layout["Text"]["Height"].register(self.textHeight)
-        ui_layout["Graphic"]["Line width"].register(self.width)
-        ui_layout["Orientation"]["Angle"].register(self.orientation)
-        ui_layout["Miscellaneous"]["Visible"].register(self.orientation)
-        ui_layout["Miscellaneous"]["Layer"].register(self.layer)
+        self.values = {
+            ui_layout["Text"]["Text"].register(self.text).varname: self.text,
+            ui_layout["Position"]["X"].register(self.x).varname: self.x,
+            ui_layout["Position"]["Y"].register(self.y).varname: self.y,
+            ui_layout["Text"]["Width"].register(self.textWidth).varname: self.textWidth,
+            ui_layout["Text"]["Height"].register(self.textHeight).varname: self.textHeight,
+            ui_layout["Graphic"]["Line width"].register(self.width).varname: self.width,
+            ui_layout["Orientation"]["Angle"].register(self.orientation).varname: self.orientation,
+            ui_layout["Miscellaneous"]["Visible"].register(self.orientation).varname: self.orientation,
+            ui_layout["Miscellaneous"]["Layer"].register(self.layer).varname: self.layer
+        }
 
         self.icon = "footprint_text"
 
