@@ -7,7 +7,7 @@ from src.ui_elements import *
 from src.field_evaluation.python_env import *
 import wx
 
-def  python_field_variables():
+def python_field_variables():
     kicad_info.update()
 
     test_footprint = Test_kicad_footprint()

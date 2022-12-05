@@ -67,7 +67,7 @@ def normal(x1, y1, x2, y2):
 class fp:
     def __init__(self, prefix, postfix):
         found = False
-        pcb = pcbnew.GetBoard()
+        pcb = kicad_info.get_board()
         for footprint in pcb.GetFootprints():
             if footprint.GetReference() == prefix + str(postfix):
                 self.footprint = footprint

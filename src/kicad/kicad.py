@@ -1,4 +1,6 @@
 import pcbnew
+import os
+from ..config import *
 
 UNIT_MM = 1
 UNIT_MIL = 5
@@ -41,16 +43,22 @@ class Kicad_info:
 
     def get_layers(self):
         layers = []
-        pcb = pcbnew.GetBoard()
+        pcb = self.get_board()
 
         for i in pcb.GetEnabledLayers().UIOrder():
             layers.append(pcbnew.LayerName(i))
 
         return layers
 
+    def get_board(self):
+        if config.test_mode:
+            return pcbnew.LoadBoard(os.path.dirname(__file__) + "/" + "../../" + config.board_file)
+        else:
+            return pcbnew.GetBoard()
+
     def get_copper_layers(self):
         layers = []
-        pcb = pcbnew.GetBoard()
+        pcb = self.get_board()
 
         for i in pcb.GetEnabledLayers().CuStack():
             layers += pcbnew.LayerName(i)
@@ -58,7 +66,7 @@ class Kicad_info:
         return layers
 
     def get_layer_id(self, layer_name):
-        pcb = pcbnew.GetBoard()
+        pcb = self.get_board()
 
         for layer_id in pcb.GetEnabledLayers().UIOrder():
             if pcbnew.LayerName(layer_id) == layer_name:

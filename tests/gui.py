@@ -1,33 +1,29 @@
 from src.kicad.kicad import *
 from src.kicad.footprint import *
 from src.item import *
+from src.config import *
+from src.get_selected import *
 from tests.resources.kicad_footprint import *
 from src.GUI import *
-from src.ui_elements import *
 import wx
 
-def  gui():
+def gui():
+
     kicad_info.update()
 
-    test_footprint = Test_kicad_footprint()
-    test_footprint.ref = "aaa"
-    test_footprint.x = kicad_info.fromUnit(4)
-    test_footprint.y = kicad_info.fromUnit(9)
-    test_footprint.rot = 900
+    print("getting selected")
+    selected = get_selected(True)
 
-    footprint1 = Footprint(test_footprint)
+    print("initting python envs")
+    i = 0
+    for item in selected.list:
+        item.init_python_env(selected, i)
+        i += 1
 
-    test_footprint = Test_kicad_footprint()
-    test_footprint.ref = "aba"
-    test_footprint.x = kicad_info.fromUnit(3)
-    test_footprint.y = kicad_info.fromUnit(9)
-    test_footprint.rot = 800
-
-    footprint2 = Footprint(test_footprint)
-
-    selected = Items([footprint1, footprint2])
-
+    print("starting gui")
     app = wx.App(0)
-    GUI(None, Ui_elements(selected.get_properties()))
+    dialog = GUI(None)
+    dialog.ShowModal()
     app.MainLoop()
+
 
