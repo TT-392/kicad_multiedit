@@ -61,7 +61,7 @@ def postfix(designator):
 
 
 
-# Eventually I want the normal function to accept self or just have a normal variable for any item with an x1, y1, x2 and y2
+# TODO: Eventually I want the normal function to accept self or just have a normal variable for any item with an x1, y1, x2 and y2
 def normal(x1, y1, x2, y2):
     x_distance = x2 - x1
     y_distance = y2 - y1

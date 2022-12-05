@@ -1,0 +1,10 @@
+near term todo:
+    Add more objects and properties of those objects
+    sub selector buttons
+    center height elements in GUI inside their row
+    regex for strings
+    fp class needs work
+
+
+stretch goals:
+    keep window open while changing selection in pcbnew
