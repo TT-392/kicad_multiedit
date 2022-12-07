@@ -24,7 +24,14 @@ class GUI(wx.Dialog):
         self.SetSizer(outer_sizer)
         self.Layout()
 
+        self.draw_selector_buttons(self, outer_sizer, ["add_circle"])
+        self.draw_selector_buttons(self, outer_sizer, ["add_circle"])
+        self.draw_selector_buttons(self, outer_sizer, ["add_circle"])
+
+
         m_toolBar1 = wx.ToolBar(self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TB_HORIZONTAL)
+
+
         m_staticText2 = wx.StaticText(m_toolBar1, wx.ID_ANY, "Origin:", wx.DefaultPosition, wx.DefaultSize, 0)
         m_staticText2.Wrap(-1)
         
@@ -39,7 +46,8 @@ class GUI(wx.Dialog):
         m_toolBar1.Realize()
 
         update_button.Bind(wx.EVT_BUTTON, self.update_origin)
-        
+
+
         
         outer_sizer.Add(m_toolBar1, 0, wx.ALIGN_RIGHT, 5)
 
@@ -165,7 +173,37 @@ class GUI(wx.Dialog):
         parent.Add((0, 0), 1, wx.EXPAND, 5)
 
 
+    def draw_selector_buttons(self, parent_window, parent, icons):
+        icon_sizer = wx.BoxSizer(wx.HORIZONTAL)
 
+        icon = icons[0]
+        sys_appearance = wx.SystemSettings.GetAppearance()
+        theme = "dark" if sys_appearance.IsDark() else "light"
+
+        
+        #button thing
+        wSizer2 = wx.WrapSizer(wx.HORIZONTAL, wx.WRAPSIZER_DEFAULT_FLAGS)
+        parent.Add(wSizer2, 10)
+        
+        m_panel1 = wx.Panel(parent_window, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL)
+        m_panel1.SetBackgroundColour(wx.Colour(21, 81, 158))
+        wSizer2.Add(m_panel1, 10)
+        
+        wSizer1 = wx.WrapSizer(wx.HORIZONTAL, wx.WRAPSIZER_DEFAULT_FLAGS)
+        m_panel1.SetSizer(wSizer1)
+
+        m_panel0 = wx.Panel(m_panel1, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL)
+        m_panel0.SetBackgroundColour(wx.Colour(8, 33, 63))
+        wSizer1.Add(m_panel0, 1, wx.EXPAND|wx.ALL, 1)
+
+
+        wSizer2 = wx.WrapSizer(wx.HORIZONTAL, wx.WRAPSIZER_DEFAULT_FLAGS)
+        m_panel0.SetSizer(wSizer2)
+
+        path = os.path.join(os.path.dirname(__file__), "../resources/output/" + theme + "/" + icon + ".png")
+        icon = wx.StaticBitmap(m_panel0, wx.ID_ANY, wx.Bitmap(path, wx.BITMAP_TYPE_ANY), wx.DefaultPosition, wx.Size(20,20), 0)
+
+        wSizer2.Add(icon, 0, wx.EXPAND|wx.ALL, 2)
 
     def __del__(self):
         pass

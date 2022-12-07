@@ -1,7 +1,9 @@
 near term todo:
+    look into wxpython xrc stuff
     Add more objects and properties of those objects
     sub selector buttons
     center height elements in GUI inside their row
+    move icon paths to a single function
     regex for strings
     fp class needs work
 
