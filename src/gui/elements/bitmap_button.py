@@ -1,33 +1,107 @@
-def draw_bitmap_button(parent_window, parent, icon):
-    icon_sizer = wx.BoxSizer(wx.HORIZONTAL)
+import wx
+import os
 
-    icon = icon
-    sys_appearance = wx.SystemSettings.GetAppearance()
-    theme = "dark" if sys_appearance.IsDark() else "light"
+#colors:
+# dark mode:
+#  edge:                                15539E
+#  focussed_selected:                   0A294F
+#  selected / focussed_not_selected:    08213F
+#  actively pressed:                    04101F
 
-    
-    #button thing
-    wSizer2 = wx.WrapSizer(wx.HORIZONTAL, wx.WRAPSIZER_DEFAULT_FLAGS)
-    parent.Add(wSizer2, 10)
-    
-    m_panel1 = wx.Panel(parent_window, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL)
-    m_panel1.SetBackgroundColour(wx.Colour(21, 81, 158))
-    wSizer2.Add(m_panel1, 10)
-    
-    wSizer1 = wx.WrapSizer(wx.HORIZONTAL, wx.WRAPSIZER_DEFAULT_FLAGS)
-    m_panel1.SetSizer(wSizer1)
+class draw_bitmap_button:
+    def __init__(self, parent_window, parent, icon):
+        icon_sizer = wx.BoxSizer(wx.HORIZONTAL)
 
-    m_panel0 = wx.Panel(m_panel1, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL)
-    m_panel0.SetBackgroundColour(wx.Colour(8, 33, 63))
-    wSizer1.Add(m_panel0, 1, wx.EXPAND|wx.ALL, 1)
+        self.selected = False
+        self.hover = False
+        self.click = False
+
+        icon = icon
+        sys_appearance = wx.SystemSettings.GetAppearance()
+        theme = "dark" if sys_appearance.IsDark() else "light"
+
+        
+        #button thing
+        wSizer2 = wx.WrapSizer(wx.HORIZONTAL, wx.WRAPSIZER_DEFAULT_FLAGS)
+        parent.Add(wSizer2, 10)
+        
+        self.edge = wx.Panel(parent_window, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL)
+        wSizer2.Add(self.edge, 10)
+        
+        wSizer1 = wx.WrapSizer(wx.HORIZONTAL, wx.WRAPSIZER_DEFAULT_FLAGS)
+        self.edge.SetSizer(wSizer1)
+
+        self.button = wx.Panel(self.edge, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL)
+        wSizer1.Add(self.button, 1, wx.EXPAND|wx.ALL, 1)
+        self.button.Bind(wx.EVT_ENTER_WINDOW, self.mouse_enter)
+        self.button.Bind(wx.EVT_LEAVE_WINDOW, self.mouse_leave)
+        self.button.Bind(wx.EVT_LEFT_DOWN, self.mouse_down)
+        self.button.Bind(wx.EVT_LEFT_UP, self.mouse_up)
 
 
-    wSizer2 = wx.WrapSizer(wx.HORIZONTAL, wx.WRAPSIZER_DEFAULT_FLAGS)
-    m_panel0.SetSizer(wSizer2)
+        wSizer2 = wx.WrapSizer(wx.HORIZONTAL, wx.WRAPSIZER_DEFAULT_FLAGS)
+        self.button.SetSizer(wSizer2)
 
-    path = os.path.join(os.path.dirname(__file__), "../resources/output/" + theme + "/" + icon + ".png")
-    icon = wx.StaticBitmap(m_panel0, wx.ID_ANY, wx.Bitmap(path, wx.BITMAP_TYPE_ANY), wx.DefaultPosition, wx.Size(20,20), 0)
+        path = os.path.join(os.path.dirname(__file__), "../../../resources/output/" + theme + "/" + icon + ".png")
+        icon = wx.StaticBitmap(self.button, wx.ID_ANY, wx.Bitmap(path, wx.BITMAP_TYPE_ANY), wx.DefaultPosition, wx.Size(20,20), 0)
 
-    wSizer2.Add(icon, 0, wx.EXPAND|wx.ALL, 2)
+        icon.Bind(wx.EVT_LEFT_DOWN, self.mouse_down)
+        icon.Bind(wx.EVT_LEFT_UP, self.mouse_up)
+
+        wSizer2.Add(icon, 0, wx.EXPAND|wx.ALL, 2)
 
 
+    def mouse_enter(self, e):
+        self.hover = True
+        self.render_update()
+
+
+    def mouse_leave(self, e):
+        self.hover = False
+        self.render_update()
+
+
+    def mouse_down(self, e):
+        self.click = True
+        self.render_update()
+
+    def mouse_up(self, e):
+        self.click = False 
+        self.render_update()
+
+        if self.hover:
+            self.selected = not self.selected
+
+    def render_update(self):
+        if self.hover and self.click:
+            self.render_click()
+
+        elif self.hover and not self.click:
+            self.render_hover()
+
+        elif not self.hover:
+            self.render_passive()
+
+
+    def render_hover(self):
+        print("hover")
+        if self.selected:
+            self.edge.SetBackgroundColour(wx.Colour(0x15, 0x53, 0x9e))
+            self.button.SetBackgroundColour(wx.Colour(0x0A, 0x29, 0x4f))
+        else:
+            self.button.SetBackgroundColour(wx.Colour(0x08, 33, 63))
+            self.edge.SetBackgroundColour(wx.Colour(0x15, 0x53, 0x9e))
+
+    def render_click(self):
+        print("click")
+        self.button.SetBackgroundColour(wx.Colour(0x04, 0x10, 0x1f))
+        self.edge.SetBackgroundColour(wx.Colour(0x15, 0x53, 0x9e))
+
+    def render_passive(self):
+        print("passive")
+        if self.selected:
+            self.button.SetBackgroundColour(wx.Colour(0x08, 33, 63))
+            self.edge.SetBackgroundColour(wx.Colour(0x15, 0x53, 0x9e))
+        else:
+            self.button.SetBackgroundColour(wx.SystemSettings.GetColour(wx.SYS_COLOUR_BACKGROUND))
+            self.edge.SetBackgroundColour(wx.SystemSettings.GetColour(wx.SYS_COLOUR_BACKGROUND))
