@@ -1,4 +1,6 @@
 import math
+import os
+import wx
 import numpy as np
 
 class utils:
@@ -40,6 +42,16 @@ class utils:
             return obj.category
         else:
             assert 0, "get_member, membername, " + membername + " isn't implemented"
+
+    def get_theme():
+        sys_appearance = wx.SystemSettings.GetAppearance()
+        return "dark" if sys_appearance.IsDark() else "light"
+
+
+    def get_item_icon_path(item_type):
+        from .icons import icons
+        path = os.path.join(os.path.dirname(__file__), "../resources/output/" + utils.get_theme() + "/" + icons[item_type] + ".png")
+        return path
 
     def to_parseable_string(data):
         special_chars = {"\"": "\\\"", "\\": "\\\\", "\'": "\\\'", "\n": "\\n"}

@@ -1,6 +1,7 @@
 import wx
 import wx.xrc
 import pcbnew
+from .kicad.circle import *
 from .gui.elements import *
 from .gui.elements.bitmap_button import *
 from .ui_layout import *
@@ -25,9 +26,9 @@ class GUI(wx.Dialog):
         self.SetSizer(outer_sizer)
         self.Layout()
 
-        draw_bitmap_button(self, outer_sizer, "add_circle")
-        draw_bitmap_button(self, outer_sizer, "add_circle")
-        draw_bitmap_button(self, outer_sizer, "add_circle")
+        draw_bitmap_button(self, outer_sizer, GraphicCircle)
+        draw_bitmap_button(self, outer_sizer, GraphicCircle)
+        draw_bitmap_button(self, outer_sizer, GraphicCircle)
 
 
         m_toolBar1 = wx.ToolBar(self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TB_HORIZONTAL)

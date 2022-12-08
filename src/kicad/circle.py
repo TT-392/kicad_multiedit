@@ -30,6 +30,7 @@ class GraphicCircle(Item):
             ui_layout["Miscellaneous"]["Layer"].register(self.layer).varname: self.layer
         }
 
+        #DEPRICATED: also, all of the ones in the other items
         self.icon = "add_circle"
 
 

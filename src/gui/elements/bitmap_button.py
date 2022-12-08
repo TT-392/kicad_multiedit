@@ -1,38 +1,27 @@
 import wx
 import os
-
-#colors:
-# dark mode:
-#  edge:                                15539E
-#  focussed_selected:                   0A294F
-#  selected / focussed_not_selected:    08213F
-#  actively pressed:                    04101F
+from ...utils import *
 
 class draw_bitmap_button:
-    def __init__(self, parent_window, parent, icon):
+    def __init__(self, parent_window, parent, icon_type):
         icon_sizer = wx.BoxSizer(wx.HORIZONTAL)
 
         self.selected = False
         self.hover = False
         self.click = False
-
-        icon = icon
-        sys_appearance = wx.SystemSettings.GetAppearance()
-        theme = "dark" if sys_appearance.IsDark() else "light"
-
         
-        #button thing
-        wSizer2 = wx.WrapSizer(wx.HORIZONTAL, wx.WRAPSIZER_DEFAULT_FLAGS)
-        parent.Add(wSizer2, 10)
+        wSizer0 = wx.WrapSizer(wx.HORIZONTAL, wx.WRAPSIZER_DEFAULT_FLAGS)
+        parent.Add(wSizer0, 10)
         
         self.edge = wx.Panel(parent_window, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL)
-        wSizer2.Add(self.edge, 10)
+        wSizer0.Add(self.edge, 10)
         
         wSizer1 = wx.WrapSizer(wx.HORIZONTAL, wx.WRAPSIZER_DEFAULT_FLAGS)
         self.edge.SetSizer(wSizer1)
 
         self.button = wx.Panel(self.edge, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL)
         wSizer1.Add(self.button, 1, wx.EXPAND|wx.ALL, 1)
+
         self.button.Bind(wx.EVT_ENTER_WINDOW, self.mouse_enter)
         self.button.Bind(wx.EVT_LEAVE_WINDOW, self.mouse_leave)
         self.button.Bind(wx.EVT_LEFT_DOWN, self.mouse_down)
@@ -42,7 +31,7 @@ class draw_bitmap_button:
         wSizer2 = wx.WrapSizer(wx.HORIZONTAL, wx.WRAPSIZER_DEFAULT_FLAGS)
         self.button.SetSizer(wSizer2)
 
-        path = os.path.join(os.path.dirname(__file__), "../../../resources/output/" + theme + "/" + icon + ".png")
+        path = utils.get_item_icon_path(icon_type)
         icon = wx.StaticBitmap(self.button, wx.ID_ANY, wx.Bitmap(path, wx.BITMAP_TYPE_ANY), wx.DefaultPosition, wx.Size(20,20), 0)
 
         icon.Bind(wx.EVT_LEFT_DOWN, self.mouse_down)
@@ -84,7 +73,6 @@ class draw_bitmap_button:
 
 
     def render_hover(self):
-        print("hover")
         if self.selected:
             self.edge.SetBackgroundColour(wx.Colour(0x15, 0x53, 0x9e))
             self.button.SetBackgroundColour(wx.Colour(0x0A, 0x29, 0x4f))
@@ -93,12 +81,10 @@ class draw_bitmap_button:
             self.edge.SetBackgroundColour(wx.Colour(0x15, 0x53, 0x9e))
 
     def render_click(self):
-        print("click")
         self.button.SetBackgroundColour(wx.Colour(0x04, 0x10, 0x1f))
         self.edge.SetBackgroundColour(wx.Colour(0x15, 0x53, 0x9e))
 
     def render_passive(self):
-        print("passive")
         if self.selected:
             self.button.SetBackgroundColour(wx.Colour(0x08, 33, 63))
             self.edge.SetBackgroundColour(wx.Colour(0x15, 0x53, 0x9e))
