@@ -31,6 +31,7 @@ class GUI(wx.Dialog):
         self.SetSizer(outer_sizer)
 
         self.scroll_box = wx.xrc.XRCCTRL(self, 'properties_scrollwindow')
+        print(type(self.scroll_box))
 
         main_grid = wx.FlexGridSizer(0, 3, 0, 0)
         main_grid.SetFlexibleDirection(wx.BOTH)
@@ -43,6 +44,10 @@ class GUI(wx.Dialog):
 
         self.place_elements(main_grid)
 
+        subselection_buttons_sizer = wx.xrc.XRCCTRL(self, 'subselection_buttons_sizer')
+        print(type(subselection_buttons_sizer))
+
+        draw_bitmap_button(self, subselection_buttons_sizer, GraphicCircle)
 
         self.Show()
 
