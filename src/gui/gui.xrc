@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+
+<resource xmlns="http://www.wxwidgets.org/wxxrc" version="2.5.3.0">
+	<object class="wxPanel" name="panel">
+    <style>wxTAB_TRAVERSAL</style>
+		<object class="wxBoxSizer">
+			<orient>wxVERTICAL</orient>
+			<object class="sizeritem">
+				<option>0</option>
+				<flag>wxEXPAND</flag>
+				<border>5</border>
+				<object class="wxBoxSizer">
+					<orient>wxHORIZONTAL</orient>
+
+                    <!-- Subselection buttons -->
+					<object class="sizeritem" name="subselection_buttons_sizer">
+						<option>1</option>
+						<flag>wxEXPAND</flag>
+						<border>5</border>
+						<object class="wxBoxSizer">
+							<orient>wxHORIZONTAL</orient>
+						</object>
+					</object>
+                    <!---->
+
+					<object class="spacer">
+						<option>1</option>
+						<flag>wxEXPAND</flag>
+						<border>5</border>
+						<size>0,0</size>
+					</object>
+
+                    <!-- Origin update controls -->
+					<object class="sizeritem">
+						<option>0</option>
+						<flag>wxALL|wxEXPAND</flag>
+						<border>5</border>
+						<object class="wxStaticText">
+							<label>Origin:</label>
+							<wrap>-1</wrap>
+						</object>
+					</object>
+					<object class="sizeritem">
+						<option>0</option>
+						<flag>wxALL</flag>
+						<border>0</border>
+						<object class="wxTextCtrl" name="input_origin">
+							<value></value>
+						</object>
+					</object>
+					<object class="sizeritem">
+						<option>0</option>
+						<flag>wxALL</flag>
+						<border>0</border>
+						<object class="wxButton" name="button_update_origin">
+							<label>Update</label>
+							<default>0</default>
+							<auth_needed>0</auth_needed>
+							<markup>0</markup>
+							<bitmap />
+						</object>
+					</object>
+                    <!---->
+
+				</object>
+			</object>
+
+            <!-- properties window-->
+			<object class="sizeritem" name="window_properties">
+				<option>1</option>
+				<flag>wxEXPAND | wxALL</flag>
+				<border>5</border>
+				<object class="wxScrolledWindow" name="properties_scrollwindow">
+					<style>wxHSCROLL|wxVSCROLL</style>
+					<scrollrate>5,5</scrollrate>
+				</object>
+			</object>
+            <!---->
+
+            <!-- cancel, apply, ok -->
+			<object class="sizeritem">
+				<option>0</option>
+				<flag>wxALIGN_RIGHT</flag>
+				<border>5</border>
+				<object class="wxBoxSizer">
+					<orient>wxHORIZONTAL</orient>
+					<object class="sizeritem">
+						<option>0</option>
+						<flag>wxALL</flag>
+						<border>0</border>
+						<object class="wxButton" name="button_cancel">
+							<label>Cancel</label>
+							<default>0</default>
+							<auth_needed>0</auth_needed>
+							<markup>0</markup>
+							<bitmap />
+						</object>
+					</object>
+					<object class="sizeritem">
+						<option>0</option>
+						<flag>wxALL</flag>
+						<border>0</border>
+						<object class="wxButton" name="button_apply">
+							<label>Apply</label>
+							<default>0</default>
+							<auth_needed>0</auth_needed>
+							<markup>0</markup>
+							<bitmap />
+						</object>
+					</object>
+					<object class="sizeritem">
+						<option>0</option>
+						<flag>wxALL</flag>
+						<border>0</border>
+						<object class="wxButton" name="button_ok">
+							<label>Ok</label>
+							<default>0</default>
+							<auth_needed>0</auth_needed>
+							<markup>0</markup>
+							<bitmap />
+						</object>
+					</object>
+				</object>
+			</object>
+            <!---->
+		</object>
+	</object>
+</resource>

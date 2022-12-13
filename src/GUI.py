@@ -18,44 +18,17 @@ class GUI(wx.Dialog):
 
         wx.Dialog.__init__(self, parent, id = wx.ID_ANY, title = wx.EmptyString, pos = wx.DefaultPosition, size = wx.Size(400,800), style = wx.DEFAULT_FRAME_STYLE|wx.FRAME_FLOAT_ON_PARENT|wx.TAB_TRAVERSAL)
 
-        self.SetSizeHints(wx.DefaultSize, wx.DefaultSize)
+        xml_resource = wx.xrc.XmlResource()
+        xml_resource.Load('src/gui/gui.xrc')
 
         outer_sizer = wx.BoxSizer(wx.VERTICAL)
+        
+        panel = xml_resource.LoadObject(self, 'panel', 'wxPanel')
+        outer_sizer.Add(panel, 1, wx.EXPAND)
+
         self.SetSizer(outer_sizer)
-        self.Layout()
 
-        m_toolBar1 = wx.ToolBar(self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TB_HORIZONTAL)
-        m_staticText2 = wx.StaticText(m_toolBar1, wx.ID_ANY, "Origin:", wx.DefaultPosition, wx.DefaultSize, 0)
-        m_staticText2.Wrap(-1)
-        
-        m_toolBar1.AddControl(m_staticText2)
-        self.origin_field = wx.TextCtrl(m_toolBar1, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0)
-        self.origin_field.SetValue("(0, 0), 0")
-
-        m_toolBar1.AddControl(self.origin_field)
-        update_button = wx.Button(m_toolBar1, wx.ID_ANY, "update", wx.DefaultPosition, wx.DefaultSize, 0)
-
-        m_toolBar1.AddControl(update_button)
-        m_toolBar1.Realize()
-
-        update_button.Bind(wx.EVT_BUTTON, self.update_origin)
-        
-        
-        outer_sizer.Add(m_toolBar1, 0, wx.ALIGN_RIGHT, 5)
-
-
-        self.scroll_box = wx.ScrolledWindow(self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.HSCROLL|wx.VSCROLL)
-        self.scroll_box.SetScrollRate(5, 5)
-
-        outer_sizer.Add(self.scroll_box, 1, wx.EXPAND |wx.ALL, 5)
-
-
-
-
-        toolbar = wx.ToolBar(self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TB_HORIZONTAL)
-        toolbar.Realize()
-
-        outer_sizer.Add(toolbar, 0, wx.ALIGN_RIGHT, 5)
+        self.scroll_box = wx.xrc.XRCCTRL(self, 'properties_scrollwindow')
 
         main_grid = wx.FlexGridSizer(0, 3, 0, 0)
         main_grid.SetFlexibleDirection(wx.BOTH)
@@ -65,21 +38,6 @@ class GUI(wx.Dialog):
 
         self.scroll_box.SetSizer(main_grid)
         self.scroll_box.Layout()
-
-
-
-        button_cancel = wx.Button(toolbar, wx.ID_ANY, "Cancel", wx.DefaultPosition, wx.DefaultSize, 0)
-        toolbar.AddControl(button_cancel)
-        button_cancel.Bind(wx.EVT_BUTTON, self.cancel_pressed)
-
-        button_apply = wx.Button(toolbar, wx.ID_ANY, "Apply", wx.DefaultPosition, wx.DefaultSize, 0)
-        toolbar.AddControl(button_apply)
-        button_apply.Bind(wx.EVT_BUTTON, self.apply_pressed)
-
-        button_ok = wx.Button(toolbar, wx.ID_ANY, "Ok", wx.DefaultPosition, wx.DefaultSize, 0)
-        toolbar.AddControl(button_ok)
-        button_ok.Bind(wx.EVT_BUTTON, self.ok_pressed)
-
 
         self.place_elements(main_grid)
 
