@@ -44,10 +44,17 @@ class GUI(wx.Dialog):
 
         self.place_elements(main_grid)
 
-        subselection_buttons_sizer = wx.xrc.XRCCTRL(self, 'subselection_buttons_sizer')
-        print(type(subselection_buttons_sizer))
 
-        draw_bitmap_button(self, subselection_buttons_sizer, GraphicCircle)
+        subselection_buttons_panel = wx.xrc.XRCCTRL(self, 'subselection_buttons_panel')
+
+        subselection_buttons_sizer = wx.BoxSizer(wx.HORIZONTAL)
+        subselection_buttons_panel.SetSizer(subselection_buttons_sizer)
+        
+
+        draw_bitmap_button(subselection_buttons_panel, subselection_buttons_sizer, GraphicCircle)
+        draw_bitmap_button(subselection_buttons_panel, subselection_buttons_sizer, GraphicCircle)
+        draw_bitmap_button(subselection_buttons_panel, subselection_buttons_sizer, GraphicCircle)
+        draw_bitmap_button(subselection_buttons_panel, subselection_buttons_sizer, GraphicCircle)
 
         self.Show()
 
