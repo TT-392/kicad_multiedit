@@ -1,5 +1,4 @@
 from .kicad.kicad import *
-from .ui_element import *
 from .property import *
 from .gui.elements import *
 
@@ -36,4 +35,5 @@ ui_layout = {
         "Visible": Property(Type_checkbox(), "visible")
     }
 }
+
 

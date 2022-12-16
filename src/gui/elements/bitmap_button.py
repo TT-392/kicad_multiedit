@@ -27,6 +27,7 @@ class draw_bitmap_button:
         self.button.Bind(wx.EVT_LEFT_DOWN, self.mouse_down)
         self.button.Bind(wx.EVT_LEFT_UP, self.mouse_up)
 
+        self.render_passive()
 
         wSizer2 = wx.WrapSizer(wx.HORIZONTAL, wx.WRAPSIZER_DEFAULT_FLAGS)
         self.button.SetSizer(wSizer2)

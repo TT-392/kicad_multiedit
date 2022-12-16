@@ -49,7 +49,6 @@ class GUI(wx.Dialog):
 
         subselection_buttons_sizer = wx.BoxSizer(wx.HORIZONTAL)
         subselection_buttons_panel.SetSizer(subselection_buttons_sizer)
-        
 
         draw_bitmap_button(subselection_buttons_panel, subselection_buttons_sizer, GraphicCircle)
         draw_bitmap_button(subselection_buttons_panel, subselection_buttons_sizer, GraphicCircle)
