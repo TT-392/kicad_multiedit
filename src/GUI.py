@@ -5,6 +5,7 @@ from .kicad.circle import *
 from .gui.elements import *
 from .gui.elements.bitmap_button import *
 from .ui_layout import *
+from .selected import *
 
 
 #GUI: Frame
@@ -50,10 +51,8 @@ class GUI(wx.Dialog):
         subselection_buttons_sizer = wx.BoxSizer(wx.HORIZONTAL)
         subselection_buttons_panel.SetSizer(subselection_buttons_sizer)
 
-        draw_bitmap_button(subselection_buttons_panel, subselection_buttons_sizer, GraphicCircle)
-        draw_bitmap_button(subselection_buttons_panel, subselection_buttons_sizer, GraphicCircle)
-        draw_bitmap_button(subselection_buttons_panel, subselection_buttons_sizer, GraphicCircle)
-        draw_bitmap_button(subselection_buttons_panel, subselection_buttons_sizer, GraphicCircle)
+        for Type in currently_selected.items.get_types():
+            draw_bitmap_button(subselection_buttons_panel, subselection_buttons_sizer, Type, True)
 
         self.Show()
 
@@ -121,7 +120,7 @@ class GUI(wx.Dialog):
                     category_element = passive_category(self.scroll_box, parent, category)
                     first_prop_in_category = False
 
-                prop.ui_element = add_control(self.scroll_box, parent, category_element, name, prop.varname, prop.get_ui_value(), prop.widget_type, prop.get_icons())
+                prop.ui_element = add_control(self.scroll_box, parent, category_element, name, prop.varname, prop.get_ui_value(), prop.widget_type, prop.get_icons()) #TODO, use type based icons
 
                 visibility = prop.is_visible()
 

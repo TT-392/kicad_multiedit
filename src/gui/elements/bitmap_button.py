@@ -3,10 +3,10 @@ import os
 from ...utils import *
 
 class draw_bitmap_button:
-    def __init__(self, parent_window, parent, icon_type):
+    def __init__(self, parent_window, parent, icon_type, depressed):
         icon_sizer = wx.BoxSizer(wx.HORIZONTAL)
 
-        self.selected = False
+        self.depressed = depressed
         self.hover = False
         self.click = False
         
@@ -60,7 +60,7 @@ class draw_bitmap_button:
         self.render_update()
 
         if self.hover:
-            self.selected = not self.selected
+            self.depressed = not self.depressed
 
     def render_update(self):
         if self.hover and self.click:
@@ -74,7 +74,7 @@ class draw_bitmap_button:
 
 
     def render_hover(self):
-        if self.selected:
+        if self.depressed:
             self.edge.SetBackgroundColour(wx.Colour(0x15, 0x53, 0x9e))
             self.button.SetBackgroundColour(wx.Colour(0x0A, 0x29, 0x4f))
         else:
@@ -86,7 +86,7 @@ class draw_bitmap_button:
         self.edge.SetBackgroundColour(wx.Colour(0x15, 0x53, 0x9e))
 
     def render_passive(self):
-        if self.selected:
+        if self.depressed:
             self.button.SetBackgroundColour(wx.Colour(0x08, 33, 63))
             self.edge.SetBackgroundColour(wx.Colour(0x15, 0x53, 0x9e))
         else:

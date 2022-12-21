@@ -11,6 +11,6 @@ GraphicCircle: "add_circle",
 Footprint: "add_footprint",
 FootprintText: "footprint_text",
 GraphicLine: "add_line",
-GraphicPolygon: "add_polygon",
+GraphicPolygon: "add_graphical_polygon",
 GraphicRect: "add_rectangle",
 GraphicText: "text"}

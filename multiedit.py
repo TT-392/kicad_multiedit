@@ -1,5 +1,5 @@
 import pcbnew
-from .src.get_selected import *
+from .src.selected import *
 from .src.GUI import *
 from .src.ui_layout import *
 from .src.config import *
@@ -29,12 +29,12 @@ class MultiEdit(pcbnew.ActionPlugin):
             kicad_info.update()
 
             print("getting selected")
-            selected = get_selected()
+            currently_selected.update()
 
             print("initting python envs")
             i = 0
-            for item in selected.list:
-                item.init_python_env(selected, i)
+            for item in currently_selected.items.list:
+                item.init_python_env(currently_selected.items, i)
                 i += 1
 
             print("starting gui")

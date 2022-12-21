@@ -93,3 +93,10 @@ class Items:
         
         return retval
 
+    def get_types(self):
+        retval = set([])
+        for item in self.list:
+            retval.add(type(item))
+        
+        return retval
+
