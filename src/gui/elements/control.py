@@ -1,5 +1,6 @@
 import wx
 import os
+from ...utils import *
 
 class Control:
     def __init__(self):
@@ -19,18 +20,19 @@ class Control:
             self.category.drop_visible_control(self)
 
 
-    def add_icons(self, parent_window, parent, icons):
+    def add_icons(self, parent_window, parent, item_types):
         icon_sizer = wx.BoxSizer(wx.HORIZONTAL)
 
-        for icon in icons:
+        for Type in item_types:
             sys_appearance = wx.SystemSettings.GetAppearance()
             theme = "dark" if sys_appearance.IsDark() else "light"
 
-            path = os.path.join(os.path.dirname(__file__), "../../../resources/output/" + theme + "/" + icon + ".png")
+            path = utils.get_item_icon_path(Type)
+
             icon = wx.StaticBitmap(parent_window, wx.ID_ANY, wx.Bitmap(path, wx.BITMAP_TYPE_ANY), wx.DefaultPosition, wx.Size(20,20), 0)
             icon_sizer.Add(icon, 0, wx.ALL, 0)
             self.wx_elements.append(icon)
 
-        parent.Add(icon_sizer, 1, wx.EXPAND, len(icons))
+        parent.Add(icon_sizer, 1, wx.EXPAND, len(item_types))
 
 

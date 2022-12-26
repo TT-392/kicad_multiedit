@@ -3,12 +3,13 @@ import os
 from ...utils import *
 
 class draw_bitmap_button:
-    def __init__(self, parent_window, parent, icon_type, depressed):
+    def __init__(self, parent_window, parent, icon_type, depressed, update_func):
         icon_sizer = wx.BoxSizer(wx.HORIZONTAL)
 
         self.depressed = depressed
         self.hover = False
         self.click = False
+        self.update_func = update_func
         
         wSizer0 = wx.WrapSizer(wx.HORIZONTAL, wx.WRAPSIZER_DEFAULT_FLAGS)
         parent.Add(wSizer0, 10)
@@ -40,6 +41,9 @@ class draw_bitmap_button:
 
         wSizer2.Add(icon, 0, wx.EXPAND|wx.ALL, 2)
 
+    def get_value(self):
+        return self.depressed
+
 
     def mouse_enter(self, e):
         self.hover = True
@@ -55,12 +59,15 @@ class draw_bitmap_button:
         self.click = True
         self.render_update()
 
+
     def mouse_up(self, e):
         self.click = False 
         self.render_update()
 
         if self.hover:
             self.depressed = not self.depressed
+            self.update_func()
+
 
     def render_update(self):
         if self.hover and self.click:

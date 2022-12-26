@@ -29,8 +29,7 @@ class passive_category():
 
         self.visible_controls.remove(control)
 
-        if len(self.controls) == 0:
-            self.__set_visibility(False)
+        self.__set_visibility(False)
 
     def __set_visibility(self, value):
         if value:

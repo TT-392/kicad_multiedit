@@ -1,9 +1,10 @@
 import wx
 import wx.xrc
+import os
 import pcbnew
 from .kicad.circle import *
 from .gui.elements import *
-from .gui.elements.bitmap_button import *
+from .gui.elements.subselector import *
 from .ui_layout import *
 from .selected import *
 
@@ -22,7 +23,7 @@ class GUI(wx.Dialog):
         wx.Dialog.__init__(self, parent, id = wx.ID_ANY, title = wx.EmptyString, pos = wx.DefaultPosition, size = wx.Size(400,800), style = wx.DEFAULT_FRAME_STYLE|wx.FRAME_FLOAT_ON_PARENT|wx.TAB_TRAVERSAL)
 
         xml_resource = wx.xrc.XmlResource()
-        xml_resource.Load('src/gui/gui.xrc')
+        xml_resource.Load(os.path.join(os.path.dirname(__file__), 'gui/gui.xrc'))
 
         outer_sizer = wx.BoxSizer(wx.VERTICAL)
         
@@ -51,22 +52,34 @@ class GUI(wx.Dialog):
         subselection_buttons_sizer = wx.BoxSizer(wx.HORIZONTAL)
         subselection_buttons_panel.SetSizer(subselection_buttons_sizer)
 
-        for Type in currently_selected.items.get_types():
-            draw_bitmap_button(subselection_buttons_panel, subselection_buttons_sizer, Type, True)
+        self.subselector = Subselector_control(subselection_buttons_panel, subselection_buttons_sizer, currently_selected.items.get_types(), currently_selected.items.get_types(), self.subselector_update)
 
         self.Show()
 
     def update_origin(self, e):
-        #TODO: getting all items can be abstracted
+        #TODO: getting all items can be done using currently_selected
         for category in ui_layout:
             for name in ui_layout[category]:
                 prop = ui_layout[category][name]
-                if prop.is_visible():
+                if prop.is_active():
                     for item in prop.get_items():
                         item.set_origin(item.python_eval(self.origin_field.GetValue()))
 
 
                     prop.update_ui_value()
+
+    def subselector_update(self):
+        types = self.subselector.get_value()
+
+        for category in ui_layout:
+            for p in ui_layout[category]:
+                prop = ui_layout[category][p]
+                prop.set_selected_types(types)
+
+                visibility = prop.is_active()
+                prop.ui_element.set_visibility(visibility)
+        self.Layout()
+
 
     def cancel_pressed(self, e):
         print("cancel")
@@ -81,7 +94,7 @@ class GUI(wx.Dialog):
             for name in ui_layout[category]:
                 prop = ui_layout[category][name]
 
-                if prop.is_visible():
+                if prop.is_active():
                     new_ui_value = prop.ui_element.get_value()
 
                     if prop.get_ui_value() != new_ui_value:
@@ -120,9 +133,9 @@ class GUI(wx.Dialog):
                     category_element = passive_category(self.scroll_box, parent, category)
                     first_prop_in_category = False
 
-                prop.ui_element = add_control(self.scroll_box, parent, category_element, name, prop.varname, prop.get_ui_value(), prop.widget_type, prop.get_icons()) #TODO, use type based icons
+                prop.ui_element = add_control(self.scroll_box, parent, category_element, name, prop.varname, prop.get_ui_value(), prop.widget_type, prop.get_item_types())
 
-                visibility = prop.is_visible()
+                visibility = prop.is_active()
 
                 prop.ui_element.set_visibility(visibility)
 

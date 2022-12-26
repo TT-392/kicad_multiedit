@@ -27,7 +27,7 @@ class Selected:
         for category in ui_layout:
             for name in ui_layout[category]:
                 prop = ui_layout[category][name]
-                prop.values = []
+                prop.values = {"active": [], "inactive": []}
 
 
         pcb = kicad_info.get_board()
@@ -38,14 +38,14 @@ class Selected:
             if footprint.IsSelected() or test_mode:
                 item_list.append(Footprint(footprint))
 
-           # for item in footprint.GraphicalItems():
-           #     if type(item) == pcbnew.FP_TEXT:
-           #         if item.IsSelected():
-           #             item_list.append(FootprintText(item))
+            for item in footprint.GraphicalItems():
+                if type(item) == pcbnew.FP_TEXT or test_mode:
+                    if item.IsSelected():
+                        item_list.append(FootprintText(item))
 
-           # reference = footprint.Reference()
-           # if reference.IsSelected():
-           #     item_list.append(FootprintText(reference))
+            reference = footprint.Reference()
+            if reference.IsSelected() or test_mode:
+                item_list.append(FootprintText(reference))
 
 
 
@@ -72,6 +72,7 @@ class Selected:
 
 
         self.items = Items(item_list)
+
 
 
 currently_selected = Selected()

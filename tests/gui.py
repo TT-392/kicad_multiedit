@@ -13,11 +13,18 @@ def gui():
     print("getting selected")
     currently_selected.update(True)
 
+#    for category in ui_layout:
+#        for p in ui_layout[category]:
+#            prop = ui_layout[category][p]
+#            prop.set_selected_types([])
+
     print("initting python envs")
     i = 0
     for item in currently_selected.items.list:
         item.init_python_env(currently_selected.items, i)
         i += 1
+        
+
 
     print("starting gui")
     app = wx.App(0)

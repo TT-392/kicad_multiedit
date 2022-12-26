@@ -9,7 +9,7 @@ class Property:
         self.ui_element = None
 
 
-        self.values = []
+        self.values = {"active": [], "inactive": []}
 
         self.ui_element = None
 
@@ -19,26 +19,26 @@ class Property:
         # TODO: re enable this check
         #assert len(self.values) != 0, "property without members"
 
-        if len(self.values) == 0:
+        if len(self.values["active"]) == 0:
             return "None"
-        if len(self.values) == 1:
-            return utils.to_parseable_string(self.values[0].get())
+        if len(self.values["active"]) == 1:
+            return utils.to_parseable_string(self.values["active"][0].get())
         else:
-            firstValue = self.values[0].get()
+            firstValue = self.values["active"][0].get()
 
-            for value in self.values[1:]:
+            for value in self.values["active"][1:]:
                 if value.get() != firstValue:
                     return self.varname
             
             return utils.to_parseable_string(firstValue)
     
     def prepare_variables(self, ui_val):
-        for value in self.values:
+        for value in self.values["active"]:
             value.item.python_env.prepare_variables(ui_val)
 
 
     def put_ui_value(self, ui_val):
-        for value in self.values:
+        for value in self.values["active"]:
             new_value = value.item.python_eval(ui_val)
             
             if new_value != value.get():
@@ -47,24 +47,24 @@ class Property:
 
 
     def register(self, value_obj):
-        self.values.append(value_obj)
+        self.values["active"].append(value_obj)
 
         return self
 
 
-    def get_icons(self):
-        icons = []
+    def get_item_types(self):
+        item_types = []
 
         for item in self.get_items():
-            icons.append(item.icon)
+            item_types.append(type(item))
 
-        return set(icons)
+        return set(item_types)
 
 
     def get_items(self):
         items = []
 
-        for value in self.values:
+        for value in self.values["active"]:
             items.append(value.item)
         
         return items
@@ -73,9 +73,21 @@ class Property:
     def update_ui_value(self):
         self.ui_element.set_value(self.get_ui_value())
 
+    def set_selected_types(self, item_types):
+        active_values = []
+        inactive_values = []
 
-    def is_visible(self):
-        if len(self.values) == 0:
+        for value in self.values["active"] + self.values["inactive"]:
+            if type(value.item) in item_types:
+                active_values.append(value)
+            else:
+                inactive_values.append(value)
+
+        self.values["active"] = active_values
+        self.values["inactive"] = inactive_values
+
+    def is_active(self):
+        if len(self.values["active"]) == 0:
             return False
         else:
             return True

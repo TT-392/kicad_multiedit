@@ -12,7 +12,7 @@ class Type_layer:
 
 
 #TODO: this stuff should move to Control.__init__
-def add_control(parent_window, parent, category, name, varname, value, Type, icons):
+def add_control(parent_window, parent, category, name, varname, value, Type, item_types):
     ui_name = wx.StaticText(parent_window, wx.ID_ANY, name + ":", wx.DefaultPosition, wx.DefaultSize, 0)
     parent.Add(ui_name, 0, wx.ALL, 5)
     
@@ -31,7 +31,7 @@ def add_control(parent_window, parent, category, name, varname, value, Type, ico
     control.wx_elements.append(ui_name)
     control.set_value(value)
 
-    control.add_icons(parent_window, parent, icons)
+    control.add_icons(parent_window, parent, item_types)
 
     return control
 
