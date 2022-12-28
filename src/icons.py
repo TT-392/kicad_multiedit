@@ -6,6 +6,7 @@ from .kicad.line import *
 from .kicad.polygon import *
 from .kicad.rect import *
 from .kicad.text import *
+
 icons = {GraphicArc: "add_arc",
 GraphicCircle: "add_circle",
 Footprint: "add_footprint",
@@ -14,3 +15,4 @@ GraphicLine: "add_line",
 GraphicPolygon: "add_graphical_polygon",
 GraphicRect: "add_rectangle",
 GraphicText: "text"}
+

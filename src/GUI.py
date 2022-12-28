@@ -25,12 +25,24 @@ class GUI(wx.Dialog):
         xml_resource = wx.xrc.XmlResource()
         xml_resource.Load(os.path.join(os.path.dirname(__file__), 'gui/gui.xrc'))
 
+
         outer_sizer = wx.BoxSizer(wx.VERTICAL)
         
         panel = xml_resource.LoadObject(self, 'panel', 'wxPanel')
         outer_sizer.Add(panel, 1, wx.EXPAND)
 
         self.SetSizer(outer_sizer)
+
+
+        button_cancel = wx.xrc.XRCCTRL(self, 'button_cancel')
+        button_apply = wx.xrc.XRCCTRL(self, 'button_apply')
+        button_ok = wx.xrc.XRCCTRL(self, 'button_ok')
+
+        button_cancel.Bind(wx.EVT_BUTTON, self.cancel_pressed)
+        button_apply.Bind(wx.EVT_BUTTON, self.apply_pressed)
+        button_ok.Bind(wx.EVT_BUTTON, self.ok_pressed)
+
+
 
         self.scroll_box = wx.xrc.XRCCTRL(self, 'properties_scrollwindow')
         print(type(self.scroll_box))
@@ -53,6 +65,8 @@ class GUI(wx.Dialog):
         subselection_buttons_panel.SetSizer(subselection_buttons_sizer)
 
         self.subselector = Subselector_control(subselection_buttons_panel, subselection_buttons_sizer, currently_selected.items.get_types(), currently_selected.items.get_types(), self.subselector_update)
+
+
 
         self.Show()
 
