@@ -4,7 +4,6 @@ import os
 import pcbnew
 from .kicad.circle import *
 from .gui.elements import *
-from .gui.elements.subselector import *
 from .ui_layout import *
 from .selected import *
 
@@ -59,14 +58,6 @@ class GUI(wx.Dialog):
         self.place_elements(main_grid)
 
 
-        subselection_buttons_panel = wx.xrc.XRCCTRL(self, 'subselection_buttons_panel')
-
-        subselection_buttons_sizer = wx.BoxSizer(wx.HORIZONTAL)
-        subselection_buttons_panel.SetSizer(subselection_buttons_sizer)
-
-        self.subselector = Subselector_control(subselection_buttons_panel, subselection_buttons_sizer, currently_selected.items.get_types(), currently_selected.items.get_types(), self.subselector_update)
-
-
 
         self.Show()
 
@@ -82,17 +73,6 @@ class GUI(wx.Dialog):
 
                     prop.update_ui_value()
 
-    def subselector_update(self):
-        types = self.subselector.get_value()
-
-        for category in ui_layout:
-            for p in ui_layout[category]:
-                prop = ui_layout[category][p]
-                prop.set_selected_types(types)
-
-                visibility = prop.is_active()
-                prop.ui_element.set_visibility(visibility)
-        self.Layout()
 
 
     def cancel_pressed(self, e):

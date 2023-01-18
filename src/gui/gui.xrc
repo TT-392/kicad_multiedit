@@ -12,15 +12,6 @@
 				<object class="wxBoxSizer">
 					<orient>wxHORIZONTAL</orient>
 
-                    <!-- Subselection buttons -->
-					<object class="sizeritem">
-                        <object class="wxPanel" name="subselection_buttons_panel">
-                            <style>wxTAB_TRAVERSAL</style>
-                            <bg>#4b6983</bg>
-                        </object>
-                    </object>
-                    <!---->
-
 					<object class="spacer">
 						<option>1</option>
 						<flag>wxEXPAND</flag>
