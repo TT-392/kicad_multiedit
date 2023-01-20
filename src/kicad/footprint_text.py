@@ -33,7 +33,7 @@ class FootprintText(Item):
             ui_layout["Text"]["Height"].register(self.textHeight).varname: self.textHeight,
             ui_layout["Graphic"]["Line width"].register(self.width).varname: self.width,
             ui_layout["Orientation"]["Angle"].register(self.orientation).varname: self.orientation,
-            ui_layout["Miscellaneous"]["Visible"].register(self.orientation).varname: self.orientation,
+            ui_layout["Miscellaneous"]["Visible"].register(self.visible).varname: self.visible,
             ui_layout["Miscellaneous"]["Layer"].register(self.layer).varname: self.layer
         }
 

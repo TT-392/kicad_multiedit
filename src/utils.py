@@ -50,7 +50,6 @@ class utils:
 
     def get_item_icon_path(item_type):
         from .icons import icons
-        print(item_type)
         path = os.path.join(os.path.dirname(__file__), "../resources/output/" + utils.get_theme() + "/" + icons[item_type] + ".png")
         return path
 

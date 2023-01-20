@@ -44,7 +44,6 @@ class GUI(wx.Dialog):
 
 
         self.scroll_box = wx.xrc.XRCCTRL(self, 'properties_scrollwindow')
-        print(type(self.scroll_box))
 
         main_grid = wx.FlexGridSizer(0, 3, 0, 0)
         main_grid.SetFlexibleDirection(wx.BOTH)
@@ -103,7 +102,6 @@ class GUI(wx.Dialog):
             prop.prepare_variables(new_ui_value)
 
         for prop in props_needing_update:
-            print("new ui val", new_ui_value)
             prop.put_ui_value(new_ui_value)
                             
         if len(props_needing_update) > 0:

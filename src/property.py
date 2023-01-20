@@ -42,7 +42,6 @@ class Property:
             new_value = value.item.python_eval(ui_val)
             
             if new_value != value.get():
-                print("applying", new_value, "to", self.varname, "in", value.item)
                 value.put(new_value)
 
 

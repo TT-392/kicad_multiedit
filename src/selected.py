@@ -38,15 +38,19 @@ class Selected:
             if footprint.IsSelected() or test_mode:
                 item_list.append(Footprint(footprint))
 
-            for item in footprint.GraphicalItems():
-                if type(item) == pcbnew.FP_TEXT or test_mode:
-                    if item.IsSelected():
-                        item_list.append(FootprintText(item))
+            else:
+                for item in footprint.GraphicalItems():
+                    if type(item) == pcbnew.FP_TEXT:
+                        if item.IsSelected() or test_mode:
+                            item_list.append(FootprintText(item))
 
-            reference = footprint.Reference()
-            if reference.IsSelected() or test_mode:
-                item_list.append(FootprintText(reference))
+                reference = footprint.Reference()
+                if reference.IsSelected() or test_mode:
+                    item_list.append(FootprintText(reference))
 
+                value_text_item = footprint.Value()
+                if value_text_item.IsSelected() or test_mode:
+                    item_list.append(FootprintText(value_text_item))
 
 
         for drawing in pcb.GetDrawings():
