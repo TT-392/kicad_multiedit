@@ -17,7 +17,7 @@ class Type_python:
 
 
 class python_control(Control):
-    def __init__(self, parent_window, parent, category, name, varname, Type):
+    def __init__(self, parent_window, parent, category, name, varname, Type, enter_func = None):
         Control.__init__(self)
 
         self.category = category
@@ -26,7 +26,7 @@ class python_control(Control):
              ui_grid = wx.FlexGridSizer(0, 2, 0, 0)
              ui_grid.SetFlexibleDirection(wx.BOTH)
              ui_grid.SetNonFlexibleGrowMode(wx.FLEX_GROWMODE_SPECIFIED)
-             self.control = wx.TextCtrl(parent_window, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0)
+             self.control = wx.TextCtrl(parent_window, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, wx.TE_PROCESS_ENTER)
              self.wx_elements.append(self.control)
 
              ui_grid.Add(self.control, 0, wx.ALL|wx.EXPAND, 5)
@@ -40,12 +40,13 @@ class python_control(Control):
              parent.Add(ui_grid, 1, wx.EXPAND, 5)
 
         else:
-            self.control = wx.TextCtrl(parent_window, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0)
+            self.control = wx.TextCtrl(parent_window, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, wx.TE_PROCESS_ENTER)
             parent.Add(self.control, 1, wx.ALL|wx.EXPAND, 5)
             self.wx_elements.append(self.control)
 
         self.control.SetToolTip(varname)
-
+        if enter_func != None:
+            self.control.Bind(wx.EVT_TEXT_ENTER, enter_func)
 
     def set_value(self, value):
         self.control.SetValue(value)

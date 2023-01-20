@@ -125,7 +125,8 @@ class GUI(wx.Dialog):
                     category_element = passive_category(self.scroll_box, parent, category)
                     first_prop_in_category = False
 
-                prop.ui_element = add_control(self.scroll_box, parent, category_element, name, prop.varname, prop.get_ui_value(), prop.widget_type, prop.get_item_types())
+                prop.ui_element = add_control(self.scroll_box, parent, category_element, name, prop.varname, prop.get_ui_value(), prop.widget_type, prop.get_item_types(), self.apply_pressed)
+
 
                 visibility = prop.is_active()
 
