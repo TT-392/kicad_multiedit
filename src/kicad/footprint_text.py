@@ -104,10 +104,10 @@ class FootprintText(Item):
             self.item = item
             
         def put(self, value):
-            self.item.obj.SetTextAngle(value * 10)
+            self.item.obj.SetTextAngleDegrees(value)
 
         def get(self):
-            return self.item.obj.GetTextAngle() / 10
+            return self.item.obj.GetTextAngleDegrees()
 
     class __visible:
         def __init__(self, item):

@@ -71,10 +71,11 @@ class Footprint(Item):
             self.item = item
             
         def put(self, value):
-            self.item.obj.SetOrientation(value * 10)
+            self.item.obj.SetOrientationDegrees(value)
+            pass
 
         def get(self):
-            return self.item.obj.GetOrientation() / 10
+            return self.item.obj.GetOrientationDegrees()
 
     class __not_in_schematic:
         def __init__(self, item):
