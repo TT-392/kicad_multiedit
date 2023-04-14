@@ -23,6 +23,8 @@ class Kicad_info:
         elif self.units == UNIT_IN:
             self.unit_string = "in"
 
+        self.version = pcbnew.Version()
+
 
 
     def toUnit(self, value):

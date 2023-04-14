@@ -28,6 +28,8 @@ class MultiEdit(pcbnew.ActionPlugin):
 
             kicad_info.update()
 
+            print(kicad_info.version);
+
             print("getting selected")
             currently_selected.update()
 
