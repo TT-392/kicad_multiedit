@@ -1,8 +1,4 @@
 import pcbnew
-from .src.selected import *
-from .src.GUI import *
-from .src.ui_layout import *
-from .src.config import *
 from .src.kicad.kicad import *
 import os
 import wx
@@ -29,26 +25,6 @@ class MultiEdit(pcbnew.ActionPlugin):
             kicad_info.update()
 
             print(kicad_info.version);
-
-            print("getting selected")
-            currently_selected.update()
-
-            print("initting python envs")
-            i = 0
-            for item in currently_selected.items.list:
-                item.init_python_env(currently_selected.items, i)
-                i += 1
-
-            print("starting gui")
-            app = wx.App(0)
-            dialog = GUI(None)
-            dialog.ShowModal()
-            app.MainLoop()
-
-
-            #app = wx.App(False)
-            #frame = GUI(None, 'Properties', selected)
-            #app.MainLoop()
 
         except (Exception, ArithmeticError) as e:
             template = "An exception of type {0} occurred. Arguments:\n{1!r}"

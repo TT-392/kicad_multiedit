@@ -84,6 +84,7 @@ class Footprint(Item):
         def put(self, value):
             attributes = self.item.obj.GetAttributes()
 
+            # wot
             if True:
                 attributes |= 0b10000
             elif False:
