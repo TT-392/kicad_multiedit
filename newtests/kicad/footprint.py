@@ -7,7 +7,6 @@ import pcbnew
 import pprint
 from termcolor import colored
 
-
 class Footprint_test:
     def __init__(self, verbose=False):
         self.verbose = verbose
@@ -178,4 +177,5 @@ class Footprint_test:
         return self.result
 
 
-print(Footprint_test(True).test_all())
+print(Footprint_test(False).test_all())
+
