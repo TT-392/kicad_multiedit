@@ -1,101 +1,56 @@
-from copy import deepcopy
+import pcbnew
+import os
+from .footprint import *
+import pprint
 
-class Footprint:
-    def __init__(self, pcbnew_obj):
-        self.pcbnew_obj = pcbnew_obj
+class Board:
+    def __init__(self):
+        self.pcb = pcbnew.LoadBoard(os.path.join(os.path.dirname(__file__), "..", "..", "newtests", "pcbnew_test_files", "test1.kicad_pcb"))
 
-        self.__values = {
-            "Position": {
-                "X": None,
-                "Y": None 
-            }, 
-            "Orientation": {
-                "Angle": None
-            },
-            "Text Items": {
-                "Ref": None
-            },
-            "Fabrication Attributes": {
-                "Not in schematic": None
-            },
-        }
+        self.items = set([])
+        self.__pcbnew_objects = set([])
 
-        self.selected = pcbnew_obj.IsSelected()
+        self.update()
 
 
-    def __get_attributes():
-        retval = {}
+    def __str__(self):
+        return pprint.pformat(self.items, indent=4)
+    
 
-        if self.pcbnew_obj.GetAttributes() & 0b10000:
-            retval["Not in schematic"] = True
-        else:
-            retval["Not in schematic"] = False
-
-        return retval
+    def __create_item(self, pcbnew_object):
+        if type(pcbnew_object) == pcbnew.FOOTPRINT:
+            return Footprint(pcbnew_object)
 
 
-    def __set_attributes(attrib):
-        attributes = self.pcbnew_obj.GetAttributes()
+    def update(self):
+        new_pcbnew_objects = set([])
+        
+        for pcbnew_fp in self.pcb.GetFootprints():
+            new_pcbnew_objects.add(pcbnew_fp)
 
-        if attrib["Not in schematic"] == True:
-            attributes |= 0b10000
-        elif attrib["Not in schematic"] == False:
-            attributes &= ~0b10000
+        new = new_pcbnew_objects - self.__pcbnew_objects
+        marked_for_deletion = self.__pcbnew_objects - new_pcbnew_objects
 
-        self.pcbnew_obj.SetAttributes(attributes)
+        for pcbnew_object in new:
+            self.__pcbnew_objects.add(pcbnew_object)
+            self.items.add(self.__create_item(pcbnew_object))
 
+        for pcbnew_object in marked_for_deletion:
+            self.__pcbnew_objects.remove(pcbnew_object)
 
-    def __update_stored_values(self):
-        pos = self.pcbnew_obj.GetPosition()
-        attributes = self.__get_attributes()
-
-        self.__values["Position"]["X"] = pos.x
-
-        self.__values["Position"]["Y"] = pos.y
-
-        self.__values["Orientation"]["Angle"] = \
-                self.pcbnew_obj.GetOrientationDegrees()
-
-        self.__values["Text Items"]["Ref"] = \
-                self.pcbnew_obj.GetReference()
-
-        self.__values["Fabrication Attributes"]["Not in schematic"] = \
-                attributes["not in schematic"]
+            for item in self.items:
+                if item.pcbnew_obj == pcbnew_object:
+                    self.items.remove(item)
+                    break
 
 
-    def set_units(self, units):
-        self.units = units
+    def get_selected(self):
+        self.update()
+        selected = set([])
 
+        for item in self.items:
+            if item.is_selected():
+                selected.add(item)
 
-    def set_origin(self, origin):
-        self.origin = origin
-
-
-    def get_values(self):
-        self.__update_stored_values()
-        return deepcopy(self.__values)
-
-
-    def put_values(self, values):
-        category = values["Position"], local_category = __values["Position"]
-        if category["X"] != local_category["X"] or category["Y"] != local_category["Y"]: 
-            self.pcbnew_obj.SetPosition(pcbnew.wxPoint(category["X"], category["Y"]))
-
-
-        category = values["Orientation"], local_category = __values["Orientation"]
-        if category["Angle"] != local_category["Angle"]:
-            self.pcbnew_obj.SetOrientationDegrees(category["Rotation"])
-
-
-        category = values["Text Items"], local_category = __values["Text Items"]
-        if category["Ref"] != local_category["Ref"]:
-            self.pcbnew_obj.SetReference(category["Ref"])
-
-
-        category = values["Fabrication Attributes"]
-        local_category = __values["Fabrication Attributes"]
-        if category["Not in schematic"] != local_category["Not in schematic"]:
-            attributes["Not in schematic"] = category["Not in schematic"]
-
-        self.__set_attributes(attributes)
+        return selected
 
