@@ -623,8 +623,10 @@
 
   (gr_circle (center 30 40) (end 31 40)
     (stroke (width 0.2) (type default)) (fill none) (layer "F.Cu") (tstamp 22d39628-dbc4-4d05-adb8-6f7da0db1dd7))
+  (gr_line (start 137.4394 43.6118) (end 110.8456 42.9514)
+    (stroke (width 0.2) (type default)) (layer "F.Cu") (tstamp af68f92b-b2b9-4caf-a4aa-fa0822ba0c9f))
   (gr_circle (center 64.4144 28.1686) (end 67.4144 28.1686)
-    (stroke (width 3) (type default)) (fill none) (layer "B.Adhes") (tstamp 1b7c0cde-43f3-4922-a98a-582456ebdb0b))
+    (stroke (width 3.00228) (type default)) (fill none) (layer "B.Adhes") (tstamp 1b7c0cde-43f3-4922-a98a-582456ebdb0b))
   (gr_circle (center 54 55) (end 56 55)
     (stroke (width 1) (type default)) (fill none) (layer "Dwgs.User") (tstamp a0d5d131-c4e3-4e4e-96b3-324317621c23))
 

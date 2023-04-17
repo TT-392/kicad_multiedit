@@ -10,7 +10,7 @@ class Board_test:
 
         board.update()
         print(board)
-
+        print(board.get_selected())
 
 
 Board_test(False)

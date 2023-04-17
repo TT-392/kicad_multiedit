@@ -5,7 +5,7 @@ import pprint
 
 class Board_item:
     origin = (0, 0), 0
-
+    pcbnew_obj = None
 
     def __str__(self):
         retval = {"Type": type(self),
@@ -17,6 +17,10 @@ class Board_item:
                  }
 
         return pprint.pformat(retval, indent=4)
+
+
+    def update_object(self, pcbnew_obj):
+        self.pcbnew_obj = pcbnew_obj
 
 
     def set_units(self, units):

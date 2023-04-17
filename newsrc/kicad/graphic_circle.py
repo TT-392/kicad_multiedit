@@ -30,12 +30,14 @@ class Graphic_circle(Board_item):
         pos = self.pcbnew_obj.GetPosition()
         dummy, pos = self._Board_item__transform_rotation_and_position(0, pos)
         radius = kicad_utils.to_unit(self.units, self.pcbnew_obj.GetRadius())
-
+        width = kicad_utils.to_unit(self.units, self.pcbnew_obj.GetWidth())
+        layer = pcbnew.LayerName(self.pcbnew_obj.GetLayer())
 
         self.values["Position"]["X"] = pos[0]
         self.values["Position"]["Y"] = pos[1]
-
         self.values["Graphic"]["Radius"] = radius
+        self.values["Graphic"]["Line width"] = width
+        self.values["Miscellaneous"]["Layer"] = layer
 
 
     def put_values(self, values):

@@ -2,4 +2,6 @@ __pycache__
 tags
 **/__pycache__
 multiedit.zip
-./newtests/pcbnew_test_files/pcbnew_files-backups/
+newtests/pcbnew_test_files/pcbnew_files-backups/*
+newtests/pcbnew_test_files/pcbnew_files-backups/
+newtests/pcbnew_test_files/fp-info-cache
